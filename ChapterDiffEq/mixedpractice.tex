@@ -1,0 +1,77 @@
+\section{Mixed Practice}
+\subsection{Warm Ups}
+These are good problems for reinforcing the vocabulary and foundational concepts of this chapter.
+
+\begin{exercise}{\Coffeecup }
+
+Find all functions that equal their own second derivative.  That is to say, use power series to solve the following differential equation:
+$$y'' = y$$
+\solushun{Let $y= a_0+a_1x + a_2 x^2 + a_3 x^3 + \cdots$ then 
+$y' = a_1 + 2a_2 x + 3a_3 x^2 + 4a_4 x^3 + \cdots$ and
+$y'' = 2a_2 + 3\cdot 2 a_3 x + 4 \cdot 3 a_4 x^2 + 5 \cdot 4 a_5 x^3 \cdots $
+Equate coeffients one degree at a time:
+
+$a_0 = 2a_2 \rightarrow a_2 = \frac{a_0}{2} $ \\
+$a_1 = 3 \cdot 2 a_3 \rightarrow a_3 = \frac{a_1}{3!}$\\
+$a_2 = 4 \cdot 3 a_4 \rightarrow a_4 = \frac{a_0}{4!}$\\
+$a_3 = 5 \cdot 4 a_5 \rightarrow a_5 = \frac{a_1}{5!}$\\
+So we have if n is odd then $a_n = \frac{a_1}{n!}$ and if n is even, we have $a_n = \frac{a_0}{n!}$\\
+Put it all together to get $y = a_0 + a_1x+\frac{a_0}{2}x^2+ \frac{a_1}{3!}x^3 + \frac{a_0}{4!} x^4 + \cdots$ notice if you group the even and odd degrees you get $y =( a_0 + \frac{a_0}{2}x^2+\frac{a_0}{4!} x^4+\cdots )+(a_1x+\frac{a_1}{3!}x^3 + \frac{a_1}{5!} + \cdots) = a_0 \cosh(x) + a_1 \sinh(x)$  Thus linear combinations of hyperbolic sine and hyperbolic cosine functions are the only functions that equal their own second derivatives.
+\\ }{0in}
+
+\AnswerKeyEntry{Linear combinations of hyperbolic sine and hyperbolic cosine functions are the only functions that equal their own second derivatives.
+}
+\end{exercise}
+\subsection{Sample Test Problems}
+
+
+\begin{exercise}{\Coffeecup \Coffeecup \Coffeecup}
+
+\begin{enumerate}[label=\alph*.)] 
+
+\item Find the set of all solutions to the following differential equation using power series.  Do not leave your answer as a power series but rather turn it back into a closed explicit formula using familiar functions.
+
+$$ \frac{dy}{dx}=y-x-2 $$
+\solushun{Let $y = a_0 + a_1 x + a_2 x^2 + a_3 x^3 + \cdots $ a power series. Then $y' = \frac{dy}{dx} = a_1 + 2a_2 x+ 3a_3 x^2 + \cdots$ So we have $a_1 + 2a_2 x+ 3a_3 x^2 + \cdots= a_0 + a_1 x + a_2 x^2 + a_3 x^3 + \cdots - x -2 = (a_0-2) +(a_1-1)x +  a_2 x^2 + a_3 x^3 + \cdots$ Which means
+$a_1=a_0-2$  \\
+$2a_2 = (a_1-1)=(a_0-2-1) = a_0-3$ so $a_2 = \frac{a_0-3}{2}$\\
+$3a_3=a_2= a_2=\frac{a_0-3}{2}$ So $a_3 = \frac{a_0-3}{3!}$\\
+$4a_4 = a_3 = \frac{a_0-3}{3!}$ so $a_4 = \frac{a_0-3}{4!}$ etc\\
+so we have $y = a_0+(a_0-2)x + \frac{a_0-3}{2}x^2+\frac{a_0-3}{3!} x^3 +\frac{a_0-3}{4!} x^4 + \cdots =a_0+(a_0-2)x +(a_0-3) \frac{x^2}{2}+\frac{x^3}{3!} +\frac{x^4}{4!} x^4 + \cdots =a_0+(a_0-2)x + (a_0 -3)\sum\limits_{x=0}^{\infty}{\frac{x^n}{n!}} - (a_0-3)-(a_0-3)x$ The part $ - (a_0-3)-(a_0-3)x$ is necessary to exclude the first 2 terms of $(a_0 -3)\sum\limits_{x=0}^{\infty}{\frac{x^n}{n!}}= (a_0 -3)e^x$ So we actually have $y =  a_0-(a_0-3)+(a_0-2)x -(a_0-3)x + (a_0-3)e^x=3 +x + (a_0-3)e^x$\\ }{0in}
+
+\item Plug your answer back into the DE to verify it is correct.
+\solushun{If $y =3 +x + (a_0-3)e^x$ then $\frac{dy}{dx} = 1 +(a_0-3)e^x$ but
+$y-x-2 = 3+x+(a_0-3)e^x -x-2 = 1 + (a_0-3)e^x$ So they match.
+\\ }{0in}
+\end{enumerate}
+
+\AnswerKeyEntry{a.~~ $y=3 +x + (a_0-3)e^x$
+b.~~ If $y =3 +x + (a_0-3)e^x$ then $\frac{dy}{dx} = 1 +(a_0-3)e^x$ but
+$y-x-2 = 3+x+(a_0-3)e^x -x-2 = 1 + (a_0-3)e^x$ So they match.
+}
+\end{exercise}
+
+
+\begin{exercise}{\Coffeecup \Coffeecup \Coffeecup}
+\begin{enumerate}[label=\alph*.)]
+\item Explain why one cannot use separation of variables to solve the differential equation $$\frac{dy}{dx}=2y+x$$
+\solushun{ $2y+x$ does not factor into a function of y times a function of x so there can be no separation of variables.
+\\ }{0in}
+
+\item Solve the above differential equation using power series.  Recognize your answer as a known function!
+\solushun{ Let $y = a_0 +a_1 x + a_2 x^2 + a_3 x^3 + \cdots $ then 
+$\frac{dy}{dx} = a_1 + 2a_2x + 3a_3 x^2 + 4a_4 x^3 + \cdots$ so we have 
+$a_1 + 2a_2x + 3a_3 x^2 + 4a_4 x^3 + \cdots = 2(a_0 +a_1 x + a_2 x^2 + a_3 x^3 + \cdots) +x = 2a_0 + (2a_1 +1)x + 2a_2x^2 + 2a_3x^3 + 2a_4 x^4 + \cdots$  set corresponding coefficients equal to each other to get:\\
+$a_1 = 2a_0$\\
+$2a_2 = 2a_1 + 1 = 4a_0 +1 \rightarrow a_2 = \frac{4a_0 +1}{2}$\\
+$3a_3 = 2a_2=8a_0 +2 \rightarrow a_3 = \frac{8a_0 +2}{3!}$\\
+$4a_4 = 2a_3 = \frac{16a_0 +4}{3!} \rightarrow a_4 = \frac{16a_0 +4}{4}$\\
+$a_n = \frac{2^n a_0 + 2^{n-2}}{n!}$ So
+$ y = a_0+ 2a_0x + \frac{2^2a_0 +2^{2-2}}{2!} x^2+\frac{2^3a_0 +2^{3-2}}{3!} x^3+ \cdots = a_0 + 2a_0x + \sum\limits_{n=2}^{\infty}{\frac{2^n a_0 + 2^{n-2}}{n!}}$ Note that $\sum\limits_{n=2}^{\infty}{\frac{2^n a_0 + 2^{n-2}}{n!}}=(a_0 + 2^{-2}) \sum\limits_{n=2}^{\infty}{\frac{(2x)^n}{n!}} = (a_0 +2^{-2}) \sum\limits_{n=0}^{\infty}{\frac{(2x)^n}{n!}} - (a_0 +2^{-2}) - (a_0 + 2^{-2}) (2x) = (a_0 +2^{-2}) e^{2x} - (a_0 +2^{-2}) - (a_0 + 2^{-2}) (2x)$ So that we now have $ y=a_0 + 2a_0 x + (a_0 +2^{-2}) e^{2x} - (a_0 +2^{-2}) - (a_0 + 2^{-2}) (2x)=-\frac{1}{4} - \frac{1}{2}x + (a_0 +2^{-2})e^{2x}$ Finally we have $y = -\frac{1}{4} -\frac{1}{2} +Ce^{2x}$
+\\ }{0in}
+\end{enumerate}
+\AnswerKeyEntry{a.)~~  $2y+x$ does not factor into a function of y times a function of x so there can be no separation of variables.\newline
+b.)~~$y = -\frac{1}{4} -\frac{1}{2} +Ce^{2x}$ \newline}
+\end{exercise}
+
+

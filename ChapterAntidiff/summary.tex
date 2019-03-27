@@ -1,0 +1,27 @@
+\section{Chapter Summary}
+
+In this chapter, we tackled a very difficult question, namely \begin{center}
+\emph{Given a function $f(x)$, how does one find an antiderivative?}
+\end{center}  Though there are many functions out there that do not have a closed form antiderivative, we explored {\bf five} techniques that can get you there in a great many cases!  Here are brief descriptions of the five:
+
+\begin{enumerate}
+\item {\bf U-substitution:} Try to clean up an integral by making a substitution of the form $u=g(x)$.  Often $g(x)$ is chosen to be the inner function in some function composition appearing in the integrand.  
+
+\item {\bf Integration by Parts:} This is the product rule for antiderivatives.  We identify two factors in the integrand and call one $u$ while the other is called $\dif v$.  We then apply the IBP formula: $$\int u\dif v=uv-\int v\dif u.$$  In general, one tries to pick $u$ to be something that is cleaner when differentiated and $\dif v$ to be something we can antidifferentiate.
+\item {\bf Products of sines and cosines:} Any expression of the form $$\int \sin^n(x)\cos^m(x) \dif x$$
+for $n,m\in \mathbb{N}$ can be integrated by using the appropriate trig identities based on the parity of $n$ and $m$.
+\item {\bf Trigonometric Substitution:} If you see quadratic polynomials in your integrand, you can likely clean things up with a trigonometric substitution.  In particular, 
+\begin{center}
+\begin{tabular}{|c|c|c|} \hline 
+ If you see... &   ...make the substitution... & ...because...  \\ \hline 
+ $a^2-x^2$ &  $  x=a \sin\left(\theta\right) $ & $a^2-a^2\sin^2\left(\theta\right)=a^2\cos^2\left(\theta\right) $ \\
+ $a^2+x^2$ &  $  x=a \tan\left(\theta\right) $ & $a^2+a^2\tan^2\left(\theta\right)=a^2\sec^2\left(\theta\right) $ \\
+$x^2-a^2$ &  $  x=a \sec\left(\theta\right) $ & $a^2\sec^2\left(\theta\right)-a^2=a^2\tan^2\left(\theta\right) $ \\ \hline
+\end{tabular}
+\end{center}
+
+\item {\bf Partial Fraction Decomposition:}  This is the general method by which we can integrate any expression of the form $$\int \frac{p(x)}{q(x)}\dif x $$ where $p(x)$ and $q(x)$ are polynomials.
+\end{enumerate}
+
+Don't forget that you can check your work on any antiderivative by differentiating your answer.  The result should be the original integrand!
+

@@ -1,0 +1,347 @@
+
+\section{Evaluating Infinite Sums Using Power Series}
+
+In Section \ref{conv}, we developed many ways to determine if an infinite series converges, but we had almost no methods for determining what value a series converges to.  Unless the series was geometric or telescoping, we were stuck.  Armed with our list of power series, we have much better tools!  Given an infinite series we wish to evaluate, we can now do the following:
+
+\begin{itemize}
+\item Look for key identifying features of the series that remind us of some known power series.
+\item See what $x$-value we can plug into our known power series to obtain the infinite series (or something close enough to it).
+\item Check that $x$-value was in the IOC of the power series, to be sure we were using a valid input.
+\end{itemize}
+
+\begin{example}{Evaluating an Infinite Series}
+Consider the infinite series $$ -\frac{3}{2!}+\frac{3^2}{3!}-\frac{3^3}{4!}+\frac{3^4}{5!}-\frac{3^5}{6!}+\cdots. $$
+
+We can convince ourselves that it converges using the Ratio Test.  But what value does it converge to?  We begin by noticing the similarity to the power series for $e^x$ based on the consecutive factorials in the denominator.  We then notice the ascending powers of 3 and the alternating signs in the infinite sum; this motivates $x=-3$ as a good choice for input.  We write this infinite series down and then play with the equation until we obtain the infinite series above.  In particular,
+$$e^{-3}=1-\frac{3}{1!}+\frac{3^2}{2!}-\frac{3^3}{3!}+\frac{3^4}{4!}-\frac{3^5}{5!}+\cdots. $$ 
+Notice that the powers of three in our infinite sum are one less than the corresponding factorial, and the signs are off.  Dividing both sides by negative three fixes this.
+$$-\frac{1}{3}e^{-3}=-\frac{1}{3}+\frac{1}{1!}-\frac{3^1}{2!}+\frac{3^2}{3!}-\frac{3^3}{4!}+\frac{3^4}{5!}-\cdots $$
+The first two terms can be moved over to left-hand side. $$-\frac{1}{3}e^{-3}+\frac{1}{3}-\frac{1}{1!}=-\frac{3}{2!}+\frac{3^2}{3!}-\frac{3^3}{4!}+\frac{3^4}{5!}-\cdots $$
+We combine those terms with arithmetic, and we have our total for the infinite series!
+ $$-\frac{3}{2!}+\frac{3^2}{3!}-\frac{3^3}{4!}+\frac{3^4}{5!}-\cdots=-\frac{1}{3}e^{-3}-\frac{2}{3} $$
+\end{example}
+
+\begin{exercise}{Checking with Ratio Test and Some Numerics \Coffeecup}
+
+\begin{itemize}
+\item In the above example, it is claimed that the series converges by the Ratio Test.  Verify by applying the Ratio Test and showing all details of the computation below.
+\vspace*{2in}
+\item Evaluate $-\frac{1}{3}e^{-3}-\frac{2}{3}$ in a calculator or CAS.  Compute a large partial sum of terms from the infinite series and verify that the answer is reasonable.  (A quick numeric check like this is very valuable for catching minus sign mistakes or other algebra errors!)
+\vspace*{1in}
+\end{itemize}
+\end{exercise}
+
+Ok, try a few!
+
+\begin{exercise}{Evaluating Infinite Series Using Power Series \Coffeecup \Coffeecup \Coffeecup} Evaluate each of the following to a number in closed form.  Or, if the series does not converge, simply say ``diverges'' and give a brief explanation why.
+
+\begin{itemize}
+\item $1-\frac{1}{2}+\frac{1}{3}-\frac{1}{4}+\frac{1}{5}-\cdots$
+
+\vspace*{.9in}
+
+\item $1-\frac{1}{2!}+\frac{1}{3!}-\frac{1}{4!}+\frac{1}{5!}-\cdots$
+\vspace*{.9in}
+
+\item $3-\frac{3}{2!}+\frac{3}{3!}-\frac{3}{4!}+\frac{3}{5!}-\cdots$
+\vspace*{.9in}
+
+\item $3-\frac{3^2}{2!}+\frac{3^3}{3!}-\frac{3^4}{4!}+\frac{3^5}{5!}-\cdots$
+\vspace*{.9in}
+
+\item $3-\frac{3^2}{2}+\frac{3^3}{3}-\frac{3^4}{4}+\frac{3^5}{5}-\cdots$
+\vspace*{.9in}
+
+\item $1-\frac{1}{2}+\frac{1}{3\cdot 2}-\frac{1}{4\cdot 3}+\frac{1}{5\cdot 4}-\cdots$
+\vspace*{.9in}
+
+\item $6+\frac{6}{4}+\frac{6}{9}+\frac{6}{16}+\frac{6}{25}+\cdots$
+
+\vspace*{.9in}
+
+\item $\binom{40}{0}+\binom{40}{1}+\binom{40}{2}+\binom{40}{3}+\binom{40}{4}+\cdots $
+
+\vspace*{.9in}
+
+\item $\binom{40}{0}-\binom{40}{1}+\binom{40}{2}-\binom{40}{3}+\binom{40}{4}-\cdots $
+
+\vspace*{.9in}
+
+\end{itemize}
+\end{exercise}
+
+Notice also that if you simply skip the step of plugging in a number for $x$, you can often evaluate a power series to a closed form.  This will be particularly useful in Chapter \ref{diffeq}.
+
+\begin{exercise}{Finding Closed Forms for Power Series \Coffeecup \Coffeecup \Coffeecup}
+Evaluate each of the following into a closed form.
+\begin{itemize}
+
+\item $5x-\frac{5}{2!}x^2+\frac{5}{3!}x^3-\frac{5}{4!}x^4+\frac{5}{5!}x^5-\cdots$
+
+\vspace*{2in}
+
+\item $-\frac{5}{2!}x^2+\frac{5}{3!}x^3-\frac{5}{4!}x^4+\frac{5}{5!}x^5-\cdots$
+
+\vspace*{2in}
+
+\item  $1+5x-\frac{5^2}{2!}x^2+\frac{5^3}{3!}x^3-\frac{5^4}{4!}x^4+\frac{5^5}{5!}x^5-\cdots$
+
+\vspace*{2in}
+
+\item  $5+5^2x-\frac{5^3}{2!}x^2+\frac{5^4}{3!}x^3-\frac{5^5}{4!}x^4+\frac{5^6}{5!}x^5-\cdots$
+
+\vspace*{2in}
+
+\item  $5+5^2x-\frac{5^3}{2!}x^2-\frac{5^4}{3!}x^3+\frac{5^5}{4!}x^4+\frac{5^6}{5!}x^5-\frac{5^7}{6!}x^6-\frac{5^8}{7!}x^7\cdots$
+
+\vspace*{2in}
+
+\item  $5x+5^2x^2-\frac{5^3}{2!}x^3-\frac{5^4}{3!}x^4+\frac{5^5}{4!}x^5+\frac{5^6}{5!}x^6-\frac{5^7}{6!}x^7-\frac{5^8}{7!}x^8\cdots$
+
+\vspace*{2in}
+\end{itemize}
+\end{exercise}
+
+\begin{exercise}{Converting Back and Forth \Coffeecup \Coffeecup \Coffeecup}
+For each of the following series, convert it into a closed form $f(x)$.  Afterwards, find a power series centered at 1 for the function you came up with and verify that it matches the original series.
+\begin{itemize}
+\item $\sum_{n=0}^\infty (x-1)^n $
+\vspace*{1in}
+\item $\sum_{n=0}^\infty \binom{1/2}{n}(x-1)^n $
+\vspace*{1in}
+\item $\sum_{n=1}^\infty \frac{1}{n}(x-1)^n $
+\vspace*{1in}
+\item $\sum_{n=0}^\infty (-1)^n(x-1)^n $
+\vspace*{1in}
+\item $\sum_{n=0}^\infty \frac{1}{(n+1)!}(x-1)^n $
+\vspace*{1in}
+\end{itemize} \AnswerKeyEntry{\textbullet $\frac{1}{2-x}$ \textbullet $\sqrt{x}$ \textbullet $-\ln(2-x)$ \textbullet $\frac{1}{x} $ \textbullet $\frac{e^{x-1}-1}{x-1}$ }
+\end{exercise}
+
+\begin{comment}
+
+We have two forms, closed form functions and their power series.  We also have a way to go back and forth between the two forms.  This calls for another game of... TELEPHONE!
+
+Break into groups of four and play telephone with one of the following pages.  If you are handed an explicit formula for a function $f(x)$, find the power series centered at one for that same function fold over the original $f(x)$, and pass it along.  If you are handed a power series, find the function $f(x)$ it evaluates to, fold over the original power series, and pass it along. 
+
+\newpage
+
+$$\sum_{n=0}^\infty (x-1)^n $$
+
+\hrulefill
+
+\vspace{.5in}
+
+\begin{center}
+\fbox{$f(x)=$ \hspace{3in}}
+\end{center}
+
+\vspace{.5in}
+
+\hrulefill
+
+\vspace{.5in}
+
+\begin{center}
+\fbox{$\sum_{n=0}^\infty$ \hspace{3in}}
+\end{center}
+
+\vspace{.5in}
+
+\hrulefill
+
+\vspace{.5in}
+
+\begin{center}
+\fbox{$f(x)=$ \hspace{3in}}
+\end{center}
+
+\vspace{.5in}
+
+\hrulefill
+
+\vspace{.5in}
+
+\begin{center}
+\fbox{$\sum_{n=0}^\infty$ \hspace{3in}}
+\end{center}
+
+\vspace{.5in}
+
+\pagebreak
+
+$$\sum_{n=0}^\infty \binom{1/2}{n}(x-1)^n $$
+
+\hrulefill
+
+\vspace{.5in}
+
+\begin{center}
+\fbox{$f(x)=$ \hspace{3in}}
+\end{center}
+
+\vspace{.5in}
+
+\hrulefill
+
+\vspace{.5in}
+
+\begin{center}
+\fbox{$\sum_{n=0}^\infty$ \hspace{3in}}
+\end{center}
+
+\vspace{.5in}
+
+\hrulefill
+
+\vspace{.5in}
+
+\begin{center}
+\fbox{$f(x)=$ \hspace{3in}}
+\end{center}
+
+\vspace{.5in}
+
+\hrulefill
+
+\vspace{.5in}
+
+\begin{center}
+\fbox{$\sum_{n=0}^\infty$ \hspace{3in}}
+\end{center}
+
+\vspace{.5in}
+
+\pagebreak
+
+$$\sum_{n=0}^\infty \frac{(-1)^n}{n+1}(x-1)^n $$
+
+\hrulefill
+
+\vspace{.5in}
+
+\begin{center}
+\fbox{$f(x)=$ \hspace{3in}}
+\end{center}
+
+\vspace{.5in}
+
+\hrulefill
+
+\vspace{.5in}
+
+\begin{center}
+\fbox{$\sum_{n=0}^\infty$ \hspace{3in}}
+\end{center}
+
+\vspace{.5in}
+
+\hrulefill
+
+\vspace{.5in}
+
+\begin{center}
+\fbox{$f(x)=$ \hspace{3in}}
+\end{center}
+
+\vspace{.5in}
+
+\hrulefill
+
+\vspace{.5in}
+
+\begin{center}
+\fbox{$\sum_{n=0}^\infty$ \hspace{3in}}
+\end{center}
+
+\vspace{.5in}
+
+\pagebreak
+
+$$\sum_{n=0}^\infty (-1)^n(x-1)^n $$
+
+\hrulefill
+
+\vspace{.5in}
+
+\begin{center}
+\fbox{$f(x)=$ \hspace{3in}}
+\end{center}
+
+\vspace{.5in}
+
+\hrulefill
+
+\vspace{.5in}
+
+\begin{center}
+\fbox{$\sum_{n=0}^\infty$ \hspace{3in}}
+\end{center}
+
+\vspace{.5in}
+
+\hrulefill
+
+\vspace{.5in}
+
+\begin{center}
+\fbox{$f(x)=$ \hspace{3in}}
+\end{center}
+
+\vspace{.5in}
+
+\hrulefill
+
+\vspace{.5in}
+
+\begin{center}
+\fbox{$\sum_{n=0}^\infty$ \hspace{3in}}
+\end{center}
+
+\vspace{.5in}
+
+\pagebreak
+
+$$\sum_{n=0}^\infty \frac{1}{(n+1)!}(x-1)^n $$
+
+\hrulefill
+
+\vspace{.5in}
+
+\begin{center}
+\fbox{$f(x)=$ \hspace{3in}}
+\end{center}
+
+\vspace{.5in}
+
+\hrulefill
+
+\vspace{.5in}
+
+\begin{center}
+\fbox{$\sum_{n=0}^\infty$ \hspace{3in}}
+\end{center}
+
+\vspace{.5in}
+
+\hrulefill
+
+\vspace{.5in}
+
+\begin{center}
+\fbox{$f(x)=$ \hspace{3in}}
+\end{center}
+
+\vspace{.5in}
+
+\hrulefill
+
+\vspace{.5in}
+
+\begin{center}
+\fbox{$\sum_{n=0}^\infty$ \hspace{3in}}
+\end{center}
+
+\vspace{.5in}
+
+\end{comment}

@@ -1,0 +1,139 @@
+\documentclass[titlepage]{book}
+
+\input{Titlepage/Preamble/PackageOfPackages}
+% Set this =0 to hide solutions, =1 to show solutions
+\def\showsolutions{0}
+\input{Titlepage/Preamble/Environments}
+\input{Titlepage/Preamble/SymbolsAndCounters}
+\input{Titlepage/Preamble/Formatting}
+
+\author{Kenneth M. Monks}
+\title{Calculus 2}
+
+\input{Index/IndexDeclarations}
+
+\begin{document}
+\Opensolutionfile{AnswerKey}
+\Writetofile{AnswerKey}
+ 
+\include{Titlepage/titlepage}
+
+\pagenumbering{roman}
+
+\pdfbookmark[section]{\contentsname}{toc}
+\tableofcontents
+\include{Acknowledgements}
+\include{ChapterOverview}
+
+\pagenumbering{arabic} 
+\setcounter{page}{1}
+
+
+\part{Integration}
+
+\begin{comment}
+
+\include{ChapterAntidiff/usub}
+\include{ChapterAntidiff/ibp}
+\include{ChapterAntidiff/sincos}
+\include{ChapterAntidiff/trigsub}
+\include{ChapterAntidiff/pfd}
+\include{ChapterAntidiff/summary}
+\include{ChapterAntidiff/mixedpractice}
+\end{comment}
+
+
+\begin{comment}
+\include{ChapterGeom/lhr}
+
+\include{ChapterGeom/improperints}
+\include{ChapterGeom/areabtwcurves}
+%KHALED:^^^^^ Need figures for last 2 problems
+\include{ChapterGeom/lengthareavolume}
+\end{comment}
+%\include{ChapterGeom/centerofmass}
+\begin{comment}
+\include{ChapterGeom/summary}
+\include{ChapterGeom/mixedpractice}
+\end{comment}
+%\include{ChapterGeom/pappus}
+
+
+
+\part{Sequences and Series}
+%\include{ChapterSeqSer/seq}
+% KHALED: How to find a recursive formula for the fraction sequence?
+\begin{comment}
+\include{ChapterSeqSer/convergence}
+% ^^ KHALED: I am here
+\include{ChapterSeqSer/finiteseries}
+\include{ChapterSeqSer/PartialSums}
+\include{ChapterSeqSer/infiniteseries}
+
+\end{comment}
+
+\include{ChapterSeqSer/AbsoluteConvergence}
+\include{ChapterSeqSer/convergenceTests}
+\include{ChapterSeqSer/summary}
+\include{ChapterSeqSer/mixedpractice}
+
+
+\begin{comment}
+
+\include{ChapterPowerSeries/PowerSeries}
+\include{ChapterPowerSeries/IOC}
+\include{ChapterPowerSeries/MixedIOCPractice}
+\include{ChapterPowerSeries/NewSeriesFromOld}
+\include{ChapterPowerSeries/ErrorBounds}
+\include{ChapterPowerSeries/GraphingUsingPowerSeries}
+\include{ChapterPowerSeries/EvaluatingLimitsAndLHR}
+\include{ChapterPowerSeries/Fib}
+\include{ChapterPowerSeries/EvaluatingInfiniteSums}
+%\include{ChapterPowerSeries/MixedPractice}
+\include{ChapterPowerSeries/PowerSeriesReference}
+\include{ChapterPowerSeries/summary}
+\include{ChapterPowerSeries/mixedpractice}
+\end{comment}
+
+
+\begin{comment}
+
+%=====Sections for Projects======%
+\include{ChapterPowerSeries/Bhaskara}
+
+\include{ChapterPowerSeries/IrrationalityOfe}
+
+\include{ChapterPowerSeries/PartitionCounting}
+\include{ChapterProb/prob}
+%=====Sections for Projects======%
+\end{comment}
+
+\part{Coming Attractions}
+
+\begin{comment}
+\include{ChapterCalcIII/parametric}
+
+\include{ChapterCalcIII/polar}
+\include{ChapterCalcIII/summary}
+\include{ChapterCalcIII/mixedpractice}
+
+\include{ChapterDiffEq/diffeq}
+\include{ChapterDiffEq/summary}
+\include{ChapterDiffEq/mixedpractice}
+\end{comment}
+
+\begin{comment}
+\include{ChapterComplex/complex}
+\include{ChapterComplex/summary}
+\include{ChapterComplex/mixedpractice}
+\end{comment}
+
+
+\chapter*{Selected Answers and Hints}
+\pdfbookmark[section]{Selected Answers and Hints}{toc}
+\Closesolutionfile{AnswerKey}
+\Readsolutionfile{AnswerKey}
+  \clearpage
+
+%\printindex
+\end{document}

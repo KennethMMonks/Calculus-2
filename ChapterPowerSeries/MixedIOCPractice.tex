@@ -1,0 +1,91 @@
+
+\section{Mixed Practice with IOC} 
+Recall our general framework for power series.  To find a power series centered at $x=a$ for a function $f(x)$, we write down an equation of the form $$ f(x)=a_0+a_1(x-a)+a_2(x-a)^2+a_2(x-a)^3+a_2(x-a)^4+\cdots$$
+and then repeatedly plug in $x=a$ and differentiate in order to solve for the coefficients, one at a time.
+
+Though this method will work to find the coefficients as long as the function and its derivatives exist at $x=a$, there remains the question: for what $x$-values will the infinite series on the right actually converge to the corresponding value of $f(x)$?  In this activity, we investigate this both numerically (just using a table of values) and theoretically (using the ratio test).  We call the set of all $x$-values for which a given series converges the \emph{interval of convergence}.
+
+Here we work through this framework in a variety of examples.
+
+\begin{exercise}{Natural Logarithm \Coffeecup \Coffeecup \Coffeecup}
+Start with the function $f(x)=\ln(x)$ and do the following:
+
+\begin{itemize}
+\item Set up a power series centered at $a=2$ for $\ln(x)$.  Solve for the degree 2, degree 3, degree 4, degree 5, and degree 6 power series approximations for $\ln(x)$ centered at $2$.  Accomplish this by just repeatedly plugging in $x=2$ and differentiating both sides.  Call these functions $P_2(x), P_3(x), P_4(x),$ and  $P_5(x),$ respectively.
+\item Make a small table of values where you list out the values of each of your $P_i$ evaluated at $x=1/2$.  Compare this to the true value of $\ln(1/2)$.  
+\item Make a small table of values where you list out the values of each of your $P_i$ evaluated at $x=2$.  Compare this to the true value of $\ln(2)$.
+\item Perform the Ratio Test on your series expansion for $\ln(x)$.  For what $x$ would you have a ratio less than one?
+\item How do your results of the ratio test compare to the numerical evidence you found above?
+\item Notice that there will be two $x$-values that cause the series to have ratio exactly equal to one when Ratio Test is applied.  Since the Ratio Test gives no info in that case, try a different test for each of those two series.  
+\item At last, state the power series you came up with and the Interval of Convergence.
+\end{itemize}
+\end{exercise}
+
+\begin{exercise}{Arctangent \Coffeecup \Coffeecup \Coffeecup}
+Start with the function $f(x)=\arctan(x)$ and do the following:
+
+\begin{itemize}
+\item Set up a power series centered at $x=0$ for $\arctan(x)$.  Solve for the degree 3, degree 5, degree 7, and degree 9 power series approximations.  Accomplish this by just repeatedly plugging in $x=0$ and differentiating both sides.  Call these functions $P_3(x), P_5(x), P_7(x)$, and $P_9(x),$ respectively.  You may want to use a computer algebra system to help with the messy derivatives that will arise!
+\item Make a small table of values where you list out the values of each of your $P_i$ evaluated at $x=1/2$.  Compare this to the true value of $\arctan(1/2)$.  
+\item Make a small table of values where you list out the values of each of your $P_i$ evaluated at $x=2$.  Compare this to the true value of $\arctan(2)$.
+\item Perform the Ratio Test on your series expansion for $\arctan(x)$.  For what $x$ would you have a ratio less than one?
+\item How do your results of the ratio test compare to the numerical evidence you found above?
+\item Notice that there will be two $x$-values that cause the series to have ratio exactly equal to one when Ratio Test is applied.  Since the Ratio Test gives no info in that case, try a different test for each of those two series.  
+\item At last, state the power series you came up with and the Interval of Convergence.
+\end{itemize}
+\end{exercise}
+
+\begin{exercise}{Exponential \Coffeecup \Coffeecup \Coffeecup}
+Start with the function $f(x)=e^x$ and do the following:
+
+\begin{itemize}
+\item Set up a power series centered at $x=0$ for $e^x$.  Solve for the degree 2, degree 3, degree 4, and degree 5 power series approximations.  Accomplish this by just repeatedly plugging in $x=0$ and differentiating both sides.  Call these functions $P_2(x), P_3(x), P_4(x),$ and $P_5(x),$ respectively.
+\item Make a small table of values where you list out the values of each of your $P_i$ evaluated at $x=1/2$.  Compare this to the true value of $e^{1/2}$.  
+\item Make a small table of values where you list out the values of each of your $P_i$ evaluated at $x=2$.  Compare this to the true value of $e^2$.
+\item Perform the Ratio Test on your series expansion for $e^x$.  For what $x$ would you have a ratio less than one?
+\item How do your results of the ratio test compare to the numerical evidence you found above?  
+\item At last, state the power series you came up with and the Interval of Convergence.
+\end{itemize}
+\end{exercise}
+
+\begin{exercise}{Cosine \Coffeecup \Coffeecup \Coffeecup}
+Start with the function $f(x)=\cos(x)$ and do the following:
+\begin{itemize}
+\item Set up a power series centered at $x=\pi$ for $\cos(x)$.  Solve for the degree 2, degree 4, degree 6, and degree 8 power series approximations.  Accomplish this by just repeatedly plugging in $x=\pi$ and differentiating both sides.  Call these functions $P_2(x), P_4(x), P_6(x),$ and $P_8(x),$ respectively.
+\item Make a small table of values where you list out the values of each of your $P_i$ evaluated at $x=\pi/2$.  Compare this to the true value of $\cos\left(\pi/2\right)$.  
+\item Make a small table of values where you list out the values of each of your $P_i$ evaluated at $x=2$.  Compare this to the true value of $\cos(2)$.
+\item Perform the Ratio Test on your series expansion for $\cos(x)$.  For what $x$ would you have a ratio less than one?
+\item How do your results of the ratio test compare to the numerical evidence you found above?  
+\item At last, state the power series you came up with and the Interval of Convergence.
+\end{itemize}
+\end{exercise}
+
+\begin{exercise}{Square Root \Coffeecup \Coffeecup \Coffeecup}
+Start with the function $f(x)=\sqrt{x}$ and do the following:
+
+\begin{itemize}
+
+\item Explain why you can't do a power series centered at zero for $\sqrt{x}$.  ({\bf Hint:} Try it.)
+\item Instead, set up a power series centered at $x=1$ for $\sqrt{x}$.  Solve for the degree 2, degree 3, degree 4, degree 5, and degree 6 power series approximations for $\sqrt{x}$ centered at $x=1$.  Accomplish this by just repeatedly plugging in $x=1$ and differentiating both sides.  Call these functions $P_2(x), P_3(x), P_4(x),$ and $P_5(x),$ respectively.
+\item Make a small table of values where you list out the values of each of your $P_i$ evaluated at $x=1/2$.  Compare this to the true value of $\sqrt{1/2}$.  
+\item Make a small table of values where you list out the values of each of your $P_i$ evaluated at $x=2$.  Compare this to the true value of $\sqrt{2}$.
+\item Perform the Ratio Test on your series expansion for $\sqrt{x}$.  For what $x$ would you have a ratio less than one?
+\item How do your results of the Ratio Test compare to the numerical evidence you found above?
+\item Notice that there will be two $x$-values that cause the series to have ratio exactly equal to one when Ratio Test is applied.  Since the Ratio Test gives no info in that case, try a different test for each of those two series.
+\item At last, state the power series you came up with and the Interval of Convergence.
+\end{itemize}
+\end{exercise}
+
+\begin{exercise}{Reciprocal \Coffeecup \Coffeecup \Coffeecup}
+Start with the function $f(x)=\frac{1}{1+x}$ and do the following:
+
+\begin{itemize}
+\item Set up a power series centered at $x=0$ for $\frac{1}{1+x}$.  Solve for the degree 2, degree 3, degree 4, and degree 5 power series approximations.  Accomplish this by just repeatedly plugging in $x=0$ and differentiating both sides.  Call these functions $P_2(x), P_3(x), P_4(x)$, and $P_5(x),$ respectively.
+\item Make a small table of values where you list out the values of each of your $P_i$ evaluated at $x=1/2$.  Compare this to the true value of $\frac{1}{1+\frac{1}{2}}$.  
+\item Make a small table of values where you list out the values of each of your $P_i$ evaluated at $x=2$.  Compare this to the true value of $\frac{1}{1+2}$.
+\item Perform the Ratio Test on your series expansion for $\frac{1}{1+x}$.  For what $x$ would you have a ratio less than one?
+\item How do your results of the ratio test compare to the numerical evidence you found above?
+\item Notice that there will be two $x$-values that cause the series to have ratio exactly equal to one when Ratio Test is applied.  Since the Ratio Test gives no info in that case, try a different test for each of those two series.  
+\item At last, state the power series you came up with and the Interval of Convergence.
+\end{itemize}
+\end{exercise}

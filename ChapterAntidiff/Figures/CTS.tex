@@ -1,0 +1,19 @@
+
+\begin{asy}
+	size(400);  
+    
+    path p1= (0,0)--(4,0)--(4,3)--cycle;
+    draw(p1,linewidth(2bp));
+    
+    path p2= (3.65,.05)--(3.65,.35)--(3.95,.35);
+    draw(p2);
+    draw(arc((0,0), r=.65, angle1=1, angle2=35));
+    
+    defaultpen(fontsize(18pt));
+    label("$\theta$",(.65,0),1.4W+1.3N);
+    label("$2\sqrt{x^2+x-1}$",(4,1.5),E);
+    label("$2x+1$",(1.65,1.70));
+    label("$\sqrt{5}$",(2,0),S);
+
+   
+\end{asy}

@@ -1,0 +1,58 @@
+\section{Chapter $\Sigma$mary}
+In this chapter, we introduced three main concepts: sequences, series, and infinite series.  Under each, we put a list of tasks you want to be able to complete for each by the end of this chapter.
+\begin{enumerate}
+\item {\bf Sequences:} Lists of numbers. $$a_0,a_1,a_2,a_3,\ldots $$
+\begin{enumerate}
+\item {\bf Convert} sequences between our three forms of writing them:
+\begin{enumerate}
+\item List of terms.
+\item Explicit formula.
+\item Recursive formula.
+\end{enumerate}
+\item Identify {\bf geometric} and {\bf arithmetic} sequences and know their explicit and recursive formulas.
+\begin{center}
+\begin{tabular}{|c|c|c|} \hline 
+& Arithmetic Sequence & Geometric Sequence \\ \hline
+Defining Feature & Common difference $d$ & Common ratio $r$ \\ 
+Recursive Formula & $a_n=a_{n-1}+d$ &$a_n=a_{n-1}r$ \\
+Explicit Formula & $a_n=a_0+dn$ &$a_n=a_{0}r^n$ \\ \hline
+\end{tabular}
+\end{center}
+\item Memorize the {\bf $N-\epsilon$ definition of the limit of a sequence}, namely $$\lim_{n \rightarrow \infty }a_n=L $$ if and only if$$\forall\epsilon>0, \exists N \in \mathbb{R}, \forall n\in \mathbb{N}, n>N \implies \left| a_n-L\right|<\epsilon.$$  Be able to use the definition to inform the steps in {\bf writing an $N-\epsilon$ proof} of sequential convergence.
+\end{enumerate}
+\item {\bf Series:} A sum of a finite list of numbers. $$a_0+a_1+a_2+a_3+\cdots +a_n $$
+\begin{enumerate}
+\item Given a sequence $a_n$, build a new sequence $A_N=\sum_{n=0}^Na_n$ called the {\bf sequence of partial sums}.  To find $A_N$ from $a_n$, we discussed the following three strategies:
+\begin{enumerate}
+\item If $a_n$ is an arithmetic sequence, use the {\bf arithmetic series formula} to calculate the sequence of partials sums as $$A_N=\left(\text{Number of Terms}\right)\cdot\left(\text{Average of First and Last}\right).$$
+\item If $a_n$ is a geometric sequence, use the {\bf geometric series formula} to calculate the sequence of partials sums as $$A_N=\text{Initial Term}\cdot\frac{1-\text{Common Ratio}^{\text{Number of Terms}}}{1-\text{Common Ratio}}.$$
+\item If $a_n$ is neither arithmetic nor geometric, write out a table of values of $A_N$ for the first few $N$ values and see if you notice a pattern.
+\end{enumerate}
+\item Given a partial sum $A_N$, find the sequence $a_n$ from which it came by taking the {\bf difference of consecutive terms}, namely
+$$A_{n}-A_{n-1}=a_n. $$
+\end{enumerate}
+\item {\bf Infinite Series:} A sum of an infinite list of numbers. $$a_0+a_1+a_2+a_3+\cdots  $$
+\begin{enumerate}
+\item Understand Cauchy's {\bf definition of infinite series} as the limit of the sequence of partial sums.  More formally, we define $$\sum_{n=0}^\infty a_n=\lim_{N\to\infty}\left(\sum_{n=0}^Na_n\right).$$
+\item Use the above definition along with the geometric series formula to build the {\bf infinite geometric series formula}, the fact that $$\sum_{n=0}^\infty a_0r^n = \frac{a_0}{1-r} $$ as long as $|r|<1$.
+\item Understand the distinction between a {\bf conditionally convergent series} and an {\bf absolutely convergent series}, as well as the key reason why we care. You might destroy all of mathematics and the universe as we know it if you perform harmless-looking rearrangements on a conditionally convergent series.  Absolutely convergent series, on the other hand, can be rearranged as you would for any finite sum. 
+\item Given an infinite series $\sum_{n=0}^\infty a_n $, determine if it converges absolutely, converges conditionally, or diverges using one or more of our eight {\bf convergence tests}.  We list these tests with short descriptions below. Note these descriptions do not necessarily include every detail and precondition of the test; these are intended only as a short phrase to help remember the essence of the test.  
+\begin{enumerate}
+\item {\bf No Hope Test:} If the summand does not approach zero, the series has no hope of converging.  If the summand does approach zero, the series has some hope of converging and another test is needed. 
+\item {\bf Geometric Series Test:} A geometric series converges if and only if the common ratio is between $1$ and $-1$.
+\item {\bf Integral Test:} A summation converges if and only if the corresponding improper integral converges.
+\item {\bf $p$ Test:} A series of the form $\sum_{n=1}^\infty \frac{1}{n^p}$ for $p\in \mathbb{R}$ converges if and only if $p>1$. 
+\item {\bf Alternating Series Test
+:} A summation of terms that approach zero and alternate sign will converge.
+\item {\bf Limit Comparison Test:} Having larger growth order than a divergent series implies divergence.  Having smaller growth order than a convergent series implies convergence.  If two summands have the same growth order, then either both series converge or both diverge.
+\item {\bf Ratio Test:} If the absolute value of the ratio between consecutive terms in the series approaches a value\textellipsis 
+\begin{itemize}
+\item \textellipsis less than 1, the series converges.
+\item \textellipsis greater than 1, the series diverges.
+\item \textellipsis equal to 1, the test gives no information.
+\end{itemize} Note that this test is just doing LCT against a geometric series and seeing if the given series has the same growth order as a convergent or as a divergent geometric series.
+\item {\bf Direct Comparison Test:} Being greater than a divergent series implies divergence.  Being smaller than a convergent series implies convergence.
+\end{enumerate}
+\item Be able to apply the {\bf Alternating Series Error Bound} to determine an upper bound for how far an approximation via a partial sum can be from the true value of an infinite alternating series.   
+\end{enumerate}
+\end{enumerate}

@@ -1,0 +1,349 @@
+\section{Partial Fraction Decomposition}
+
+In this section, we will combine the techniques of all previous sections and learn how to antidifferentiate \antider{rational functions}!
+
+\begin{exercise}{What is a Rational Function Again? \Coffeecup}
+What is the definition of a \emph{rational function}?
+\solushun{A rational function is a function that is expressed as a ratio, with some power of $x$ in the denominator. Think a polynomial divided by a polynomial.\\}{.5in}
+\end{exercise}
+
+A \antider{partial fraction decomposition} (PFD) is a way to decompose a \partialfractions{rational function} (a polynomial divided by a polynomial) as a sum of simpler \integ{rational functions}.  This is purely an algebraic trick that fundamentally does not involve calculus.  It is useful in many contexts!  Here we apply it to (of course) finding antiderivatives. Typically, a given rational function is too challenging to antidifferentiate as is. Once we break it up into smaller pieces via PFD, it becomes manageable.
+
+The fundamental idea is simple. If we have a fraction that has more than one factor in the denominator, we can rewrite it as a sum of fractions whose denominators have the original denominator as their least common multiple. 
+\begin{exercise}{Trying This with Integers Before We Go to Polynomials \Coffeecup}
+ Consider the fraction $\frac{1}{6}$.  We notice that the denominator, six, is equal to two times three.  Thus, we attempt to write one-sixth as a sum of fractions whose denominators are two and three.
+ 
+Find integers $A$ and $B$ such that:
+$$\frac{1}{6}=\frac{A}{2}+\frac{B}{3} $$
+Check your answer by adding the fractions on the right hand side back together to verify you get one-sixth. 
+\solushun{
+$$3A+2B=1$$
+$$A=\frac{1-2B}{3}$$
+Let $B=2$. Then $A=\frac{1-4}{3}=-1$.
+$$-\frac{1}{2}+\frac{2}{3}=\frac{-3+4}{3\cdot 2}=\frac{1}{6}$$
+}{.5in}
+\end{exercise}
+
+\subsection{Warming Up with a Small Example}\label{PotatoFryDip}
+
+Partial fraction decomposition is the same idea, except we are working with polynomials rather than just integers.
+
+\begin{example}{Our First Decomposition!}\label{OurFirstPotatoFryDip}
+ To decompose the fraction $\frac{1}{x^2-1}$, we first factor the denominator into $x^2-1=(x-1)(x+1)$.  Thus, we look for an expression of the form  $$ \frac{1}{x^2-1}=\frac{A}{x-1}+\frac{B}{x+1}$$
+for some numbers $A$ and $B$.  To find such $A$ and $B$, we multiply both sides by $x^2-1$ to produce the polynomial equation  $$1=A(x+1)+B(x-1) $$
+
+Since we want the expressions to be equal for all values of $x$, we pick convenient values of $x$ to plug in to solve for $A$ and $B$.  
+\begin{itemize}
+\item Set $x=1$: $$1=A\cdot (2) + B \cdot (0) \implies A=\frac{1}{2}$$
+\item Set $x=-1$: $$1=A\cdot (0) + B \cdot (-2) \implies B=-\frac{1}{2}$$
+\end{itemize}
+At last, we have obtained the partial fraction decomposition! $$\frac{1}{x^2-1}=\frac{\frac{1}{2}}{x-1}-\frac{\frac{1}{2}}{x+1}$$
+\end{example}
+
+\begin{exercise}{Checking Our Work \Coffeecup} Take the right-hand side of the above equation and add the two fractions together by finding a common denominator. Verify that their sum is the original rational function $\frac{1}{x^2-1}$.
+\solushun{\begin{align*}
+\frac{\frac{1}{2}}{x-1}-\frac{\frac{1}{2}}{x+1}&=\frac{\frac{1}{2}(x+1)-\frac{1}{2}(x-1)}{(x-1)(x+1)}\\
+&=\frac{\frac{x}{2}+\frac{1}{2}-\left(\frac{x}{2}-\frac{1}{2}\right)}{x^2-1}\\
+&=\frac{\frac{x}{2}+\frac{1}{2}-\frac{x}{2}+\frac{1}{2}}{x^2-1}\\
+&=\frac{1}{x^2-1}
+\end{align*}}{1in}
+\end{exercise}
+\begin{example}{Finding the Same PFD by Expanding and Equating Coefficients}\label{57Varieties}
+We repeat the above example but demonstrate an alternate way to find our coefficients.  Recall the equation $$1=A(x+1)+B(x-1) $$  In the previous example, we proceeded by plugging in numerical values for $x$.  Instead, we could fully multiply out the polynomials and combine like terms.  This produces $$1=(A+B)x+(A-B) $$  We can pad the left-hand side with a degree one term with coefficient zero to put both sides in the form ``number times $x$ plus number''.  $$0x+1=(A+B)x+(A-B) $$  Now we can construct a system of two equations in two unknowns by equating one coefficient at a time.  Specifically, we build it as:
+\begin{center}
+\begin{tabular}{|r l|c|l r|} \hline & & & & \\ 
+Degree zero coefficient of LHS = &\hspace{-.18in} Degree zero coefficient of RHS & $\implies $ & $1 =$ & \hspace{-.18in} $A-B$ \\ & & & &  \\ \hline & & & &  \\ 
+Degree one coefficient of LHS = & \hspace{-.18in} Degree one coefficient of RHS & $\implies $ & $0 =$ & \hspace{-.18in} $A+B$ \\ & & & &  \\ \hline 
+\end{tabular}
+\end{center}
+The resulting linear system in two equations and two unknowns can then be solved via any applicable method (substitution, elimination, matrices, etc). 
+\end{example}
+\begin{exercise}{Solve the System \Coffeecup}
+Solve the linear system of two equations and two unknowns in the example above.  Verify you obtain the same values for $A$ and $B$ that we found in Example \ref{PotatoFryDip}.\ref{OurFirstPotatoFryDip}.
+\vspace*{1in}
+\end{exercise}
+\begin{exercise}{Using a PFD to Find an Antiderivative \Coffeecup \Coffeecup } \begin{itemize}
+\item  Find an antiderivative of $\frac{1}{x^2-1}$ by antidifferentiating $$\frac{\frac{1}{2}}{x-1}-\frac{\frac{1}{2}}{x+1}$$
+\solushun{
+\begin{align*}
+\int\frac{\frac{1}{2}}{x-1}-\frac{\frac{1}{2}}{x+1}\dif x&=\int\frac{\frac{1}{2}}{x-1}\dif x-\int\frac{\frac{1}{2}}{x+1}\dif x\\
+&=\frac{1}{2}\int\frac{1}{x-1}\dif x-\frac{1}{2}\int\frac{1}{x+1}\dif x\\
+&=\frac{1}{2}\ln|x-1|-\frac{1}{2}\ln|x+1|+C\\
+&=\frac{1}{2}\left(\ln|x-1|-\ln|x+1|\right)+C\\
+&=\frac{1}{2}\ln\left|\frac{x-1}{x+1}\right|+C\\
+&=\ln\left| \sqrt{\frac{x-1}{x+1}}\right|+C
+\end{align*}
+}{3in}
+\item Verify the answer is the same as what you would get if you had taken the antiderivative of  $\frac{1}{x^2-1}$ using the trigonometric substitution $x=\sec(\theta)$.
+\solushun{With $x=\sec(\theta)$ and $\dif x = \sec(\theta)\tan(\theta)\dif\theta$ we have:
+\begin{align*}
+\int\frac{1}{x^2-1}\dif x&=\int\frac{1}{\sec^2(\theta)-1}\sec(\theta)\tan(\theta)\dif\theta\\
+&=\int\frac{1}{\tan^2(\theta)}\sec(\theta)\tan(\theta)\dif\theta\\
+&=\int\frac{\sec(\theta)}{\tan(\theta)}\dif\theta\\
+&=\int\frac{1}{\cos(\theta)}\cdot\frac{\cos(\theta)}{\sin(\theta)}\dif\theta\\
+&=\int\frac{1}{\sin(\theta)}\dif\theta\\
+&=\int\csc(\theta)\dif\theta\\
+&=-\ln|\csc(\theta)+\cot(\theta)|+C\\
+\end{align*}
+Constructing a triangle with $x=\sec(\theta)$, we can determine $\csc(\theta)=\frac{x}{\sqrt{x^2-1}}$ and $\cot(\theta)=\frac{1}{\sqrt{x^2-1}}$. So we have:
+\begin{align*}
+-\ln|\csc(\theta)+\cot(\theta)|+C&=-\ln\left|\frac{x}{\sqrt{x^2-1}}+\frac{1}{\sqrt{x^2-1}}\right|+C\\
+&=-\ln\left|\frac{x+1}{(\sqrt{x-1})(\sqrt{x+1})}
+\right|+C\\
+&=-\ln\left|\frac{\sqrt{x+1}}{\sqrt{x-1}}\right|+C\\
+&=\ln\left|\left(\sqrt{\frac{x+1}{x-1}}\right)^{-1}\right|+C\\
+&=\ln\left|\sqrt{\frac{x-1}{x+1}}\right|+C\\
+\end{align*}
+And we have the same result.\\
+}{3in}
+\AnswerKeyEntry{Using properties of logarithms, both answers should be able to be put in the form $\ln\left| \sqrt{\frac{x-1}{x+1}}\right|+C$}
+\end{itemize}
+\end{exercise}
+It turns out there are three strange things that can happen when finding a PFD, namely: 
+\begin{enumerate}
+\item The degree of the numerator is greater than or equal to the degree of the denominator. 
+\item The denominator has one or more irreducible quadratic factors (where irreducible quadratic means a degree two polynomial that has no real roots).
+\item The denominator has one or more repeated factors.
+\end{enumerate}
+
+Each has a particular workaround.  Below, we describe these methods and show a corresponding hideous example that demonstrates all of these steps.  
+
+\begin{exercise}{Reminding Ourselves of Some Language \Coffeecup}
+\begin{itemize}
+\item What exactly does \emph{irreducible quadratic} mean?
+\solushun{A quadratic that can't be factored into real roots.\\}{.5in}
+\item Give an example of a quadratic polynomial that is irreducible.
+\solushun{$x^2+x+1$\\}{.5in}
+\item Give an example of a quadratic polynomial that is not irreducible.
+\solushun{$x^2+2x+1$\\}{.5in}
+\item Is the polynomial $x^2$ an irreducible quadratic?  Explain why or why not.
+\solushun{No. It has real roots $x=0$.\\}{.5in}
+\vspace*{.5in}
+\end{itemize}
+\end{exercise}
+
+
+\subsection{The General Method of PFD}
+The process for performing a partial fraction decomposition of $\frac{p(x)}{q(x)}$ is as follows:
+
+\begin{enumerate}
+\item {\bf Polynomial Long Division:} If the degree of $p(x)$ is not strictly smaller than the degree of $q(x)$, start by performing polynomial \partialfractions{long division} to split the fraction into a quotient and remainder.  In the remainder term, the numerator will now have degree less than the denominator. 
+
+\item {\bf Factor Denominator:} Factor the denominator into a product of powers of linear and irreducible quadratic polynomials.
+
+\item {\bf Set Up Terms in the Summation:}
+\begin{enumerate}
+\item {\bf Linear Factors:}  If the denominator is divisible by $(x-r)^n$ for some real number $r$ and positive natural number $n$, we build terms that look like
+
+$$\frac{A_1}{x-r}+\frac{A_2}{(x-r)^2}+\frac{A_3}{(x-r)^3}+\cdots+\frac{A_n}{(x-r)^n} $$
+
+where the $A_i$ represent unknown real constants.  That is, you use all consecutive powers of a linear factor as denominators and have arbitrary constants as numerators.
+\item {\bf Irreducible Quadratic Factors:}  Let $b$ and $c$ be real numbers and suppose $x^2+bx+c$ is an irreducible quadratic.  If the denominator is divisible by $(x^2+bx+c)^n$ for some positive natural number $n$, we build terms that look like
+
+$$\frac{A_1x+B_1}{x^2+bx+c}+\frac{A_2x+B_2}{(x^2+bx+c)^2}+\frac{A_3x+B_3}{(x^2+bx+c)^3}+\cdots+\frac{A_nx+B_n}{(x^2+bx+c)^n} $$
+
+where the $A_i$ and $B_i$ represent unknown real constants.  That is, you use all consecutive powers of a linear factor as denominators and have arbitrary constants as numerators.
+
+\end{enumerate}
+
+
+\item {\bf Clear Denominators:} Multiply each side of your equation by the denominator $q(x)$ to clear all fractions.
+
+\item {\bf Solve for Unknowns:} Solve for the unknown constants by plugging in convenient values of $x$ (since we want the expression to be true for all values of $x$).  The roots of $q(x)$ are always good choices for $x$ values, but other friendly numbers like zero or one are also often helpful.
+
+
+\item {\bf Plug Values Back into the Previously Unknown Numerators:} Plug your constants back in to conclude the equality of your original rational expression with its PFD.
+
+\end{enumerate}
+
+
+\begin{example}{An Epic PFD}
+
+We now find the partial fraction decomposition of the rational function $$ r(x)=\frac{x^7+8 x^6+25 x^5+52 x^4+79 x^3+13 x^2-61 x+81}{x^6+9 x^5+28 x^4+36 x^3+27 x^2+27 x}$$
+
+This rational function has quotient $x-1$ and remainder $6 x^5+44 x^4+88 x^3+13 x^2-34 x+81$ upon \remainder{long division}.  So, for our first step in the decomposition we have 
+
+$$r(x)=x-1+\frac{6 x^5+44 x^4+88 x^3+13 x^2-34 x+81}{x^6+9 x^5+28 x^4+36 x^3+27 x^2+27 x}$$
+
+We now ignore the quotient and work on breaking up the fractional piece.  The denominator is divisible by $x$, so we factor that out.  Next, we use the Rational Root Theorem to form a list of possible roots and divide off the corresponding factors as we find them.  Working out all the algebra, we conclude the denominator factors as $$x^6+9 x^5+28 x^4+36 x^3+27 x^2+27 x=x (x+3)^3 (x^2+1)$$
+
+In this particular setting, $x$, $x+3$, $(x+3)^2$, and $(x+3)^3$ are the relevant powers of linear factors. The factor $x^2+1$ is the only irreducible quadratic.  ({\bf Note:} $(x+3)^2$ is not an irreducible quadratic term; it is a common mistake to consider it so.  It is a power of a linear term and should be treated as such.)  We now set up our sum.
+
+$$ \frac{6 x^5+44 x^4+88 x^3+13 x^2-34 x+81}{x (x+3)^3 (x^2+1)} = \frac{A}{x}+\frac{B}{x+3} +\frac{C}{(x+3)^2} + \frac{D}{(x+3)^3} + \frac{Ex+F}{x^2+1} $$
+Since fractions are a pain, we get rid of them!  Multiplying both sides by $x (x+3)^3 (x^2+1)$, our equation becomes
+$$ 6 x^5+44 x^4+88 x^3+13 x^2-34 x+81$$ 
+$$ = A (x+3)^3 (x^2+1)+Bx (x+3)^2 (x^2+1) +Cx (x+3) (x^2+1) + Dx (x^2+1) + (Ex+F)x (x+3)^3 $$
+
+We now solve for our unknown coefficients.  It is highly convenient to set $x=0$. This produces the equation $ 81= A (3)^3 $ which implies $A=3$.  Similarly, we set $x=-3$. This produces the equation $$6 (-3)^5+44 (-3)^4+88 (-3)^3+13 (-3)^2-34 (-3)+81=D(-3) ((-3)^2+1)$$ which simplifies to $ 30=D(-30) $ which implies $D=-1$.  We have now run out of the most convenient values to choose for $x$, namely the roots of the denominator.  At this point, we unfortunately need to do something messy!  We can either plug in less than optimal values of $x$, for example $x=1$, then $x=-1$, then $x=2$, etc, and solve the resulting simultaneous system of equations that results.  Or, we can multiply out the polynomials and equate coefficients one degree at a time (the method of Example \ref{PotatoFryDip}.\ref{57Varieties}).  Carrying out either of these methods will produce
+
+$$ B=2, C=1, E=1, F=-5 $$
+
+At last, we plug the values for the constants $A,B,C,D,E,$ and $F$ back into the original decomposition (with quotient).  Our final PFD is 
+
+$$ \frac{x^7+8 x^6+25 x^5+52 x^4+79 x^3+13 x^2-61 x+81}{x^6+9 x^5+28 x^4+36 x^3+27 x^2+27 x} = x-1 + \frac{3}{x} + \frac{2}{x + 3} + \frac{1}{(x + 3)^2} - \frac{1}{(x + 3)^3} + \frac{x - 5}{x^2 + 1} $$ 
+
+\end{example}
+
+\begin{exercise}{ Identifying the Steps of PFD \Coffeecup}
+In the ridiculous example above, label each of the six steps of partial fraction decomposition.  Where exactly does each step occur?
+\end{exercise}
+
+\begin{exercise}{ Which Type of Numerator Goes Where? \Coffeecup}
+In the above example, notice that the factor $(x+3)^2$ corresponded to a term of the form $$\frac{C}{(x+3)^2}$$ and not a term of the form $$\frac{Cx+D}{(x+3)^2}.$$
+
+Why was this the case?
+
+\vspace*{1in}
+
+\end{exercise}
+
+Well, that's the process of partial fraction decomposition!  Why are we doing it in a calculus course?  Because a generic rational function is really hard to integrate, but the partial fraction decomposition is made up of simpler terms that are much easier to integrate.  Let's find the antiderivative of that beast above!  
+
+\begin{example}{Return of the Son of \emph{Using a PFD to Find an Antiderivative}}
+
+We apply our PFD to compute the following antiderivative:
+\begin{align*}
+ \int  &\left(\frac{x^7+8 x^6+25 x^5+52 x^4+79 x^3+13 x^2-61 x+81}{x^6+9 x^5+28 x^4+36 x^3+27 x^2+27 x}\right) \dif x \\
+&=\int \left(x-1 + \frac{3}{x} + \frac{2}{x + 3} + \frac{1}{(x + 3)^2} - \frac{1}{(x + 3)^3} + \frac{x - 5}{x^2 + 1}\right) \dif x\\
+&=\frac{x^2}{2}-x+3\ln(x)  +2\ln(x+3) + -\frac{1}{x+3}   + \frac{1}{2(x + 3)^2} +\int \frac{x}{x^2 + 1} \dif x+ \int \frac{-5}{x^2 + 1} \dif x\\
+&=\frac{x^2}{2}-x+3\ln(x)  +2\ln(x+3) + -\frac{1}{x+3}   + \frac{1}{2(x + 3)^2}  + \frac{1}{2}\ln(x^2+1) -5 \arctan(x)
+\end{align*}
+
+Oh, and um, plus $C$.
+\end{example}
+
+\subsection{Sweet PFD \partialfractions{Flow Chart}}
+
+ \input{ChapterAntidiff/Figures/PFDFlow.tex}
+
+\begin{exercise}{Now you cry! I mean, try!  \Coffeecup \Coffeecup \Coffeecup }
+Find the following antiderivatives.  Keep in mind that not every step of PFD will necessarily occur in every problem!
+
+\begin{itemize}
+
+\item $ \displaystyle
+\int\frac{1}{x^2-9x+20}\dif x $
+\solushun{
+Let's start by breaking up the fraction. We can factor $x^2-9x+20$ into $(x-5)(x-4)$.
+$$\frac{1}{x^2-9x+20}=\frac{A}{x-5}+\frac{B}{x-4}$$
+Multiplying by the common denominator gives
+$$1=A(x-4)+B(x-5)$$
+First let $x=5$:
+$$1=A(5-4)+B(5-5)=A$$
+Then let $x=4$:
+$$1=A(4-4)+B(4-5)=-B$$
+$$A=1, B=-1$$
+Now we can proceed with our integral:
+\begin{align*}
+\int\frac{1}{x-5}-\frac{1}{x-4}\dif x&=\ln|x-5|-\ln|x-4|+C\\
+&=\ln\left|\frac{x-5}{x-4}\right|+C
+\end{align*}
+}{3in}
+
+\item $\displaystyle \int  \frac{1}{x^4-9} \dif x $
+\solushun{$x^4-9$ factors to $(x^2+3)(x^2-3)$. $(x^2-3)$ further factors to $(x-\sqrt{3})(x+\sqrt{3})$. So our partial fraction decomposition is:
+$$\frac{1}{x^4-9}=\frac{Ax+B}{x^2+3}+\frac{C}{x-\sqrt{3}}+\frac{D}{x+\sqrt{3}}$$
+Multiplying both sides by the common denominator gives:
+$$1=(Ax+B)(x^2-3)+C(x^2+3)(x+\sqrt{3})+D(x^2+3)(x-\sqrt{3})$$
+We can let $x=\sqrt{3}$:
+$$1=(Ax+B)(3-3)+C(3+3)(\sqrt{3}+\sqrt{3})+D(3+3)(\sqrt{3}-\sqrt{3})$$
+$$1=C(6)(2\sqrt{3})=12\sqrt{3}C$$
+So $C=\frac{1}{12\sqrt{3}}$.
+Let $x=-\sqrt{3}$:
+$$1=(Ax+B)(3-3)+C(3+3)(-\sqrt{3}+\sqrt{3})+D(3+3)(-\sqrt{3}-\sqrt{3})$$
+$$1=D(6)(-2\sqrt{3})=-12\sqrt{3}D$$
+So $D=-\frac{1}{12\sqrt{3}}$.
+To get $A$ and $B$, substitute everything we have and multiply out the polynomial:
+$$1=(Ax+B)(x^2-3)+\frac{1}{12\sqrt{3}}(x^2+3)(x+\sqrt{3})+\frac{-1}{12\sqrt{3}}(x^2+3)(x-\sqrt{3})$$
+$$1=Ax^3-3Ax+Bx^2-3B+\frac{1}{12\sqrt{3}}(x^3+x^2\sqrt{3}+3x+3\sqrt{3})-\frac{1}{12\sqrt{3}}(x^3-x^2\sqrt{3}+3x-3\sqrt{3})$$
+$$1=Ax^3-3Ax+Bx^2-3B+\frac{1}{12\sqrt{3}}(x^3+x^2\sqrt{3}+3x+3\sqrt{3})-\frac{1}{12\sqrt{3}}(x^3-x^2\sqrt{3}+3x-3\sqrt{3})$$
+$$1=Ax^3-3Ax+Bx^2-3B+\frac{x^2}{12}+\frac{1}{4}+\frac{x^2}{12}+\frac{1}{4}$$
+$$1=Ax^3-3Ax+Bx^2-3B+\frac{x^2}{6}+\frac{1}{2}$$
+Before proceeding, note that $A$ is the only coefficient with an $x^3$ term on either side. Since there is no $x^3$ on the LHS, and none on the RHS to cancel out $Ax^3$, we know $A=0$. We can substitute that in to simplify further:
+$$1=Bx^2-3B+\frac{x^2}{6}+\frac{1}{2}$$
+Now, note that the $x^2$ term on the LHS is $0$, so $Bx^2+\frac{1}{6}x^2=0$, which tells us $B=-\frac{1}{6}$. We can check that by looking at the constant term, which is $1$. $-3B+\frac{1}{2}=1$. Using $B=-\frac{1}{6}:-3\frac{-1}{6}+\frac{1}{2}=\frac{1}{2}+\frac{1}{2}=1$.
+Plug all the terms back into the original PFD:
+\begin{align*}
+\int \frac{-\frac{1}{6}}{x^2+3}+\frac{\frac{1}{12\sqrt{3}}}{x-\sqrt{3}}+\frac{-\frac{1}{12\sqrt{3}}}{x+\sqrt{3}} \dif x&=-\frac{1}{6}\int\frac{1}{x^2+3}\dif x+\frac{1}{12\sqrt{3}}\int\frac{1}{x-\sqrt{3}}\dif x-\frac{1}{12\sqrt{3}}\int\frac{1}{x+\sqrt{3}} \dif x\\
+&=-\frac{1}{12}\ln|x^2+3|+\frac{1}{12\sqrt{3}}\ln|x-\sqrt{3}|-\frac{1}{12\sqrt{3}}\ln|x+\sqrt{3}|+C\\
+&=-\frac{1}{12}\ln|x^2+3|+\frac{1}{12\sqrt{3}}\ln\left|\frac{x-\sqrt{3}}{x+\sqrt{3}}\right|+C\\
+\end{align*}
+}{3in}
+
+\item $\displaystyle \int  \frac{x^4}{x^2+1} \dif x $
+\solushun{ We use polynomial long division, so that 
+$$\frac{x^4}{x^2+1}=x^2-1+\frac{1}{x^2+1}$$
+Then, the antiderivative is fairly straightfowarad:
+\begin{align*}
+    \int\frac{x^4}{x^2+1}\dif x&=\int x^2-1+\frac{1}{x^2+1}\dif x\\
+    &=\frac{1}{3}x^3-x+\frac{1}{2}\ln|x^2+1|+C
+\end{align*}}{3in}
+
+\item $\displaystyle \int  \frac{2}{x^5+2x^3+x} \dif x $
+\solushun{We start by factoring the fraction:
+$$\frac{2}{x^5+2x^3+x}=\frac{1}{(x)(x^4+2x^2+1)}=\frac{1}{(x)(x^2+1)^2}$$
+Our PFD breaks apart into:
+$$2\left(\frac{1}{x^5+2x^3+x}\right)=2\left(\frac{A}{x}+\frac{Bx+c}{x^2+1}+\frac{Dx+E}{(x^2+2)^2}\right)$$
+From here, the simplest approach is to multiply both sides by the least common denominator and compare terms of like power, and then solve the resulting system of equations.
+$$1=A(x^2+1)^2+(Bx+C)(x)(x^2+1)+(Dx+E)(x)$$
+We have an easy win by first setting $x=0:1=A$.
+$$1=x^4+2x^2+1+Bx^4+Bx^2+Cx^3+Cx+Dx^2+Ex$$
+Collecting like terms and comparing to the LHS, we have:
+\begin{align*}
+(B+1)x^4&=0x^4\\
+(C)x^3&=0x^3\\
+(2+B+D)x^2&=0x^2\\
+(E)x&=0x
+\end{align*}
+Solving these systems of equations, we get $A=1, B=-1, C=0, D=-1, E=0$, and our PFD becomes:
+$$2\left(\frac{1}{x^5+2x^3+x}\right)=2\left(\frac{1}{x}+\frac{-1x}{x^2+1}+\frac{-1x}{(x^2+2)^2}\right)$$
+Solving our antiderivative now is much easier:
+\begin{align*}
+\int2\left(\frac{1}{x}+\frac{-x}{x^2+1}+\frac{-x}{(x^2+1)^2}\right)\dif x&=2\int\frac{1}{x}-\frac{x}{x^2+1}-\frac{x}{(x^2+1)^2}\dif x\\
+&=2\left(\ln|x|-\frac{1}{2}\ln|x^2+1|+\frac{1}{2}\frac{1}{x^2+1}+C\right)\\
+&=2\ln|x|-\ln|x^2+1|+\frac{1}{x^2+1}+C
+\end{align*}}{3in}
+
+\item $\displaystyle \int  \frac{x-2}{x^3+x^2+3 x-5} \dif x $
+\solushun{Our PFD is:
+$$\frac{x-2}{x^3+x^2+3x-5}=\frac{x-2}{(x-1)(x^2+2x+5)}=\frac{A}{x-1}+\frac{Bx+C}{x^2+2x+5}$$
+Then we can solve for $A, B$ and $C$:
+\begin{align*}
+    x-1&=A(x^2+2x+5)+(Bx+C)(x-1)\\
+    &=Ax^2+2Ax+5A+Bx^2-Bx+Cx-C\\
+\end{align*}
+Grouping by like power terms:
+\begin{align*}
+    (A+B)x^2&=0x^2\\
+    (2A-B+C)x&=x\\
+    (5A-C)&=-1
+\end{align*}
+}{4in}
+
+\end{itemize}
+\AnswerKeyEntry{\textbullet The function $\frac{1}{x^2-9x+20}$ has $\ln\left|\frac{x-5}{x-4}\right|+C$ as its antiderivative.  
+\textbullet The factorization $x^4-9=\left(x^2+3\right)\left(x-\sqrt{3}\right)\left(x+\sqrt{3}\right)$ will produce the following setup: $$\frac{1}{x^4-9}=\frac{Ax+B}{x^2+3}+\frac{C}{x-\sqrt{3}}+\frac{D}{x+\sqrt{3}} $$ in which you can then solve for the coefficients and antidifferentiate. 
+\textbullet The function $\frac{x^4}{x^2+1}$ has an irreducible quadratic for a denominator. However, the degree of the numerator is not smaller than the degree of the denominator.  Thus, polynomial long division is the only step of PFD that is required in this case. 
+\textbullet The antiderivative of $\frac{2}{x^5+2x3+x}$ is $$2\ln|x|-\ln\left| x^2+1\right|+\frac{1}{x^2+1}$$
+\textbullet The PFD will produce $$ \frac{x-2}{x^3+x^2+3x-5}=\frac{-\frac{1}{8}}{x-1}+\frac{\frac{1}{8}x+\frac{11}{8}}{x^2+2x+5}$$ While the first term is easy to integrate, the second is quite tricky!  To hack through it, split it as follows: $$\frac{\frac{1}{8}x+\frac{11}{8}}{x^2+2x+5}=\frac{\frac{1}{8}x+\frac{1}{8}}{x^2+2x+5}+\frac{\frac{10}{8}}{x^2+2x+5} $$  The first fraction can then be integrated via $u$-sub, while the second can be done via trig sub after completing the square on the denominator.}
+\end{exercise}
+
+\begin{exercise}{Revisiting an Old Friend \Coffeecup \Coffeecup \Coffeecup}
+Recall Example \ref{secantsub}.\ref{secsub}, where we found the antiderivative of $$\frac{1}{x^4-9x^2}$$ via trig sub.  Find this antiderivative again but via PFD!  Verify your answer is compatible with what trig sub produced.  
+\solushun{The fraction breaks up into $\frac{1}{x^2(x-3)(x+3)}$, so we construct the partial fractions: $$\frac{A}{x}+\frac{B}{x^2}+\frac{C}{x-3}+\frac{D}{x+3}$$. Clearing the denominator produces:
+$$A(x)(x-3)(x+3)+B(x-3)(x+3)+C(x^2)(x+3)+D(x^2)(x-3)=1$$. We can clear out the fractions by settings $x$ equal to the roots of the denominator:
+\begin{align*}
+    x=0 &: -9B = 1 \implies B=-\frac{1}{9}\\
+    x=3 &: C(9)(6) = 1 \implies C=\frac{1}{54}\\
+    x=-3 &: D(9)(-6) = 1 \implies D=-\frac{1}{54}\\
+\end{align*}
+Since $A$ has an $x^3$ power and nothing else does, we know $A=0$.
+So our integral is $$\int\frac{1}{9x^2}+\frac{1}{54(x-3)}-\frac{1}{54(x+3)}\dif x$$
+Solving this produces
+\begin{align*}
+    \frac{1}{9x}+\frac{1}{54}\ln|x-3|-\frac{1}{54}\ln|x+3|&=\frac{1}{9x}+\frac{1}{54}\left(\ln|x-3|-\ln|x+3|\right)\\
+    &=\frac{1}{9x}+\frac{1}{54}\ln\left|\frac{x-3}{x+3}\right|
+\end{align*}
+}{4in}
+\AnswerKeyEntry{For $\frac{1}{x^4-9x^2}$, keep in mind that $x^2$ is not an irreducible quadratic factor but rather a repeated linear factor.  The PFD and integration will produce $$\frac{1}{9x}+\frac{1}{54}\ln\left|\frac{x-3}{x+3}\right|+C $$ }
+\end{exercise}

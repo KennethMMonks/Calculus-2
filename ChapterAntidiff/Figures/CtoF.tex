@@ -1,0 +1,21 @@
+
+
+\begin{asy}
+	size(150);  
+    import graph;
+    
+    real f(real x)
+    {
+        return (9/5)*(x)+32;
+    }
+           
+    xlimits(-50, 50);
+	ylimits(-100, 100);
+    draw(graph(f,-45,37,n=400), linewidth(.5bp));
+    
+	yaxis("", -50, 100, LeftTicks(ticklabel=NoZeroFormat));
+	xaxis("", -50, 50, RightTicks(ticklabel=NoZeroFormat));
+
+
+    
+\end{asy}

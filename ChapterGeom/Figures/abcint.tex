@@ -1,0 +1,40 @@
+
+
+\begin{asy}
+	size(300);  
+    import graph;
+
+    real f(real x)
+    {
+    	x = 1.1*x;
+    	return (x+2)/(x^2+2x-8)+0.4;
+    }
+    
+    draw((1.8,1.5)--(1.8,-2),linewidth(.5pt)+black+dashed);
+    labelx("$b$",1.8,SE);
+    labelx("$a$",-2,S);
+    labelx("$c$",1.5,SW);
+    
+    path a=(-2,0)--(-2,1.5);
+    path x=(-3,0)--(3,0);
+    path xx=(-3,-1.98)--(3,-1.98);
+    path b=(1.8,-2)--(1.8,1.5);
+    path c=(1.5,-2)--(1.5,1.5);
+    
+    path pp1=buildcycle(x,a,graph(f,-3,1.57));
+    fill(pp1,mediumgray);
+    path pp2=buildcycle(x,b,xx,graph(f,-3,1.57));
+    fill(pp2,lightgray);
+    path pp3=buildcycle(x,c,graph(f,-3,1.57));
+    fill(pp3,mediumgray);
+    
+    xlimits(-3, 3);
+	ylimits(-2, 1.5);
+    draw(graph(f,-3,1.57,n=500),linewidth(1pt)+black);
+    label("$f(x)$",(-2.3,0.9));
+	yaxis("$y$", -2, 1.5, above=true);
+	xaxis("$x$", -3, 3, above=true);
+    
+    draw((1.5,-.2)--(1.75,-0.2),EndArrow);
+    
+\end{asy}

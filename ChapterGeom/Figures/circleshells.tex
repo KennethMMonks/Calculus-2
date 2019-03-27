@@ -1,0 +1,205 @@
+
+  	settings.render=0;
+	import three;
+    import graph3;
+    currentprojection=orthographic(0,-0.25,1);
+    currentlight=nolight;
+
+	size(300);
+	
+	
+	real o=0.2;
+	//Cylinder 1
+	
+	real x=0.2;
+	real s=sqrt(1-x^2);
+	//Side
+	for (real c=-s; c<s; c=c+0.005)
+	{
+		path3 c1=(x,c,0)..(0,c,x)..(-x,c,0)..(0,c,-x)..cycle;
+		
+		draw(c1,linewidth(1pt)+gray+opacity(o));
+	}
+	//Top and Bottom
+	for (real c=0+x-0.2; c<x; c=c+0.005)
+	{
+		path3 t=(c,s,0)..(0,s,c)..(-c,s,0)..(0,s,-c)..cycle;
+		path3 b=(c,-s,0)..(0,-s,c)..(-c,-s,0)..(0,-s,-c)..cycle;
+		
+		draw(t,linewidth(1pt)+gray+opacity(o));
+		draw(b,linewidth(1pt)+gray+opacity(o));
+	}
+	
+	
+	//cylinder 2
+	
+	real x=0.4;
+	real s=sqrt(1-x^2);
+	//Side
+	for (real c=-s; c<s; c=c+0.005)
+	{
+		path3 c1=(x,c,0)..(0,c,x)..(-x,c,0)..(0,c,-x)..cycle;
+		
+		draw(c1,linewidth(1pt)+gray+opacity(o));
+	}
+	//Top and Bottom
+	for (real c=0+x-0.2; c<x; c=c+0.005)
+	{
+		path3 t=(c,s,0)..(0,s,c)..(-c,s,0)..(0,s,-c)..cycle;
+		path3 b=(c,-s,0)..(0,-s,c)..(-c,-s,0)..(0,-s,-c)..cycle;
+		
+		draw(t,linewidth(1pt)+gray+opacity(o));
+		draw(b,linewidth(1pt)+gray+opacity(o));
+	}
+	
+	//cylinder 3
+	real x=0.6;
+	real s=sqrt(1-x^2);
+	//Side
+	for (real c=-s; c<s; c=c+0.005)
+	{
+		path3 c1=(x,c,0)..(0,c,x)..(-x,c,0)..(0,c,-x)..cycle;
+		
+		draw(c1,linewidth(1pt)+gray+opacity(o));
+	}
+	//Top and Bottom
+	for (real c=0+x-0.2; c<x; c=c+0.005)
+	{
+		path3 t=(c,s,0)..(0,s,c)..(-c,s,0)..(0,s,-c)..cycle;
+		path3 b=(c,-s,0)..(0,-s,c)..(-c,-s,0)..(0,-s,-c)..cycle;
+		
+		draw(t,linewidth(1pt)+gray+opacity(o));
+		draw(b,linewidth(1pt)+gray+opacity(o));
+	}
+	//cylinder 4
+	real x=0.8;
+	real s=sqrt(1-x^2);
+	//Side
+	for (real c=-s; c<s; c=c+0.005)
+	{
+		path3 c1=(x,c,0)..(0,c,x)..(-x,c,0)..(0,c,-x)..cycle;
+		
+		draw(c1,linewidth(1pt)+gray+opacity(o));
+	}
+	//Top and Bottom
+	for (real c=0+x-0.2; c<x; c=c+0.005)
+	{
+		path3 t=(c,s,0)..(0,s,c)..(-c,s,0)..(0,s,-c)..cycle;
+		path3 b=(c,-s,0)..(0,-s,c)..(-c,-s,0)..(0,-s,-c)..cycle;
+		
+		draw(t,linewidth(1pt)+gray+opacity(o));
+		draw(b,linewidth(1pt)+gray+opacity(o));
+	}
+	
+	//cylinder 5
+	real x=0.95;
+	real s=sqrt(1-x^2);
+	//Side
+	for (real c=-s; c<s; c=c+0.005)
+	{
+		path3 c1=(x,c,0)..(0,c,x)..(-x,c,0)..(0,c,-x)..cycle;
+		
+		draw(c1,linewidth(1pt)+gray+opacity(o));
+	}
+	//Top and Bottom
+	for (real c=0+x-0.15; c<x; c=c+0.005)
+	{
+		path3 t=(c,s,0)..(0,s,c)..(-c,s,0)..(0,s,-c)..cycle;
+		path3 b=(c,-s,0)..(0,-s,c)..(-c,-s,0)..(0,-s,-c)..cycle;
+		
+		draw(t,linewidth(1pt)+gray+opacity(o));
+		draw(b,linewidth(1pt)+gray+opacity(o));
+	}
+
+	//Cylinder bottom and top lines.
+		//Cyl 1
+		x=0.2;
+		s=sqrt(1-x^2);
+		path3 t=(x,s,0)..(0,s,x)..(-x,s,0)..(0,s,-x)..cycle;
+		path3 b=(x,-s,0)..(0,-s,x)..(-x,-s,0)..(0,-s,-x)..cycle;
+		draw(t,linewidth(0.7pt)+heavygray);
+		draw(b,linewidth(0.7pt)+heavygray);
+
+		
+		//Cyl 2
+		x=0.4;
+		s=sqrt(1-x^2);
+		path3 t=(x,s,0)..(0,s,x)..(-x,s,0)..(0,s,-x)..cycle;
+		path3 b=(x,-s,0)..(0,-s,x)..(-x,-s,0)..(0,-s,-x)..cycle;
+		draw(t,linewidth(0.7pt)+heavygray);
+		draw(b,linewidth(0.7pt)+heavygray);
+		path3 t=(x-0.2,s,0)..(0,s,x-0.2)..(-x+0.2,s,0)..(0,s,-x+0.2)..cycle;
+		path3 b=(x-0.2,-s,0)..(0,-s,x-0.2)..(-x+0.2,-s,0)..(0,-s,-x+0.2)..cycle;
+		draw(t,linewidth(0.7pt)+heavygray);
+		draw(b,linewidth(0.7pt)+heavygray);
+		
+		//Cyl 3
+		x=0.6;
+		s=sqrt(1-x^2);
+		path3 t=(x,s,0)..(0,s,x)..(-x,s,0)..(0,s,-x)..cycle;
+		path3 b=(x,-s,0)..(0,-s,x)..(-x,-s,0)..(0,-s,-x)..cycle;
+		draw(t,linewidth(0.7pt)+heavygray);
+		draw(b,linewidth(0.7pt)+heavygray);
+		path3 t=(x-0.2,s,0)..(0,s,x-0.2)..(-x+0.2,s,0)..(0,s,-x+0.2)..cycle;
+		path3 b=(x-0.2,-s,0)..(0,-s,x-0.2)..(-x+0.2,-s,0)..(0,-s,-x+0.2)..cycle;
+		draw(t,linewidth(0.7pt)+heavygray);
+		draw(b,linewidth(0.7pt)+heavygray);
+
+		
+		//Cyl 4
+		x=0.8;
+		s=sqrt(1-x^2);
+		path3 t=(x,s,0)..(0,s,x)..(-x,s,0)..(0,s,-x)..cycle;
+		path3 b=(x,-s,0)..(0,-s,x)..(-x,-s,0)..(0,-s,-x)..cycle;
+		draw(t,linewidth(0.7pt)+heavygray);
+		draw(b,linewidth(0.7pt)+heavygray);
+		path3 t=(x-0.2,s,0)..(0,s,x-0.2)..(-x+0.2,s,0)..(0,s,-x+0.2)..cycle;
+		path3 b=(x-0.2,-s,0)..(0,-s,x-0.2)..(-x+0.2,-s,0)..(0,-s,-x+0.2)..cycle;
+		draw(t,linewidth(0.7pt)+heavygray);
+		draw(b,linewidth(0.7pt)+heavygray);
+
+		
+		//Cyl 5
+		x=0.95;
+		s=sqrt(1-x^2);
+		path3 t=(x,s,0)..(0,s,x)..(-x,s,0)..(0,s,-x)..cycle;
+		path3 b=(x,-s,0)..(0,-s,x)..(-x,-s,0)..(0,-s,-x)..cycle;
+		draw(t,linewidth(0.7pt)+heavygray);
+		draw(b,linewidth(0.7pt)+heavygray);
+		path3 t=(x-0.15,s,0)..(0,s,x-0.15)..(-x+0.15,s,0)..(0,s,-x+0.15)..cycle;
+		path3 b=(x-0.15,-s,0)..(0,-s,x-0.15)..(-x+0.15,-s,0)..(0,-s,-x+0.15)..cycle;
+		draw(t,linewidth(0.7pt)+heavygray);
+		draw(b,linewidth(0.7pt)+heavygray);
+
+		
+		//Cylinder sidewalls...
+		//cyl1
+		x=0.2;
+		s=sqrt(1-x^2);
+		draw((x,-s,0)--(x,s,0),linewidth(0.7pt)+heavygray);		
+		draw((-x,-s,0)--(-x,s,0),linewidth(0.7pt)+heavygray);	
+		//cyl2
+		x=0.4;
+		s=sqrt(1-x^2);
+		draw((x,-s,0)--(x,s,0),linewidth(0.7pt)+heavygray);		
+		draw((-x,-s,0)--(-x,s,0),linewidth(0.7pt)+heavygray);	
+		//cyl3
+		x=0.6;
+		s=sqrt(1-x^2);
+		draw((x,-s,0)--(x,s,0),linewidth(0.7pt)+heavygray);		
+		draw((-x,-s,0)--(-x,s,0),linewidth(0.7pt)+heavygray);	
+		//cyl4
+		x=0.8;
+		s=sqrt(1-x^2);
+		draw((x,-s,0)--(x,s,0),linewidth(0.7pt)+heavygray);		
+		draw((-x,-s,0)--(-x,s,0),linewidth(0.7pt)+heavygray);	
+		//cyl5
+		x=0.95;
+		s=sqrt(1-x^2);
+		draw((x,-s,0)--(x,s,0),linewidth(0.7pt)+heavygray);		
+		draw((-x,-s,0)--(-x,s,0),linewidth(0.7pt)+heavygray);	
+			
+	//SPHERE
+
+  	path3 p1=(0,1,0)..(1,0,0)..(0,-1,0)..(-1,0,0)..cycle;
+  	draw(p1,linewidth(1pt)); 

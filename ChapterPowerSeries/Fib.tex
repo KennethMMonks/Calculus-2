@@ -1,0 +1,131 @@
+\section{The Fibonacci Numbers via Power Series}\label{FigAndGnocchiNumbers}
+
+Recall the Fibonacci numbers are the recursively defined sequence given by
+
+\begin{align*}
+ F_0&=0 \\ 
+F_1&=1 \\ 
+F_{n+2}&=F_{n+1}+F_n.
+\end{align*}
+
+\begin{exercise}{Listing a Few Terms \Coffeecup}
+Use the above recursion to compute the first five Fibonacci numbers.  List these below.
+\vspace*{.5in}
+\end{exercise}
+
+We now compare these numbers to the coefficients of a particular power series.
+
+\begin{exercise}{Coefficients of a Particular Power Series \Coffeecup \Coffeecup \Coffeecup}
+\begin{itemize}
+\item Use long division to find the first five coefficients of the power series of the following function:
+$$ f(x) = \frac{x}{1-x-x^2}. $$
+\vspace*{2in}
+\item Whoa.  What do you notice about the Fibonacci numbers vs the coefficients in that power series?
+\vspace*{.5in}
+\end{itemize}
+\end{exercise}
+
+We had a recursively defined sequence and a sequence of power series coefficients.  We now compare these to an explicitly defined sequence.
+\begin{exercise}{Really? \Coffeecup \Coffeecup}
+Define a sequence $a_n$ via the following explicit formula:
+
+$$a_n = \frac{1}{\sqrt{5}} \left( \left(\frac{1+\sqrt{5}}{2}\right)^n-\left(\frac{1-\sqrt{5}}{2}\right)^n \right).   $$
+\begin{itemize}
+\item Compute the first five terms of this sequence by simply plugging in $n$ values and crunching numbers on a calculator or CAS.  List your answers below.
+\vspace*{1in}
+\item What?  Yes, really.  Right?
+\vspace*{.5in}
+\end{itemize}
+\end{exercise}
+
+Ok let's figure out what the heck is going on.  Let the function $f(x)=F_0+F_1x+F_2x^2+F_3x^3+\cdots$.  That is, $f$ is defined to be a function whose power series has the Fibonacci sequence as its coefficients.  This is called the \emph{\fibonacci{generating function}} for the Fibonacci numbers.
+\begin{exercise}{Studying the Generating Function \Coffeecup \Coffeecup \Coffeecup}
+\begin{itemize}
+
+\item Find a power series for the function $xf(x)$.
+
+\vspace*{.5in}
+
+\item Find a power series for the function $x^2f(x)$.
+
+\vspace*{.5in}
+ 
+\item Use the above to find a power series for the function $f(x)-xf(x)-x^2f(x)$.  
+
+\vspace*{1in}
+
+\item Solve the above equation for $f(x)$ to get $f(x)=\frac{x}{1-x-x^2}$.
+
+\vspace*{.5in}
+
+\end{itemize}
+\end{exercise}
+
+We now treat the function $f(x)=\frac{x}{1-x-x^2}$ as a ``New Series from Old'' style exercise.  Once we find a formula its coefficients, we will have a formula for the Fibonacci numbers!
+
+\begin{exercise}{Finding an Explicit Formula for the Coefficients \Coffeecup \Coffeecup \Coffeecup}
+\begin{itemize}
+\item Factor the polynomial $1-x-x^2$ via the quadratic formula.  In particular, factor into the form $\left(1-\frac{x}{r_1}\right)\left(1-\frac{x}{r_2}\right)$ where $r_1$ and $r_2$ are the roots.
+\vspace*{1in}
+\item Use this factorization to find the partial fraction decomposition of $f(x)=\frac{x}{1-x-x^2}$.
+\vspace*{2in}
+\item Use the geometric series formula to find a power series for each term in the PFD, then add them together to get a power series for the \partialfractions{Fibonacci generating function} $f(x)=\frac{x}{1-x-x^2}$. 
+\vspace*{3in}
+\item Equate the general degree $n$ coefficient with $F_n$ to obtain the above explicit formula for the Fibonacci numbers!
+\vspace*{1in}
+\end{itemize}
+\end{exercise}
+
+The explicit formula for the Fibonacci Numbers is known as \emph{Binet's Formula}.  We state it again here, just because it is so nice to look at.
+
+\begin{theorem}{Binet's Formula} For all $n\in \mathbb{N}$,
+
+$$F_n = \frac{1}{\sqrt{5}} \left( \left(\frac{1+\sqrt{5}}{2}\right)^n-\left(\frac{1-\sqrt{5}}{2}\right)^n \right).   $$
+
+\end{theorem}
+\begin{exercise}{Ratio of Consecutive Fibonacci Numbers  \Coffeecup \Coffeecup}
+
+We now revisit Exercise \ref{convseq}.\ref{Fibbies}, armed with Binet's Formula!  Use Binet's Formula to compute the limit of the ratio of consecutive Fibonacci numbers.  That is, compute an exact value for the following limit:
+
+$$\lim_{n\rightarrow \infty}\frac{F_{n+1}}{F_n} \hspace{4in}$$
+\vspace*{2in} \AnswerKeyEntry{The ratio between consecutive terms is $\frac{1+\sqrt{5}}{2}$, the Golden Ratio.}
+\end{exercise}
+
+\begin{exercise}{IOC \Coffeecup \Coffeecup}
+Find the IOC for the Fibonacci generating function.  How does this relate to vertical asymptotes on the graph of $\frac{x}{1-x-x^2}$?
+\vspace*{2in} \AnswerKeyEntry{The IOC is $\left(\frac{1-\sqrt{5}}{2},\frac{\sqrt{5}-1}{2}\right)$.  This is the interval that proceeds symmetrically left and right from the origin as far as it can until it runs into the nearest vertical asymptote of $\frac{x}{1-x-x^2}$.}
+\end{exercise}
+Again armed now with Binet's Formula, we revisit Exercise \ref{AppleCations}.\ref{Lieonacci}.
+
+\begin{exercise}{Sums of Consecutive Fibonacci Numbers \Coffeecup \Coffeecup \Coffeecup}
+
+Use Binet's Formula to verify that a sum of consecutive Fibonacci numbers is in fact always one less than the following Fibonacci number.  That is, show that $$  \sum_{i=0}^n F_i = F_{n+1}-1$$ by rewriting the left-hand side summand using Binet's Formula and then summing the geometric series that result.
+\vspace*{3in}
+\end{exercise}
+Here we offer another proof of the same summation identity!  In this argument, we build yet another generating function for the sums of the Fibonacci numbers rather than for the Fibonacci numbers themselves.
+\begin{exercise}{Another Take on Sums of Consecutive $F_n$ \Coffeecup \Coffeecup \Coffeecup}
+\begin{itemize}
+\item By expanding and multiplying power series, demonstrate that the following product is valid: 
+
+$$   \left(\sum_{n=0}^\infty F_nx^n\right)\left(\sum_{n=0}^\infty x^n\right) = \sum_{n=0}^\infty \left( \sum_{i=0}^n F_i \right)x^n. $$
+
+\vspace*{1in}
+\item Explain why the left-hand side above is equal to the
+function $g(x)=\frac{x}{\left(1-x-x^2\right)\left(1-x\right)}$.
+
+\vspace*{.5in}
+
+\item Verify the PFD $g(x)=\frac{x}{\left(1-x-x^2\right)\left(1-x\right)}=\frac{1+x}{1-x-x^2}-\frac{1}{1-x}$.
+
+\vspace*{.5in}
+
+\item Use that PFD along with our known series for the Fibonacci generating function and the geometric series to show the power series for $g(x)$ has $F_n+F_{n-1}-1$ as its general degree $n$ coefficient for natural numbers $n>0$. 
+
+\vspace*{1in}
+
+\item Conclude that the identity $  \sum_{i=0}^n F_i = F_{n+1}-1$ is true, as both the left- and right-hand sides represent the degree $n$ coefficient of $g(x)$.
+
+\vspace*{.5in}
+
+\end{itemize}
+\end{exercise}

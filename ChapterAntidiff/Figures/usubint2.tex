@@ -1,0 +1,25 @@
+\begin{asy}
+	size(200,100,IgnoreAspect);  
+    import graph;
+    
+    real f(real x)
+    {
+        return sqrt(x);
+    }
+    
+    	path l= (1,0)--(1,2);
+    
+        path p= l--graph(f,1,9)--(9,3/2)--(9,0)--cycle; 
+    fill(p,lightgray);
+           
+    xlimits(0, 9);
+	ylimits(0, 4);
+    draw(graph(f,0,10,n=400), linewidth(.5bp));
+    label("$f(u)$",(9,3.3),NW);
+    dot((1,1));
+    dot((9,3));
+	yaxis("$y$", 0, 4, LeftTicks(ticklabel=NoZeroFormat),above=true);
+	xaxis("$u$", 0, 10, RightTicks(ticklabel=NoZeroFormat,N=10),above=true);
+    labelx("$0$",0,1S+1W);
+    
+\end{asy}

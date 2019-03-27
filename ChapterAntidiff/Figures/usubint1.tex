@@ -1,0 +1,26 @@
+% To change size of the figure, edit size
+
+\begin{asy}
+	size(100,100,IgnoreAspect);  
+    import graph;
+   
+    real f(real x)
+    {
+        return sqrt(2x+1);
+    }
+          
+    path p= (0,0)--(0,1)--graph(f,1,5)--(4,3)--(4,0)--cycle; 
+    fill(p,lightgray);
+    
+    xlimits(0, 5);
+	ylimits(0, 4);
+    draw(graph(f,0,5,n=400), linewidth(.5bp));
+    label("$f(x)$",(5,3.7),1.5W);
+    dot((0,1));
+    dot((4,3));
+	yaxis("$y$", 0, 4, LeftTicks(ticklabel=NoZeroFormat),above=true);
+	xaxis("$x$", 0, 5, RightTicks(ticklabel=NoZeroFormat,N=5),above=true);
+    labelx("$0$",0,1S+1W);
+    
+\end{asy}
+ 

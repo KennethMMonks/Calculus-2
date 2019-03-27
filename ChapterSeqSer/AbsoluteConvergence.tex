@@ -1,0 +1,55 @@
+\section{Absolute Convergence and \infiniteseries{Rearrangements}}
+When we add up finitely many numbers, we take properties like commutativity and associativity for granted.  We add up numbers in whatever order is most convenient.  With infinite series, we cannot be quite so cavalier!
+
+\begin{example}{Did You Know that \alternatingseries{Zero Equals One}?}
+Here we use the fact that 0=-1+1.
+\begin{align*}
+1&=1+0+0+0+0+\cdots \\
+ &=1+(-1+1)+(-1+1)+(-1+1)+(-1+1)+\cdots \\
+ &=1-1+1-1+1-1+1-1+1-\cdots \\
+ &=(1-1)+(1-1)+(1-1)+(1-1)+(1+-1)+\cdots \\
+&=0+0+0+0+0+\cdots\\
+&=0
+\end{align*}
+\end{example}
+
+\begin{exercise}{What? \Coffeecup \Coffeecup \Coffeecup}
+Let us now correctly analyze the infinite sum $$1-1+1-1+1-1+1-1+1-\cdots $$ 
+
+\begin{itemize}
+\item Consider the sequence $a_n=(-1)^n$.  Use the Geometric Series Formula to find the corresponding sequence of partial sums $A_N$.
+\vspace*{1in}
+\item What is the limit of the sequence of partial sums?
+\vspace*{.5in}
+\item Thus, what is the correct value of the infinite series $1-1+1-1+1-1+1-1+1-\cdots$? \vspace*{.5in}
+\end{itemize}
+\end{exercise}
+
+It turns out that the key lies in the distinction between a series being convergent vs being \emph{absolutely convergent}, a stronger type of convergence.
+
+\begin{definition}{Absolute Convergence }
+An infinite series $\sum_{n=0}^\infty a_n$ is \emph{absolutely convergent} if and only if $\sum_{n=0}^\infty \left| a_n \right|$ is convergent.
+\end{definition}
+Absolute convergence is the idea that it wasn't just some sort of cancellation of positive and negative terms that let the partial sums stabilize.  Rather, the magnitudes of the terms were going to zero quickly enough.  To test this, we just take the term-by-term absolute value of the series and see if the resulting series still converges. 
+
+\begin{example}{An Absolutely Convergent Series}
+The infinite geometric series $$1-\frac{1}{2}+\frac{1}{4}-\frac{1}{8}+\frac{1}{16}-\cdots $$ is \conv{absolute}ly convergent because $$|1|+\left|-\frac{1}{2}\right|+\left|\frac{1}{4}\right|+\left|-\frac{1}{8}\right|+\left|\frac{1}{16}\right|+\cdots=1+\frac{1}{2}+\frac{1}{4}+\frac{1}{8}+\frac{1}{16}+\cdots=2.  $$ The term=by-term absolute value of the series still converges, so the original series is declared absolutely convergent.
+\end{example}
+
+Contrast this concept with the following \conditional{definition}, a weaker form of convergence called \conv{conditional}.
+
+\begin{definition}{Conditional Convergence }
+An infinite series $\sum_{n=0}^\infty a_n$ is \emph{conditionally convergent} if and only if it converges but $\sum_{n=0}^\infty \left| a_n \right|$ diverges.
+\end{definition}
+
+\begin{example}{A Conditionally Convergent Series}
+The \conditional{alternating harmonic series} $$1-\frac{1}{2}+\frac{1}{3}-\frac{1}{4}+\frac{1}{5}+\cdots $$ is conditionally convergent because $$1+\frac{1}{2}+\frac{1}{3}+\frac{1}{4}+\frac{1}{5}+\cdots $$ diverges. In particular, it is the harmonic series which totals to $\infty$ (as we will see in Example \ref{TomaytoWithMayo}.\ref{Bern}).  
+\end{example}
+
+\begin{exercise}{A Maybe Absolutely Convergent Series \Coffeecup \Coffeecup}
+Is the infinite geometric series $$0.1-0.02+0.004-0.0008+0.00016-\cdots $$ absolutely convergent or conditionally convergent?  Explain.
+\vspace*{.5in}
+\AnswerKeyEntry{It is absolutely convergent, since the series of corresponding positive terms is $0.1+0.02+0.004+0.0008+0.00016+\cdots $ which converges to one-eighth. }
+\end{exercise}
+
+It turns out that for absolutely convergent series, \absolute{rearranging of terms} and any sort of normal algebraic manipulation is fine.  This is a theorem that is rather difficult to prove and will be saved for a later mathematical adventure.  For this course, we will just use it!

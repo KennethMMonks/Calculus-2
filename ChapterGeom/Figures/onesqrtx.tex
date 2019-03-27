@@ -1,0 +1,55 @@
+
+
+\begin{asy}
+	size(300);  
+    import graph;
+
+    real f(real x)
+    {
+    	return 1/sqrt(-x);
+    }
+    real g(real x)
+    {
+    	return 1/sqrt(x);
+    }
+    
+    path x=(-2,0)--(2,0);
+    path a=(-1,0)--(-1,3);
+    path b=(1,0)--(1,3);
+    path xx=(-2,2.77)--(2,2.77);
+    
+    path area=buildcycle(x,a,graph(f,-2,-.13),xx,graph(g,.13,2),b);
+    fill(area,lightgray);
+    
+    path c1=(-.2,0)--(-.2,3);
+    path c2=(.2,0)--(.2,3);
+    
+    path c1area=buildcycle(x,a,graph(f,-2,-.13),c1);
+	fill(c1area,mediumgray);
+    
+    path c2area=buildcycle(x,c2,graph(g,.13,2),b);
+    fill(c2area,mediumgray);
+    
+    xlimits(-2, 2);
+    ylimits(-.5, 3);
+    draw(graph(f,-2,-.13,n=500),linewidth(1pt)+black);
+    draw(graph(g,.13,2,n=500),linewidth(1pt)+black);
+	yaxis("$y$", -.5, 3, above=true);
+	xaxis("$x$", -2, 2, Ticks(ticklabel=NoZeroFormat), above=true);
+    
+    labelx("$c_1$",-.2,2S);
+    labelx("$c_2$",.2,2S);
+    
+    draw((-.2,-0.05)--(-.05,-0.05),EndArrow);
+   // draw((-.2,.55)--(-.05,.55),EndArrow);
+   // draw((-.2,1.05)--(-.05,1.05),EndArrow);
+   // draw((-.2,1.55)--(-.05,1.55),EndArrow);
+   // draw((-.2,2.05)--(-.05,2.05),EndArrow);
+
+    draw((.2,-0.05)--(.05,-0.05),EndArrow);
+  //  draw((.2,.55)--(.05,.55),EndArrow);
+   // draw((.2,1.05)--(.05,1.05),EndArrow);
+   // draw((.2,1.55)--(.05,1.55),EndArrow);
+   // draw((.2,2.05)--(.05,2.05),EndArrow);
+    
+\end{asy}

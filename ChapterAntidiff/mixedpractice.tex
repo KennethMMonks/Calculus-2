@@ -1,0 +1,158 @@
+\section{Mixed Practice}
+
+\subsection{Warm Ups}
+These are good problems for reinforcing the vocabulary and foundational concepts of this chapter.
+\begin{exercise}{\Coffeecup }
+Find the antiderivative of $\frac{1}{1+x}$ using the substitution $u=1+x$.
+\AnswerKeyEntry{$\ln\left(1+x\right)+C$}
+\solushun{ $\int{\frac{1}{1+x} \dif x} \newline$
+Let $u=1+x$ then $\dif u=\dif x \newline$
+so $\int{\frac{1}{1+x} \dif x} =\int{\frac{1}{u} \dif u}= \ln\left(u\right)+C=\ln\left(1+x\right)+C$ \\ }{0in}
+\end{exercise}
+
+\begin{exercise}{\Coffeecup \Coffeecup }
+Find the antiderivative 
+
+$$\int \frac{\sqrt{x}}{\sqrt{x}+1}\dif x $$ using the substitution $u=\sqrt{x}+1$.
+\AnswerKeyEntry{$x+ -2\sqrt{x}+2\ln{|\sqrt{x}+1|}+C$}
+\solushun{ $\int \frac{\sqrt{x}}{\sqrt{x}+1}dx \newline$
+Let $u=\sqrt{x}+1$ then $du = 1/2 x^{-1/2} dx$ so $2 x^{1/2} du=dx \newline$
+so $\int \frac{\sqrt{x}}{\sqrt{x}+1}dx = \int \frac{\sqrt{x}}{u}(2 x^{1/2} du)=
+2 \int {\frac{x}{u} du}$ but since $u=\sqrt{x}+1 \Rightarrow x=(u-1)^2$ we have
+$2 \int {\frac{x}{u} du}=2 \int {\frac{(u-1)^2}{u} du}=2 \int {\frac{u^2-2u+1}{u} du}=2 \int {(u-2+\frac{1}{u}) du}= 2(u^2/2-2u +\ln{|u|})+C \newline$
+$ = (\sqrt{x}+1)^2 -4(\sqrt{x}+1) + 2\ln{|\sqrt{x}+1|}+C = x -2\sqrt{x}+2\ln{|\sqrt{x}+1|}+C$\\ }{0in}
+\end{exercise}
+
+\begin{exercise}{\Coffeecup \Coffeecup }
+Compute the exact value of the following definite integral:
+$$ \int_{x=1}^{x=\sqrt{3}} \frac{1}{\sqrt{x^2+1}} \dif x. $$
+\AnswerKeyEntry{$\ln \left| \frac{ 2+\sqrt{3}}{\sqrt{2} +1} \right|$}
+\solushun{ Use $x=\tan{\theta}$ then $\dif x=\sec^2{\theta} \dif \theta$. Also, $x^2 = \tan^2{\theta} $ and $\tan^2{\theta} +1 = \sec^2{\theta}$. So
+$$\int_{1}^{\sqrt{3}}{\frac{1}{\sqrt{x^2+1}} \dif x} = \int_{\theta=\frac{\pi}{4}}^{\theta=\frac{\pi}{3}}{\frac{1}{\sqrt{\tan^2{\theta}}+1} \cdot \sec^2{\theta} \dif \theta}= \int_{\theta=\frac{\pi}{4}}^{\theta=\frac{\pi}{3}}{\frac{1}{\sec{\theta}} \cdot \sec^2{\theta} \dif \theta}
+=\int_{\theta=\frac{\pi}{4}}^{\theta=\frac{\pi}{3}}{\sec{\theta} \dif \theta}
+$$
+$$=\ln|\sec{\theta}+\tan{\theta}| \Biggr|_{\theta=\frac{\pi}{4}}^{\theta=\frac{\pi}{3}}= \ln|\sec( \pi/3)+\tan(\pi/3)| - \ln|\sec(\pi/4)+\tan(\pi/4)| 
+=\ln \left| \frac{ 2+\sqrt{3}}{\sqrt{2} +1} \right|
+$$\\ }{0in}
+\end{exercise}
+
+\begin{exercise}{\Coffeecup \Coffeecup}
+Calculate the antiderivative: $$ \int {\frac{1}{x^4-x^2}\dif x}$$ via partial fraction decomposition.
+\AnswerKeyEntry{$\frac{1}{2}\ln{|x-1|}-\frac{1}{2}\ln{|x+1|} +\frac{1}{x} +C$}
+\solushun{First let $\frac{1}{x^4-x^2} = \frac{1}{x^2(x-1)(x+1)}= \frac{A}{x-1}+\frac{B}{x+1}+\frac{C}{x}+\frac{D}{x^2}$  then we have $1= Ax^2(x+1)+Bx^2(x-1)+Cx(x+1)(x-1)+D(x+1)(x-1)$ \\
+Let $x=0$ then $1=D(1)(-1) = -D$ so $D=-1$ \\
+Let $x=1$ then $1=A(2)$ so $A=\frac{1}{2}$ \\
+Let $x=-1$ then $1 = B(-2)$ so $B=-\frac{1}{2}$ \\
+We can find C using the degree 3 coefficients of the equation \\$1= Ax^2(x+1)+Bx^2(x-1)+Cx(x+1)(x-1)+D(x+1)(x-1)$ \\so we have $0 = A+B+C \Rightarrow -A-B = C \Rightarrow -\frac{1}{2} +\frac{1}{2} =C \Rightarrow C=0$ \\
+So we have $$\int{\frac{1}{x^4-x^2}dx} = \int{\frac{\frac{1}{2}}{x-1}+\frac{-\frac{1}{2}}{x+1}+\frac{0}{x}+\frac{-1}{x^2}dx}=\frac{1}{2}\ln{|x-1|}-\frac{1}{2}\ln{|x+1|} +\frac{1}{x} +C$$
+\\ }{0in}
+\end{exercise}
+
+
+\subsection{Sample Test Problems}
+
+\begin{exercise}{\Coffeecup \Coffeecup }
+ Consider $\int {\cos^{13}{x}\sin^{5}{x} \dif x}$.
+\begin{itemize}
+\item  Can you compute this integral using $u=\cos{x}$?  Explain.
+\solushun{ Yes, use one factor of $\sin{x} $ for the $\dif u$. Specifically, $u=\cos{x}$ implies $ \dif u=-\sin{x} \dif x$ and use  $\sin^2{x}=1-\cos^2{x}$.  We now calculate the integral as 
+$\int {\cos^{13}{x}\sin^{5}{x} dx}=\int {\cos^{13}{x}\sin^{4}{x}\sin{x} \dif x}=
+-\int {u^{13}(1-u^2)^2 \dif u}=-\int {u^{13}-2u^{15} + u^{17} \dif u}= -\frac{u^{14}}{14} + \frac{2 u^{16}}{16} + \frac{u^{18}}{18} = -\frac{\cos^{18}{x}}{18}+ \frac{\cos^{16}{x}}{8} - \frac{\cos^{14}{x}}{14} + C.
+$\\ }{0in}
+
+\item  Can you compute this integral using $u=\sin(x)$?  Explain.
+\solushun{ \\ }{0in}
+
+\item Which of the two above substitutions will be easier to use?  Carry out the integration, using the easier of the two.
+\solushun{ \\ }{0in}
+\end{itemize}
+\AnswerKeyEntry{$-\frac{\cos^{18}{x}}{18}+ \frac{\cos^{16}{x}}{8} - \frac{\cos^{14}{x}}{14} + C$}
+
+\end{exercise}
+\begin{exercise}{\Coffeecup \Coffeecup \Coffeecup}
+Evaluate the integral $$ \int \csc^3(x) \dif x$$ 
+via IBP.
+\AnswerKeyEntry{The antiderivative is $-\frac{1}{2}\left(\csc(x)\cot(x)+\ln\left|\csc(x)+\cot(x)\right|\right)+C$}
+\solushun{Use $u=\csc(x)$ and $\dif v = \csc^2(x) \dif x$.
+\\ }{0in}
+\end{exercise} 
+
+\begin{exercise}{\Coffeecup \Coffeecup \Coffeecup }
+Consider the following antiderivative: $$ \int {\frac{1}{x^2-16} \dif x}$$
+\begin{itemize}
+
+\item  Compute the above antiderivative via a partial fraction decomposition. 
+\solushun{ $ \frac{1}{x^2-16} = \frac{A}{x+4}+\frac{B}{x-4} \Rightarrow 
+1=A(x-4)+B(x+4)$ \newline
+Set $x=-4 \rightarrow 1=A \cdot (-8) \rightarrow A=-\frac{1}{8} $ \newline 
+and set $x=4 \rightarrow 1=B \cdot 8 \rightarrow B = \frac{1}{8}$ 
+So we have $$\int {\frac{1}{x^2-16} dx}= -\frac{1}{8} \int {\frac{1}{x+4} dx} +\frac{1}{8} \int {\frac{1}{x-4} dx} = -\frac{1}{8} \ln |x+4| + \frac{1}{8}\ln|x-4|
+=\frac{1}{8} \ln \left| \frac{x-4}{x+4} \right| + C
+$$
+\\ }{0in}
+
+\item Compute the above antiderivative via trigonometric substitution. 
+\solushun{ Use $x=4 \sec{\theta}$ then $dx=4 \sec{\theta}\tan{\theta}~~d\theta $ also $x^2 =16 \sec^2{\theta} $ and $16 \sec^2{\theta} - 16 = 16 \tan^2{\theta}$ So
+$$\int{\frac{1}{x^2-16} dx} = \int{\frac{1}{16 \sec^2{\theta}-16} 4\sec{\theta}\tan{\theta} d\theta}= \int{\frac{1}{16 \tan^2{\theta}} 4\sec{\theta}\tan{\theta} d\theta}
+=\int{\frac{\sec{\theta}}{4 \tan{\theta}}  d\theta}
+$$
+$$=\frac{1}{4}\int{\csc{\theta}  d\theta}=
+- \frac{1}{4} \ln \left|\csc{\theta} + \cot{\theta}\right| + C 
+= - \frac{1}{4} \ln |\frac{x}{\sqrt{x^2-16}} + \frac{4}{\sqrt{x^2-16}}| + C = -\frac{1}{4}\ln \left| \frac{x+4}{\sqrt{x^2-16}} \right| + C $$
+because $x=4 \sec{\theta} \Rightarrow \cos{\theta} = \frac{4}{x} \Rightarrow \cos^2{\theta} = \frac{16}{x^2}=1-\sin^2{\theta} \Rightarrow \sin^2{\theta} = 1-\frac{16}{x^2} = \frac{x^2-16}{x^2} \Rightarrow  \sin{\theta} = \frac{\sqrt{x^2-16}}{x} \Rightarrow \csc{\theta} = \frac{x}{\sqrt{x^2-16}}$ 
+also since we defined $ x= 4\sec{\theta}$ then $ 16 \sec^2{\theta} - 16=x^2-16 = 16 \tan^2{\theta} \Rightarrow \sqrt{x^2-16} = 4\tan{\theta} \Rightarrow \cot{\theta} = \frac{4}{\sqrt{x^2-16}} $\\ }{0in}
+
+\item Your answers may appear very different!  Verify that they are in fact equivalent.
+\AnswerKeyEntry{$\frac{1}{8} \ln \left| \frac{x-4}{x+4} \right| + C$}
+\solushun{Start with the answer from the previous part and use properties of the natural logarithm as follows: \\$-\frac{1}{4}\ln \left| \frac{x+4}{\sqrt{x^2-16}} \right|=-\frac{1}{4} \ln|x+4| +\frac{1}{4}\ln|\sqrt{x^2-16}| \newline = -\frac{1}{4} \ln|x+4| +\frac{1}{4} \frac{1}{2} \ln|x^2-16|
+\newline = -\frac{1}{4} \ln|x+4| +\frac{1}{8}\ln|x-4|+\frac{1}{8}\ln|x+4|
+\newline =-\frac{1}{8}\ln|x+4|+\frac{1}{8}\ln|x-4| 
+\newline = \frac{1}{8} \ln \left| \frac{x-4}{x+4} \right|$.
+\\ }{0in}
+\end{itemize}
+\end{exercise}
+
+\begin{exercise}{\Coffeecup \Coffeecup \Coffeecup \Coffeecup }
+\begin{itemize}
+\item  Perform a Partial Fraction Decomposition on the following rational function: $$  \frac{x^3}{x^3-3x^2+4} $$
+\solushun{ Note the powers of the numerator and denominator are the same, PFD requires the numerator to be less than the denominator. So start with long division $$\polylongdiv{x^3}{x^3-3x^2+4}$$ so we have $\frac{x^3}{x^3-3x^2+4}  = 1+ \frac{3x^2-4}{x^3-3x^2+4}$ Now we need to factor $x^3-3x^2+4$  we can try multiple options with synthetic division and the rational zero theorem.  \\A good guess is $-1$ since $(-1)^3 -3(-1)^2 +4 = 0$ so a factor is $(x+1)$ 
+use long division to factor
+$$\polylongdiv{x^3-3x^2+4}{x+1}$$ 
+now we have $\frac{x^3}{x^3-3x^2+4}  = 1+ \frac{3x^2-4}{(x+1)(x^2-4x+4)}=1+ \frac{3x^2-4}{(x+1)(x-2)^2}$ use PFD on  $\frac{3x^2-4}{(x+1)(x-2)^2}$ and we have \\
+$\frac{3x^2-4}{(x+1)(x-2)^2} = \frac{A}{x+1} + \frac{B}{x-2} + \frac{C}{(x-2)^2}  \Rightarrow 3x^2-4 = A(x-2)^2 + B(x+1)(x-2) + C(x+1)$ \\
+Let $x = -1$ then $3-4 =-1 = A(-3)^2 = 9A \Rightarrow A = -\frac{1}{9}$ \\
+Let $x = 2$ then $3(2)^2 -4 = 8 = C(3) \Rightarrow C = \frac{8}{3}$ \\
+Use degree 2 coefficients to get $3 = A + B \Rightarrow 3 = -\frac{1}{9} + B \Rightarrow 3 + \frac{1}{9} = \frac{28}{9} = B $ \\
+We now have $\frac{x^3}{x^3-3x^2+4} = 1 + \frac{ -\frac{1}{9}}{x+1} + \frac{\frac{28}{9}}{x-2} + \frac{\frac{8}{3}}{(x-2)^2}$\\ }{0in}
+
+\item Use your work from the previous part to evaluate the following antiderivative: $$ \int \frac{x^3}{x^3-3x^2+4} \dif x  $$
+\AnswerKeyEntry{\textbullet $ \frac{x^3}{x^3-3x^2+4} = 1 + \frac{ -\frac{1}{9}}{x+1} + \frac{\frac{28}{9}}{x-2} + \frac{\frac{8}{3}}{(x-2)^2} $ \newline
+\textbullet  $  \intop {1 + \frac{ -\frac{1}{9}}{x+1} + \frac{\frac{28}{9}}{x-2} + \frac{\frac{8}{3}}{(x-2)^2} \dif x} = x -\frac{1}{9} \ln{|x+1|} + \frac{28}{9} \ln{|x-2|} - \frac{8}{3} \frac{1}{(x-2)} + C$ }
+%\solushun{ $$ \int {1 + \frac{ -\frac{1}{9}}{x+1} + \frac{\frac{28}{9}}{x-2} + \frac{\frac{8}{3}}{(x-2)^2} dx} = x -\frac{1}{9} \ln{|x+1|} + \frac{28}{9} \ln{|x-2|} - \frac{8}{3} \frac{1}{(x-2)} + C$$}
+\end{itemize}
+
+\end{exercise}
+
+\begin{exercise}{\Coffeecup \Coffeecup \Coffeecup }
+
+Evaluate the following antiderivative using Integration by Parts: $$\int{\sec^5
+{x} \dif x}. $$
+{\bf Hint:} The two integrals from Subsections \ref{SixTrigAntiderivatives} and \ref{reappear} listed below may be helpful!
+
+\begin{align*}
+\int{\sec{x} \dif x}&=\ln{|\sec{x}+\tan{x}|}+C \\
+\int{\sec^3{x} \dif x}&=\frac{1}{2}\left( \sec{x}\tan{x}+\ln{|\sec{x}+\tan{x}|}\right)+C 
+\end{align*}
+
+\AnswerKeyEntry{$\frac{1}{4}\sec^3{x}\tan{x}  +\frac{3}{8} \sec{x}\tan{x}+\frac{3}{8} \ln{|\sec{x}+\tan{x}|}+C$}
+\solushun{Let $u=\sec^3{x}$ then $du =3\sec^2{x} \sec{x}\tan{x} dx$ \\
+Let $dv = \sec^2{x} dx$ then $v=\tan{x}$ \\
+$\int{\sec^5{x} dx}=  \sec^3{x}\tan{x} - 3\int{\tan^2{x}\sec^3{x}dx} =  \sec^3{x}\tan{x} - 3\int{(\sec^2{x}-1)\sec^3{x}dx}$ \\ $=  \sec^3{x}\tan{x} - 3\int{(\sec^5{x}-\sec^3{x})dx} =  \sec^3{x}\tan{x} - 3\int{\sec^5{x}dx} +\int{\sec^3{x}dx}$\\
+$=\sec^3{x}\tan{x}  +\frac{3}{2}\left( \sec{x}\tan{x}+\ln{|\sec{x}+\tan{x}|}\right)- 3\int{\sec^5{x}dx} $ but then we have \\
+$4\int{\sec^5{x}dx}=\sec^3{x}\tan{x}  +\frac{1}{2}\left( \sec{x}\tan{x}+\ln{|\sec{x}+\tan{x}|}\right)$ \\
+so $\int{\sec^5{x}dx}=\frac{\sec^3{x}\tan{x}  +\frac{3}{2}\left( \sec{x}\tan{x}+\ln{|\sec{x}+\tan{x}|}\right)}{4}=\frac{1}{4}\sec^3{x}\tan{x}  +\frac{3}{8} \sec{x}\tan{x}+\frac{3}{8} \ln{|\sec{x}+\tan{x}|}+C$
+\\ }{0in}
+\end{exercise}
+
+
+

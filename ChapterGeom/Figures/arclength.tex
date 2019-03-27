@@ -1,0 +1,28 @@
+
+\begin{asy}
+	size(300);  
+    import graph;
+    import contour;
+
+    real f(real x)
+    {
+    	return 2sin(.5x)+1;
+    }
+
+    
+    xlimits(-.5,5);
+	ylimits(-.5, 3.5);
+    draw(graph(f,-.5,5,n=500),linewidth(1pt)+black);
+    
+    draw(graph(f,1,4,n=500),linewidth(2.5pt)+black);
+    
+	yaxis("$y$", -.5, 3.5, above=true);
+	xaxis("$x$", -.5, 5, above=true);
+    
+    dot((1,1.959),linewidth(6pt));
+    label("$(a,f(a))$",(1,1.959),2N+1.5W);
+    
+    dot((4,2.818),linewidth(6pt));
+    label("$(b,f(b))$",(4,2.818),3S);
+    
+\end{asy}

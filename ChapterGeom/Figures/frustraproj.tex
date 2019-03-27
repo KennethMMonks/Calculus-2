@@ -1,0 +1,60 @@
+
+  	settings.render=0;
+	import three;
+    import graph3;
+    currentprojection=orthographic(0,-0.25,1);
+    currentlight=nolight;
+
+	size(300);
+	
+	//Frustrum
+	real o=0.2;
+	for (real c=1; c<=2; c=c+0.005)
+	{
+		path3 f=(c,c,0)..(0,c,c)..(-c,c,0)..(0,c,-c)..cycle;
+		draw(f,linewidth(1.5)+gray+opacity(o));
+	}
+	
+	//Projection on plane
+	for (real c=1; c<=2; c=c+0.005)
+	{
+		path3 f=(c,0,0)..(0,0,c)..(-c,0,0)..(0,0,-c)..cycle;
+		draw(f,linewidth(1.5)+gray);
+	}
+	
+		
+	//Frustrum Lines
+	//top
+	path3 p1=(2,2,0)..(0,2,2)..(-2,2,0)..(0,2,-2)..cycle;	
+	draw(p1,linewidth(1)+heavygray);
+	//bottom
+	path3 p1=(1,1,0)..(0,1,1)..(-1,1,0)..(0,1,-1)..cycle;
+	draw(p1,linewidth(1)+heavygray);
+	
+	//Projection lines
+	path3 p1=(2,0,0)..(0,0,2)..(-2,0,0)..(0,0,-2)..cycle;	
+	draw(p1,linewidth(1)+deepgray);
+	//bottom
+	path3 p1=(1,0,0)..(0,0,1)..(-1,0,0)..(0,0,-1)..cycle;
+	draw(p1,linewidth(1)+deepgray);
+
+
+	//Labely stuff.
+	draw((1.1,1,0)--(2.1,2,0),dashed);
+	draw((1,1,0)--(1.1,1,0));
+	draw((2,2,0)--(2.1,2,0));
+	label("$L$",(1.6,1.3,0),X+Y);
+
+	draw((1,1,0)--(1,0,0),dashed);
+	draw((-1,1,0)--(-1,0,0),dashed);
+	
+	draw((2,2,0)--(2,0,0),dashed);
+	draw((-2,2,0)--(-2,0,0),dashed);
+	
+	dot((0,0,0),linewidth(3pt));
+	
+	draw((0,0,0)--(1,0,0),dashed);
+	label("$r$",(0.3,0.03,0),X+Y);
+	
+	draw((0,0,0)--(2*cos(20),0,2*sin(-20)),dashed);
+	label("$R$",(0.7,0,-1.6),X+Y);

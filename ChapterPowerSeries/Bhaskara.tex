@@ -1,0 +1,87 @@
+\begin{center}
+{\LARGE \bf Bhaskara's Approximation of Sine}
+
+Kenneth M Monks
+\end{center}
+
+It's important to note that Euler's impressive use and development of power series in the 18th century was far from the first attempt by mathematicians worldwide to try to approximate trig functions via algebraic functions.
+
+Let's compare a far earlier method by Bhaskara during the seventh century in India.  Bhaskara proposed using the following (surprising!) algebraic approximation for sine:
+
+$$ sin(x) \approx \frac{16x(\pi-x)}{5\pi^2-4x(\pi-x)}$$
+
+
+a) Plot both functions using a graphing utility, $sin(x)$ and the approximation.  How do the graphs compare?  What is the worst the error ever is on the interval $\left[ 0,\pi \right] $?  (You can just estimate the error visually from the graph, nothing too technical here.)
+
+\vspace{2in}
+
+b) How crazy is it how crazy good that is?  Right?  I know.
+
+\vspace{1in}
+
+Historians are unsure of how he came upon this formula as he only published the result and not his derivation.  Here we will together go through a plausible line of reasoning which could lead to such a formula, and we will analyze the results and compare them to our power series approximations.
+
+\vspace{.1in}
+
+So suppose we want to approximate sine.  Realistically, we don't gain anything by approximating it outside of the interval $\left[ 0, \pi \right] $ since any other value of sine could be computed via a reference angle to something between zero and $\pi$.  Let's think of some nice properties that sine has on that interval that we would want our approximation to also have:
+
+\vspace{.1in}
+
+-Certainly we want our approximation to be zero at 0 and $\pi$, and for those to be the only zeroes on the interval.
+
+\vspace{.1in}
+
+- Additionally, we'd like our approximation to satisfy the symmetry that sine has on that interval.  In particular, $sin(x)= sin(\pi-x)$.
+
+\vspace{.1in}
+
+Thinking in this manner, a plausible first attempt at approximating sine via something algebraic could be:
+
+$$ sin(x) \approx x(\pi-x)$$
+
+a) Verify this approximation satisfies the two properties listed above.
+
+\vspace{2in}
+
+b) How good of an approximation is this?  Plot both below and describe what is good about the approximation, as well is what is not good about it.   How large does the error get on that interval?
+
+\pagebreak
+
+c) As you probably suspect from your work in b), it seems it would  be wise to scale our approximation down to get the heights closer.  Scale it by whatever constant is needed to get the $y$-value correct at $\pi/2$.  That is, find a real number $a$ such that the approximation $ax(\pi-x)$ is perfect at the point $\pi/2$.
+
+\vspace{2in}
+
+d) How does your new approximation from c) compare?  Does it still satisfy the desired properties from a)?  How large does the error get using the new approximation?
+
+\vspace{3in}
+
+One way we could improve upon what happened in d) is to scale by different amounts at different parts of the interval, rather than just scaling by a constant factor across the whole interval where the ideal scaling factor may be very different from point to point.  We want to scale by something algebraic though to keep our approximation algebraic.  So let's think of different polynomials we could scale by.
+
+\vspace{.1in}
+
+e) Scaling by a constant was essentially scaling by a degree zero polynomial.  The next natural thing to try would be a degree 1 polynomial. Why would scaling it by a degree 1 polynomial not work? (HINT: one of our properties from a) would fail!)
+
+\vspace{2in}
+
+f) Thus, it is reasonable to next try scaling it by a degree 2 polynomial.  In interest of preserving symmetry, we'll scale by something of the form $b+cx(\pi-x)$.  Thus the form of our approximation will be:
+
+$$ sin(x) \approx \frac{ax(\pi-x)}{b+cx(\pi-x)}$$
+
+Why can we assume $b=1$?  (HINT: If $b$ was not 1, how could you reduce the above fraction to get it to be 1?)
+
+\vspace{2in}
+
+g) Use the two known rational values that $\sin(\pi/2)=1$ and $\sin(\pi/6)=1/2$ to solve for $a$ and $c$.  
+
+
+\vspace{2in}
+
+h) Simplify your expression with $a$ and $c$ plugged in to get Bhaskara's formula.
+
+
+
+\vspace{2in}
+
+i) How many terms would you need in the power series for sine to achieve the same accuracy as Bhaskara's formula on that interval?  Use Taylor's Error Theorem to get your result.
+
+

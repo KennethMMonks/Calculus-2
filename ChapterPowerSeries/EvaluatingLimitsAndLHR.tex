@@ -1,0 +1,130 @@
+
+\section{Evaluating Limits Using Power Series}\label{EvalLHR}
+
+Often when faced with an indeterminate form of a limit, it can be resolved by replacing functions with power series.  Specifically, since a limit is trying to study a function as $x$ approaches some value $a$, we use a power series centered at $a$ for the function causing us trouble (or a series centered at whatever value the input is approaching). 
+
+\begin{example}{Evaluating a Limit Using Power Series}
+Consider the limit $$\lim_{x \rightarrow \infty} x\sin\left(\frac{1}{x}\right). $$
+
+First, notice this is of the indeterminate form $0\cdot \infty$.  This is a situation we would have typically handled via LHR, but now we have different tools!  As $x$ approaches infinity, $\frac{1}{x}$ approaches zero, so it makes sense to replace sine by its power series centered at zero.  This will allow us to resolve the indeterminate form using ordinary algebra! 
+
+\begin{align*}
+\lim_{x \rightarrow \infty} x\sin\left(\frac{1}{x}\right) &=\lim_{x \rightarrow \infty} x\left(\frac{1}{x}-\frac{1}{3!}\frac{1}{x^3}+\frac{1}{5!}\frac{1}{x^5}+\cdots\right) \\
+&=\lim_{x \rightarrow \infty} 1-\frac{1}{3!}\frac{1}{x^2}+\frac{1}{5!}\frac{1}{x^4}+\cdots \\
+&= 1-\frac{1}{3!}0^2+\frac{1}{5!}0^4+\cdots \\
+&=1
+\end{align*}
+\end{example}
+
+\begin{exercise}{Checking Against LHR \Coffeecup \Coffeecup}
+Verify the previous limit calculation using LHR. \vspace*{1in}
+\end{exercise}
+
+\begin{exercise}{Practice with Limits via Power Series \Coffeecup \Coffeecup \Coffeecup}
+
+Evaluate each of the following limits two ways:
+\begin{enumerate}
+\item Using a power series centered at the $x$ value that $x$ is approaching. 
+
+\item Via L'Hospital's Rule.
+\end{enumerate}
+
+\begin{itemize}
+
+\item $ \lim_{x\rightarrow 0} \frac{1-\cos(x)}{x}$
+
+\vspace*{1in}
+
+\item $ \lim_{x\rightarrow 0} \frac{1-\cos(x)}{x^2}$
+
+\vspace*{1in}
+
+\item $ \lim_{x\rightarrow 1} \frac{\ln(x)}{x-1}$
+
+\vspace*{1in}
+
+\item $ \lim_{x\rightarrow 1} \frac{\ln(x)}{(x-1)^2}$
+
+\vspace*{1in}
+
+\end{itemize}
+\end{exercise}
+
+
+We at last have the tools to revisit Exercise \ref{LCTomato}.\ref{rabbit} and show where the rabbit came from.
+
+\begin{example}{Cosine of Reciprocals}
+Once again, consider the series $\sum_{n=1}^\infty \left(1-\cos\left(\frac{1}{n}\right)\right)$. 
+Our rabbit was the decision to compare to the series $\sum_{n=1}^\infty\frac{1}{n^2}$.  This decision was not actually arbitrary, but in fact motivated by power series!  As $n$ approaches $\infty$, the quantity $\frac{1}{n}$ approaches zero.  Thus, it makes sense to replace $\cos\left(\frac{1}{n}\right)$ by its power series centered at zero.  Specifically, we have 
+
+\begin{align*}
+1-\cos\left(\frac{1}{n}\right)&=1-\left(1-\frac{1}{2!}\left(\frac{1}{n}\right)^2+\frac{1}{4!}\left(\frac{1}{n}\right)^4-\frac{1}{6!}\left(\frac{1}{n}\right)^6+\cdots\right)\\ 
+&=\frac{1}{2!}\frac{1}{n^2}-\frac{1}{4!}\frac{1}{n^4}+\frac{1}{6!}\frac{1}{n^6}+\cdots\\ 
+\end{align*}
+
+This power series expansion motivates the choice of $\frac{1}{n^2}$ as comparison function, as it is the dominant term in the expression above.  For large $n$, all other terms are insignificant in comparison.   
+
+
+We again demonstrate the summands have the same growth order by taking a limit of their ratios.  This time, instead of doing LHR, we use the above power series expansion.
+\begin{align*}
+\lim_{n\to\infty}\frac{1/n^2}{1-\cos\left(\frac{1}{n}\right)}&=\lim_{n\to\infty}\frac{1/n^2}{\frac{1}{2!}\frac{1}{n^2}-\frac{1}{4!}\frac{1}{n^4}+\frac{1}{6!}\frac{1}{n^6}+\cdots} \\
+&=\lim_{n\to\infty}\frac{\left(1/n^2\right)\cdot n^2}{\left(\frac{1}{2!}\frac{1}{n^2}-\frac{1}{4!}\frac{1}{n^4}+\frac{1}{6!}\frac{1}{n^6}+\cdots\right)\cdot n^2} \\
+&=\lim_{n\to\infty}\frac{1}{\frac{1}{2!}-\frac{1}{4!}\frac{1}{n^2}+\frac{1}{6!}\frac{1}{n^4}+\cdots } \\
+&=\lim_{n\to\infty}\frac{1}{\frac{1}{2}-0+0-0+\cdots} \\
+&=\frac{1}{\frac{1}{2}}\\
+&=2.
+\end{align*}
+\end{example}
+
+\begin{exercise}{An Insignificant Calculation \Coffeecup}
+In the above example, we made the claim that for large $n$, the later terms of $$ \frac{1}{2!}\frac{1}{n^2}-\frac{1}{4!}\frac{1}{n^4}+\frac{1}{6!}\frac{1}{n^6}+\cdots$$ are insignificant compared to the term $\frac{1}{2!}\frac{1}{n^2}$.  To check this, fill out the following table of values:
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|}\hline  & & & \\
+$n$ & $\frac{1}{n^2} $ & $ \frac{1}{n^4} $ & $ \frac{1}{n^6}$ \\  
+ & & & \\ \hline
+ & & & \\
+10 & & & \\
+ & & & \\
+100 & & & \\ 
+& & & \\ \hline
+\end{tabular}
+\end{center}
+
+\end{exercise}
+\begin{exercise}{Now You Too Can Be a Magician \Coffeecup \Coffeecup \Coffeecup}
+Determine the convergence or divergence of the following series by using power series to find a suitable comparison function and then applying LCT.
+\begin{itemize}
+\item $ \sum_{n=1}^\infty\arctan\left(\frac{2}{n}\right)$ \vspace*{1in}
+\item $ \sum_{n=1}^\infty\arctan\left(\frac{2}{n^2}\right)$ \vspace*{1in}
+\item $ \sum_{n=1}^\infty\arcsin\left(\arctan\left(\frac{2}{n}\right)\right)$ \vspace*{1in}
+\end{itemize}
+\AnswerKeyEntry{Choices of comparison functions and conclusions are as follows: \textbullet $\frac{1}{n}$, diverges \textbullet $\frac{1}{n^2}$, converges \textbullet $\frac{1}{n}$, diverges. }
+\end{exercise}
+Also, as promised in Section \ref{LHR}, we provide a LHR \LHR{justification using power series}!
+
+\begin{exercise}{Seeing LHR through a Power Series Lens \Coffeecup \Coffeecup \Coffeecup \Coffeecup}
+
+Here we analyze the case where $f(x)$ and $g(x)$ both are functions with convergent power series expansions at a real number $c$.  Assume also $$\lim_{x \rightarrow c}f(x)=\lim_{x \rightarrow c}g(x)=0.$$  We now write out the power series for each function centered at $c$.
+
+$$ f(x)=a_1(x-c)+a_2(x-c)^2+a_3(x-c)^3+\cdots$$
+$$ g(x)=b_1(x-c)+b_2(x-c)^2+b_3(x-c)^3+\cdots$$
+
+If $\lim_{x \rightarrow c}f(x)=\lim_{x \rightarrow c}g(x)=0$ and $b_1\not =0$, then 
+ \begin{align*}
+  \lim_{x \rightarrow c}\frac{f(x)}{g(x)}&=\lim_{x \rightarrow c}\frac{a_0+a_1(x-c)+a_2(x-c)^2+a_3(x-c)^3+\cdots}{b_0+b_1(x-c)+b_2(x-c)^2+b_3(x-c)^3+\cdots} \\ 
+  &=\lim_{x \rightarrow c}\frac{0+a_1(x-c)+a_2(x-c)^2+a_3(x-c)^3+\cdots}{0+b_1(x-c)+b_2(x-c)^2+b_3(x-c)^3+\cdots} \\
+  &=\lim_{x \rightarrow c}\frac{(x-c)\left(a_1+a_2(x-c)+a_3(x-c)^2+\cdots\right)}{(x-c)\left(b_1+b_2(x-c)+b_3(x-c)^2+\cdots\right)} \\
+  &=\lim_{x \rightarrow c}\frac{a_1+a_2(x-c)+a_3(x-c)^2+\cdots}{b_1+b_2(x-c)+b_3(x-c)^2+\cdots} \\
+  &=\frac{a_1}{b_1} \\
+  &=\lim_{x \rightarrow c}\frac{a_1+2a_2(x-c)+3a_3(x-c)^2+\cdots}{b_1+2b_2(x-c)+3b_3(x-c)^2+\cdots} \\
+  &=\lim_{x \rightarrow c}\frac{f'(x)}{g'(x)}.
+  \end{align*} 
+\begin{itemize}
+\item How can we handle the case where $a_1=b_1=0$?  \vspace*{1in}
+\item How can we handle the case where $b_1=0$ but $a_1\not = 0$?  \vspace*{1in}
+\item What if $c=\infty$ instead of a real number? \vspace*{1in}
+\item What if the indeterminate limit is of the form $\frac{\infty}{\infty}$ instead of $\frac{0}{0}$? \vspace*{1in}
+\end{itemize}
+\AnswerKeyEntry{If the expression $\frac{f(x)}{g(x)}$ is indeterminate of the form $\frac{\infty}{\infty}$, we can trade it out for the expression $\frac{1/g(x)}{1/f(x)}$, which brings us back to the $\frac{0}{0}$ case.}
+\end{exercise}

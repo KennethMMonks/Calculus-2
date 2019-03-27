@@ -1,0 +1,25 @@
+	size(300);  
+    import graph;
+    import contour;
+
+    draw((0,0)--(1.75,0.5*1.75),linewidth(1pt)+black);
+ 
+    draw((0,0)--(1.75,-0.5*1.75),linewidth(1pt)+black);
+    
+    draw((1.75,0)--(1.75,0.5*1.75),linewidth(0.7pt)+dashed);
+	label("$r$",(1.75,0.25*1.75),2E);    
+
+	draw((0.75,0)--(0.75,0.5*0.75),linewidth(0.7pt)+dashed);
+	label("$x$",(0.75,0),2S);
+    
+    
+	yaxis(-1, 1, above=true);
+	xaxis(-.5, 2.5, above=true);
+    
+    dot((1.75,0.5*1.75),linewidth(6pt));
+    label("$(h,r)$",(1.75,0.5*1.75),2N);
+    
+    dot((1.75,-0.5*1.75),linewidth(6pt));
+    label("$(h,-r)$",(1.75,-0.5*1.75),2S);
+    
+    dot((0,0),linewidth(6pt));

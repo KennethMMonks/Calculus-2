@@ -1,0 +1,14 @@
+\section{Chapter Summary}
+The set of {\bf complex numbers} is the set of all numbers expressible as $a+bi$ for real numbers $a$ and $b$.  In the {\bf complex plane}, we plot $a$ as the horizontal and $b$ as the vertical. Allowing complex numbers in our calculus adventures relates many seemingly unrelated objects!  
+
+\begin{enumerate}
+\item {\bf Euler's Identity and consequences:} By setting $x=i\theta$ in our power series for the exponential function, we obtain {\bf Euler's Identity}.  This is the relationship $$e^{i\theta}=\cos\left(\theta\right)+i\sin\left(\theta\right)$$ which is usually then multiplied by $r$ to obtain
+$$re^{i\theta}=\underset{x\text{ in polar coords}}{\underbrace{r\cos\left(\theta\right)}}+i\underset{y\text{ in polar coords}}{\underbrace{r\sin\left(\theta\right)}}.$$  This means that in the complex plane we have $re^{i\theta}$ as the point at angle $\theta$ and radius $r$.  This relationship has many consequences, including the following:
+\begin{enumerate}
+\item {\bf Proving trig identities:} Properties of exponentials can be turned into trig identities using Euler's Identity.
+\item {\bf Calculating roots of complex numbers:} To find the $n^{th}$ roots of a complex number $a+bi$, notice that this is the same as solving the equation $z^n=a+bi.$  Rewrite everything in polar form, distribute the $n$ power, and equate radius and angles to find the roots. 
+\item {\bf Calculating logarithms of complex numbers:} To compute $\ln\left(a+bi\right)$, write $a+bi$ in polar form with an angle chosen in the branch cut $-\pi/2\leq \theta<3\pi/2$.  From there, use properties of logs to simplify the expression.
+\item {\bf Calculating exponentials with a complex base:} Rewrite as ``$e$ to the $\ln$'' of the expression and then use the method for complex logarithms described above.
+\end{enumerate}
+\item {\bf Revisiting PFD with complex numbers:} With complex numbers, there is no need for the irreducible quadratic case in a PFD.  Instead, we can completely factor the denominator of any rational function into a product of powers of linear factors.
+\end{enumerate}

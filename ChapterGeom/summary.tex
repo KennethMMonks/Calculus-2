@@ -1,0 +1,22 @@
+\section{Chapter Summary}
+
+In this chapter, we explored how integrals can inform geometric properties of our shapes.  There were four primary quantities we studied.
+
+\begin{enumerate}
+\item {\bf Length:}  We defined the {\bf arc length} of the graph of a function $f(x)$ as $$ L= \int_{x=a}^{x=b} \sqrt{1+\left( f'(x)\right)^2 } \dif x. $$
+\item {\bf Area:} 
+\begin{enumerate}
+\item The {\bf area between curves} given by the graphs of functions $f(x)$ and $g(x)$ is $$L= \int_{x=a}^{x=b} f(x)-g(x) \dif x. $$
+\item If the region of interest is unbounded horizontally or vertically, the corresponding integral is called {\bf improper}.  To evaluate, we create a new bound $c$ and take a limit as $c$ approaches the trouble spot.  To evaluate the limits that arise in this context, we often need {\bf LHR}.
+\item If the graph of a function $f(x)$ is revolved about the $y$-axis, the {\bf surface area} of the resulting shape can be computed as $$SA= \int_{x=a}^{x=b} 2 \pi x\sqrt{1+\left( f'(x)\right)^2 } \dif x .$$  Notice that this integrand is just $2\pi x$ (representing circumference of a circle of radius $x$) times the arc length integrand.
+\end{enumerate}
+ 
+\item {\bf Volume:} \begin{enumerate}
+\item The {\bf volume by cross-sections} of a 3D solid can be computed by slicing it into 2D regions of area $A(x)$ at location $x$ and then integrating the areas. Specifically, $$V=\int_{x=a}^{x=b}A(x)\dif x. $$
+\item The {\bf volume by cylindrical shells} of a 3D solid can be computed if the solid has rotational symmetry about an axis.  Without loss of generality we assume this axis is the $y$-axis, in which case the volume is $$ V= \int_{x=a}^{x=b} 2 \pi x f(x) \dif x. $$  Notice this integrand is just $2\pi x$ (representing circumference of a circle of radius $x$) times the integrand for area between $f(x)$ and $0$.
+\end{enumerate}
+\item {\bf Center of Mass:} The {\bf center of mass} of a region $R$ is the point $$\left(\bar{x},\bar{y}\right)=\left(M_y/m,M_x/m\right)$$ where $m$ is the area of $R$ and $M_y$ and $M_x$ are the {\bf moment integrals} with respect to the $y$ and $x$ axes, respectively.  These are computed as follows: \begin{align*}
+ M_y&=  \int_{x=a}^{x=b} x\left(f(x)-g(x)\right) \dif x\\
+ M_x&=  \int_{x=a}^{x=b} \frac{1}{2}\left(f(x)+g(x)\right)\left(f(x)-g(x)\right)\dif x.
+\end{align*} 
+\end{enumerate}

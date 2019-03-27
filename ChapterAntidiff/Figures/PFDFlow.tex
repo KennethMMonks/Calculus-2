@@ -1,0 +1,55 @@
+\begin{tikzpicture}[
+      >=latex',
+      auto
+    ]
+    
+    \tikzstyle{box} = [rectangle, rounded corners, minimum width=4.75cm, minimum height=1cm, text centered, text width=4.25cm, draw=black, fill=gray!15, drop shadow]
+    
+    \tikzstyle{arrow} = [thick,>=stealth,arrowhead=5mm,->]
+    
+    \node [box] (given) {
+    	Given a rational function of the form $\frac{p(x)}{q(x)}$, \\
+        Is the degree of $p(x)$ \textit{strictly} less than the degree of $q(x)$?
+        };
+        
+	\node [box]  (factor) [node distance=2cm and -1cm,below left=of given] {Factor the denominator into a product of powers of linear and irreducible quadratic polynomials. \\
+    Consider the following for each of the factors.};
+    \node [box] (P1Big) [node distance=2cm and -1cm,below right=of given] {Perform long division and split the fraction into quotient and remainder. Consider the remainder.};    
+    
+    \node [box]  (linear) [node distance=2cm and -1.75cm,below left=of factor] {Decompose by creating a fraction. Make the denominator the factor and the numerator an unknown constant (such as ``$A$''). \\
+    Does the factor have a power greater than one?};
+    \node [box]  (irreducible) [node distance=2cm and 2.75cm, below right= of factor] {Decompose by creating a fraction. Make the denominator the factor and the numerator an unknown linear expression (such as ``$Ax+B$'').\\
+    Does the factor have a power greater than one?};
+    
+    \node [box] (multPower) [node distance =1cm and .5cm, below right= of linear] {Repeat the decomposition for each power; from one to the value of the power.};
+    
+    \node [box] (sum) [node distance=1.25cm, below =of multPower] {Sum all fractions created from factors and set equal to original rational function.};
+    
+    \node [box] (mult) [node distance=2cm and .5cm, below left =of sum] {Multiply each side of your equation by $q(x)$ to clear all fractions.};
+    \node [box] (solve) [node distance=.5cm, right =of mult] {Solve for all unknown constants.};
+    \node [box] (finish) [node distance=.5cm, right =of solve] {Plug your constants back in. Voila! You're done!};
+
+       
+    
+    \draw [->, >=open triangle 60, ultra thick,line width= 3pt, shorten >=2pt] (given) -- ($(given.south)+(0,-1)$) -| (factor) node[above,pos=0.25] {Yes} ;
+    \draw [->, >=open triangle 60, ultra thick,line width= 3pt, shorten >=2pt] (given) -- ($(given.south)+(0,-1)$) |- (P1Big) node[above,fill=white,pos=0.35] {No} ;
+    
+    \draw [->, >=open triangle 60, ultra thick,line width= 3pt, shorten >=2pt] (P1Big) -- ($(P1Big.north)+(0,2.75)$) |- (given.east);
+    
+    \draw [->, >=open triangle 60, ultra thick,line width= 3pt, shorten >=2pt] (factor) -- ($(factor.south)+(0,-.75)$) -| (linear) node[above,pos=0.25] {Linear Factors} ;
+    \draw [->, >=open triangle 60, ultra thick,line width= 3pt, shorten >=2pt] (factor) -- ($(factor.south)+(0,-.75)$) -| (irreducible) node[above,pos=0.25] {Irreducible Quadratic Factors} ;
+    
+    \draw [->, >=open triangle 60, ultra thick, line width=3pt, shorten >=2pt] (linear.east) -- ($(linear.east)+(1,0)$) -| ($(multPower.north)+(-.75,0)$) node[above,pos=0.25] {Yes};
+    \draw [->, >=open triangle 60, ultra thick, line width=3pt, shorten >=2pt] ($(irreducible.west)+(0,.2)$) -- ($(irreducible.west)+(-1,.2)$) -| ($(multPower.north)+(.75,0)$) node[above,pos=0.25] {Yes};
+     \draw [->, >=open triangle 60, ultra thick, line width=3pt, shorten >=2pt] ($(multPower.south)$) -- ($(sum.north)$);
+    
+    \draw [->, >=open triangle 60, ultra thick, line width=3pt, shorten >=2pt] (linear.south) -- ($(linear.south)+(0,-3)$) |- (sum.west) node[above,fill=white,pos=-.1] {No};
+    \draw [->, >=open triangle 60, ultra thick, line width=3pt, shorten >=2pt] (irreducible.south) -- ($(irreducible.south)+(0,-3)$) |- (sum.east) node[above,fill=white,pos=-.3] {No};
+    
+    \draw [->, >=open triangle 60, ultra thick, line width=3pt, shorten >=2pt] (sum.south) -- ($(sum.south)+(0,-1)$) -| (mult.north);
+    
+    \draw [->, >=open triangle 60, ultra thick, line width=3pt, shorten >=2pt] (mult.south) -- ($(mult.south)+(0,-1)$) -| ($(solve.south)+(-.75,0)$);
+    \draw [->, >=open triangle 60, ultra thick, line width=3pt, shorten >=2pt] ($(solve.north)+(0.75,0)$) -- ($(solve.north)+(0.75,1)$) -| (finish.north);
+
+
+\end{tikzpicture}

@@ -1,0 +1,26 @@
+\section{Chapter Summary}
+In this chapter, we undertook the mission of rewriting the many different types of nonpolynomial functions we have (especially rational, exponential, logarithmic, trigonometric, inverse trigonometric, and radical) as polynomials (usually of infinite degree).
+\begin{enumerate}
+\item {\bf Building the theory of power series!}  
+\begin{enumerate}
+\item {\bf Given a function, find its power series centered at $a$:} Given some function $f(x)$, rewrite it as $$f(x)=a_0+a_1(x-a)+a_2(x-a)^2+a_3(x-a)^3+a_4(x-a)^4+\cdots$$
+via one of the following methods: \begin{itemize}
+\item {\bf Brute force method:}  Repeatedly differentiate the function, plug in $x=a$, and solve for the coefficients one at a time until a pattern appears or you have enough terms for your purposes.
+\item {\bf New series from old:} Using a known power series as a starting point and then manipulating via substitution, algebra, differentiation, antidifferentiation, or other valid forms of trickery.
+\end{itemize}
+\item {\bf Given a power series, find the interval of convergence:} Use the ratio test to find the interior of the interval.  The endpoints then will have to be plugged in one at a time and convergence can be determined using some test other than the ratio test.
+\item {\bf Use Taylor's Error Bound to determine the accuracy in approximating functions with finite degree power series:} When trying to compute the value of $f(x)$ via a finite power series approximation, we can obtain an upper bound for the error as follows: $$\left| f(x)- \underset{\text{degree }n\text{ power series for }f(x)\text{ centered at }a}
+{\underbrace{\left(a_0+a_1\left(x-a\right)+a_2\left(x-a\right)^2+a_3\left(x-a\right)^3+\cdots+a_n\left(x-a\right)^n\right)}}\right|\leq \frac{M|x-a|^{n+1}}{(n+1)!} $$
+where $M$ is an upper bound for the absolute value of the $(n+1)^{\text{st}}$ derivative of $f$ between $a$ and $x$.
+\end{enumerate}
+\item {\bf Applications of power series!}  There are of course many many many more applications of power series, but we focused on a few in particular.
+\begin{enumerate}
+\item {\bf Analyzing graphs using power series:} Just as we approximated graphs using tangent lines in Calc I, we can now approximate the shapes of graphs via tangent lines, parabolas, cubics, etc.  $$f(x)=\underset{\underset{\hspace{.5in}\ddots}{\text{approximating cubic at }x=a}}{ \underbrace{\underset{\text{approximating parabola at }x=a}{ \underbrace{\underset{\text{tangent line at }x=a}{\underbrace{\underset{y \text{ coordinate at }x=a}
+{\underbrace{a_0}}+a_1\left(x-a\right)}}+a_2\left(x-a\right)^2}}+a_3\left(x-a\right)^3}}+\cdots $$
+
+\item {\bf Evaluate indeterminate forms of limits using power series:} We can justify LHR (or bypass it) by instead replacing functions by power series centered at the value the input is approaching, and then evaluate the limit via algebra.
+
+\item {\bf Evaluate infinite series using power series:}  Given an infinite series, find a closed form (if possible) by identifying a power series it resembles and performing appropriate manipulations (substitutions for $x$, algebra, etc) to make it match.
+
+\end{enumerate}
+\end{enumerate}

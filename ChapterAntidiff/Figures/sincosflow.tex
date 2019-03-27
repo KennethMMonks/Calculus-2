@@ -1,0 +1,58 @@
+
+
+%\begin{figure}
+	%\centering
+	\begin{tikzpicture}[
+      >=latex',
+      auto
+    ]
+    
+    \tikzstyle{box} = [rectangle, rounded corners, minimum width=4.75cm, minimum height=1cm, text centered, text width=4.25cm, draw=black, fill=gray!15, drop shadow]
+    
+    \tikzstyle{arrow} = [thick,>=stealth,arrowhead=5mm,->]
+    
+    \node [box] (given) {
+    	Given\\ $\int \sin^n (x) \cdot \cos^m (x) \mathtt{d}x$. \\
+        Is at least one of $n$ or $m$ odd?
+        };
+	\node [box]  (nmOdd) [node distance=2cm and -1cm,below left=of given] {Is $n$ odd or is $m$ odd?};
+    \node [box]  (nOdd) [node distance=2cm and -1.75cm,below left=of nmOdd] {Break off one power of sine so you have: \\ 
+    $\int \sin^{n-1}(x)\cos^m(x)\sin(x)\mathtt{d}x $ \\};
+    \node [box]  (bothOdd) [node distance=7cm,below=of nmOdd] {Your choice! Use one of the following substitutions:
+    $\cos^2(x)=1-\sin^2(x)$\\
+    Or! \\
+    $\sin^2(x)=1-\cos^2(x)$
+    };
+    
+    \node [box]  (nOddSub) [node distance=1.5cm,below=of nOdd] {Use the substitution: \\
+    $\sin^2(x)=1-\cos^2(x)$};
+    \node [box]  (mOdd) [node distance=2cm and -1.75cm,below right=of nmOdd] {Break off one power of cosine so you have: \\ 
+    $\int \cos^{m-1}(x)\sin^n(x)\cos(x)\mathtt{d}x $ \\};
+    \node [box]  (mOddSub) [node distance=1.5cm,below=of mOdd] {Use the substitution: \\
+    $\cos^2(x)=1-\sin^2(x)$};
+    
+    \node [box] (nmEven) [node distance=2cm and -1cm,below right=of given] {Proceed with half angle identities.};
+    \node [box] (nmEven2) [node distance=2cm and -3cm,below right=of nmEven] {
+    Cosine half angle identity: \\
+    $\cos^2(x)=\frac{1+\cos(2x)}{2} $ \\
+    \vspace{10pt}
+    Sine half angle identity: \\
+    $ \sin^2(x)=\frac{1-\cos(2x)}{2}$};
+    
+    
+    
+    \draw [->, >=open triangle 60, ultra thick,line width= 3pt, shorten >=2pt] (given) -- ($(given.south)+(0,-1)$) -| (nmOdd) node[above,pos=0.25] {Yes} ;
+    \draw [->, >=open triangle 60, ultra thick,line width= 3pt, shorten >=2pt] (given) -- ($(given.south)+(0,-1)$) -| (nmEven) node[above,pos=0.25] {No} ;
+    
+    \draw [->, >=open triangle 60, ultra thick,line width= 3pt, shorten >=2pt] (nmOdd) -- ($(nmOdd.south)+(0,-.75)$) -| (nOdd) node[above,pos=0.25] {$n$ is odd} ;
+    \draw [->, >=open triangle 60, ultra thick,line width= 3pt, shorten >=2pt] (nmOdd) -- ($(nmOdd.south)+(0,-.75)$) -| (mOdd) node[above,pos=0.25] {$m$ is odd} ;
+    \draw [->, >=open triangle 60, ultra thick,line width= 3pt, shorten >=2pt] (nmOdd) -- (bothOdd) node[above, fill=white, pos=0.25] {Both odd} ;
+    
+    \draw [->, >=open triangle 60, ultra thick,line width= 3pt, shorten >=2pt] (nOdd) -- (nOddSub) ;
+    \draw [->, >=open triangle 60, ultra thick,line width= 3pt, shorten >=2pt] (mOdd) -- (mOddSub) ;
+    
+    
+    \draw [->, >=open triangle 60, ultra thick,line width= 3pt, shorten >=2pt] (nmEven) -- ($(nmEven.south)+(0,-.75)$) -| (nmEven2) ;
+	
+	\end{tikzpicture}
+%\end{figure}

@@ -1,0 +1,36 @@
+	size(300);  
+    import graph;
+
+    real f(real x)
+    {
+    	return x^2;
+    }
+    
+    real g(real x)
+    {
+    	return x;
+    }
+    
+    path pp1=buildcycle(graph(f,0,1),graph(g,0,1));
+    fill(pp1,mediumgray);
+    
+    xlimits(-0.25, 1.2);
+	ylimits(-0.25, 1.2);
+    draw(graph(f,-0.2,1.08,n=500),linewidth(0.9pt));
+    draw(graph(g,-0.2,1.1,n=500),linewidth(0.9pt));
+	yaxis("$y$", -0.25, 1.2, above=true);
+	xaxis("$x$", -0.25, 1.2, above=true);
+	
+	label("$f(x)$",(0.5,0.63));
+	label("$g(x)$",(0.65,0.3));
+	
+	real i1=0;
+	dot((i1,(i1)),linewidth(6pt));
+	
+	real i2=1;
+	dot((i2,(i2)),linewidth(6pt));
+	
+	//draw((i1,0)--(i1,(i1-0.25)^2+0.1),dashed);
+	//draw((i2,0)--(i2,(i2-0.25)^2+0.1),dashed);
+	label("$(0,0)$",(0.07,-0.05));
+	label("$(1,1)$",(1.05,0.92));

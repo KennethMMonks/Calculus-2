@@ -1,0 +1,84 @@
+%%--------Solutions------%%
+
+\newcommand{\solushun}[2]{
+   
+   \ifnum\showsolutions=1
+       \hrulefill \\
+       {\bf A Solution:}
+       #1 \vspace*{\baselineskip}
+       \hrulefill
+   \fi
+ 
+   \ifnum\showsolutions=0 \vspace*{#2}
+   \fi
+}
+
+%%-------------AnswerKey----%%
+ %\Newassociation{solution}{Soln}{AnswerKey}
+
+% \renewcommand{\Solnlabel}[1]{\bf Exercise ~\thesubsection.#1.}
+
+\newcommand{\AnswerKeyEntry}[1]{\Writetofile{AnswerKey}{
+{\noindent \bf Exercise ~\thesubsection.\thecounter.} #1 \newline \newline } }
+
+%%-----ColorBox----------%%
+\newtcolorbox{moretbox}[2][]{colback=black!50,
+colframe=black!75!black,fonttitle=\bfseries,colbacktitle=gray!10,coltitle=black,enhanced,attach boxed title to top left={yshift=-2mm,xshift=5mm},title=#2,#1}
+
+       \tcbset{colframe=black!50,colback=white,colupper=black,
+	fonttitle=\bfseries,nobeforeafter,center title}
+
+
+%%----EXAMPLE---------%%
+
+    \newenvironment{example}[1]{\refstepcounter{counter}
+    \medskip
+    \vspace*{.05in}
+    \noindent
+\begin{moretbox}[breakable,colback=gray!5,colbacktitle=gray!15]{\textbf{Example~\thesubsection.\thecounter. #1}}
+ } 
+ {
+\end{moretbox} \medskip
+   }
+   
+%%----EXERCISE---------%%   
+
+\newenvironment{exercise}[1]{\refstepcounter{counter}  \medskip 
+    \vspace*{.05in}
+    \noindent
+\begin{moretbox}[breakable,colback=white,colbacktitle=gray!15]{\textbf{Exercise~\thesubsection.\thecounter. #1}}
+\medskip } 
+ { \medskip 
+\end{moretbox} \medskip
+   }
+%%----THEOREM---------%%
+    \newenvironment{theorem}[1]{\refstepcounter{counter}  \medskip     
+    \vspace*{.05in}
+    \noindent
+\begin{moretbox}[colback=gray!5,colbacktitle=gray!15]{\textbf{Theorem~\thesubsection.\thecounter. #1}}
+ } 
+ {
+\end{moretbox} \medskip
+   }
+   
+%%----DEFINITION---------%%
+
+\newenvironment{definition}[1]{\refstepcounter{counter}  \medskip 
+    \vspace*{.05in}
+    \noindent
+\begin{moretbox}[colback=gray!5,colbacktitle=gray!15]{\textbf{Definition~\thesubsection.\thecounter. #1}}
+ } 
+ {
+\end{moretbox} \medskip
+   }
+
+%%------Formula Boxes---------%%
+\newcommand{\FormulaBox}[2]{
+\begin{center}
+\tcbox[left=0mm,right=0mm,top=0mm,bottom=0mm,boxsep=0mm,toptitle=0.5mm,bottomtitle=0.5mm,center title,title=#1]
+{
+	\renewcommand*{\arraystretch}{1.8} 
+  #2
+}
+\end{center}}
+

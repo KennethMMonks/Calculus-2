@@ -1,0 +1,30 @@
+\section{Chapter Summary}
+
+A {\bf differential equation} is an equation involving an unknown function $y(x)$ and one or more of its derivatives.  The goal is to solve for an infinite family of functions $y(x)$ that satisfy the equation, or to find just a single function that solves the equation if a suitable {\bf initial condition} is provided.  There are many methods for solving DEs, but we focused on two in particular.  
+
+\begin{enumerate}
+\item {\bf Separation of variables:} To solve via separation of variables, we follow the following steps:
+\begin{itemize}
+\item Write right-hand side of the differential equation in factored form, producing a DE in the form $ \frac{dy}{dx}=F(x)G(y)$ (if possible). 
+\item Separate variables by multiplying both sides by $\frac{1}{G(y)}\dif x$.
+\item Antidifferentiate both sides.   
+\item Solve for $y$, if possible.  (If not, we at least have an implicit solution.)
+\end{itemize}
+This method is usually quite straightforward to carry out.  The drawback is that most Differential Equations are not separable, meaning that it is impossible to write it as $ \frac{dy}{dx}=F(x)G(y)$.  Thus, the method usually fails as soon as it gets started.
+
+\item {\bf Power series solutions:}  This method is far more robust as it does not depend on the DE being separable.  It applies to more DEs, but be warned it is typically far messier!  The steps are as follows:
+\begin{itemize}
+\item Set the unknown function $y$ equal to an unknown power series: $$y(x)=a_0+a_1x+a_2x^2+a_3x^3+\cdots. $$
+\item Plug the power series into the DE for all occurrences of $y$.  Expand and combine like terms. 
+\item Equate coefficients one degree at a time.  This will create an infinite system of equations of the following form: \begin{align*}
+\text{Left-hand side degree zero coefficient} &=\text{Right-hand side degree zero coefficient} \\
+\text{Left-hand side degree one coefficient} &=\text{Right-hand side degree one coefficient} \\
+\text{Left-hand side degree two coefficient} &=\text{Right-hand side degree two coefficient} \\
+\text{Left-hand side degree three coefficient} &=\text{Right-hand side degree three coefficient} \\
+&\vdots
+\end{align*}
+\item Solve for the coefficients $a_0$, $a_1$, $a_2, \ldots$ one at a time in terms of $a_0$.  (If you have an initial condition, $a_0$ will just be a number. Otherwise leave everything in terms of $a_0$.) 
+\item Plug those coefficients back into the power series expansion for $y$ to obtain a power series solution. \item Try to recognize that power series as a known function or variant thereof.  
+\end{itemize}
+One can visualize solutions to DEs via a {\bf slope field}, a grid of arrows that shows the value of $\frac{\dif y}{\dif x}$ at each point as the slope of the arrow.  The solutions to the differential equation are functions that essentially follow the directions given by the arrows, starting at some initial condition.
+\end{enumerate}

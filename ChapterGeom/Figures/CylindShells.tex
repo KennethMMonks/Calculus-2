@@ -1,0 +1,173 @@
+
+  	settings.render=0;
+	import three;
+    import graph3;
+    currentprojection=orthographic(0,-0.38,1);
+    currentlight=nolight;
+
+	size(300);
+    
+    
+    //CYLINDERS!!!!
+    
+    real o=0.2;
+    
+    //Cylinder 1
+   	real c=0.15;
+    for (c; c<0.4; c=c+0.005)
+    {
+        path3 c1=(c,0.405,0)..(0,0.405,c)..(-c,0.405,0)..(0,0.405,-c)..cycle;
+    	draw(c1,linewidth(1pt)+gray+opacity(o));
+    }
+        
+   	real c=0.405;
+    for (c; c>0; c=c-0.005)
+    {
+        path3 c1=(0.15,c,0)..(0,c,0.15)..(-0.15,c,0)..(0,c,-0.15)..cycle;
+    	draw(c1,linewidth(1pt)+gray+opacity(o));
+    }
+        
+        
+     //Cylinder 2
+    real c=0.4;
+    for (c; c<1.1;c=c+0.005)
+    {
+        path3 c1=(c,0.88,0)..(0,0.88,c)..(-c,0.88,0)..(0,0.88,-c)..cycle;
+    	draw(c1,linewidth(1pt)+gray+opacity(o));
+    }
+        
+   	real c=0.88;
+    for (c; c>0; c=c-0.005)
+    {
+        path3 c1=(0.4,c,0)..(0,c,0.4)..(-0.4,c,0)..(0,c,-0.4)..cycle;
+    	draw(c1,linewidth(1pt)+gray+opacity(o));
+    }
+    	
+    real c=0.88;
+    for (c; c>0; c=c-0.005)
+    {
+        path3 c1=(1.1,c,0)..(0,c,1.1)..(-1.1,c,0)..(0,c,-1.1)..cycle;
+    	draw(c1,linewidth(1pt)+gray+opacity(o));
+    }
+        
+    //Cylinder 3   
+    	
+    real c=1.1;
+    for (c; c<1.35;c=c+0.005)
+    {
+        path3 c1=(c,0.405,0)..(0,0.405,c)..(-c,0.405,0)..(0,0.405,-c)..cycle;
+    	draw(c1,linewidth(1pt)+gray+opacity(o));
+    }
+        
+    real c=0.405;
+    for (c; c>0; c=c-0.005)
+    {
+        path3 c1=(1.35,c,0)..(0,c,1.35)..(-1.35,c,0)..(0,c,-1.35)..cycle;
+    	draw(c1,linewidth(1pt)+gray+opacity(o));
+    }
+    
+    //Cylinder Bottom
+    
+    real c=0.15;
+    for (c; c<1.35; c=c+0.005)
+    {
+        path3 c1=(c,0,0)..(0,0,c)..(-c,0,0)..(0,0,-c)..cycle;
+    	draw(c1,linewidth(1pt)+gray+opacity(o));
+    }
+    
+	//Redraw Cylinder marking things:
+	
+	//1
+	real a=0.15;
+		path3 cyl1=(a,(-2(a-0.75)^2+1.125),0)..(0,(-2(a-0.75)^2+1.125),a)..(-a,(-2(a-0.75)^2+1.125),0)..(0,(-2(a-0.75)^2+1.125),-a)..cycle;
+    	draw(cyl1,linewidth(1pt)+heavygray);
+    	
+    path3 cyl11=(0.4,(-2(a-0.75)^2+1.125),0)..(0,(-2(a-0.75)^2+1.125),0.4)..(-0.4,(-2(a-0.75)^2+1.125),0)..(0,(-2(a-0.75)^2+1.125),-0.4)..cycle;
+    	draw(cyl11,linewidth(1pt)+heavygray);
+    
+    //2	
+   	real a=0.4;
+		path3 cyl2=(a,(-2(a-0.75)^2+1.125),0)..(0,(-2(a-0.75)^2+1.125),a)..(-a,(-2(a-0.75)^2+1.125),0)..(0,(-2(a-0.75)^2+1.125),-a)..cycle;
+    	draw(cyl2,linewidth(1pt)+heavygray);
+    	
+    path3 cyl22=(1.1,(-2(a-0.75)^2+1.125),0)..(0,(-2(a-0.75)^2+1.125),1.1)..(-1.1,(-2(a-0.75)^2+1.125),0)..(0,(-2(a-0.75)^2+1.125),-1.1)..cycle;
+    	draw(cyl22,linewidth(1pt)+heavygray);
+    	
+    //3
+    real a=1.35;
+		path3 cyl3=(1.1,(-2(a-0.75)^2+1.125),0)..(0,(-2(a-0.75)^2+1.125),1.1)..(-1.1,(-2(a-0.75)^2+1.125),0)..(0,(-2(a-0.75)^2+1.125),-1.1)..cycle;
+    	draw(cyl3,linewidth(1pt)+heavygray);
+    
+    path3 cyl33=(1.35,(-2(a-0.75)^2+1.125),0)..(0,(-2(a-0.75)^2+1.125),1.35)..(-1.35,(-2(a-0.75)^2+1.125),0)..(0,(-2(a-0.75)^2+1.125),-1.35)..cycle;
+    	draw(cyl33,linewidth(1pt)+heavygray);
+    	
+    	
+	//Cylinder Bottoms
+    	
+    path3 cylb1=(0.15,0,0)..(0,0,0.15)..(-0.15,0,0)..(0,0,-0.15)..cycle;
+    	draw(cylb1,linewidth(1pt)+heavygray);	
+    path3 cylb2=(0.4,0,0)..(0,0,0.4)..(-0.4,0,0)..(0,0,-0.4)..cycle;
+    	draw(cylb2,linewidth(1pt)+heavygray);
+    path3 cylb3=(1.1,0,0)..(0,0,1.1)..(-1.1,0,0)..(0,0,-1.1)..cycle;
+    	draw(cylb3,linewidth(1pt)+heavygray);
+    path3 cylb4=(1.35,0,0)..(0,0,1.35)..(-1.35,0,0)..(0,0,-1.35)..cycle;
+    	draw(cylb4,linewidth(1pt)+heavygray);
+    	
+   	//Cylinder Wall Lines
+   		draw((0.15,0,0)--(0.15,0.405,0),linewidth(0.7pt)+heavygray);
+   		draw((0.4,0,0)--(0.4,0.88,0),linewidth(0.7pt)+heavygray);
+   		draw((1.1,0,0)--(1.1,0.88,0),linewidth(0.7pt)+heavygray);
+   		draw((1.35,0,0)--(1.35,0.405,0),linewidth(0.7pt)+heavygray);
+   		
+   		draw((-0.15,0,0)--(-0.15,0.405,0),linewidth(0.7pt)+heavygray);
+   		draw((-0.4,0,0)--(-0.4,0.88,0),linewidth(0.7pt)+heavygray);
+   		draw((-1.1,0,0)--(-1.1,0.88,0),linewidth(0.7pt)+heavygray);
+   		draw((-1.35,0,0)--(-1.35,0.405,0),linewidth(0.7pt)+heavygray);
+    
+    //Defines our function that we revolve
+    
+    	real x1(real t) {return t;}
+		real y1(real t) {return -2(t-0.75)^2+1.125;}
+		real z1(real t) {return 0;}
+    	path3 p=graph(x1,y1,z1,0,1.75,operator ..);
+        draw(p,linewidth(1pt),Arrow3(size=15bp));
+        draw(graph(x1,y1,z1,0,1.5,operator ..),linewidth(2pt));
+        
+        dot((0,0,0),linewidth(7pt));
+        dot((1.5,0,0),linewidth(7pt));
+        
+    //Revolves the function
+    
+        
+		path3 p1=graph(x1,y1,z1,0,1.5,operator ..);
+        
+        for(int c=1; c<2; c=c+1)
+        {
+        	draw(rotate(c*180,(0,1,0))*p1,linewidth(1pt)+deepgray);
+        }
+    	
+	//Circles!
+    
+		real a=1.5;
+		path3 c1=(a,(-2(a-0.75)^2+1.125),0)..(0,(-2(a-0.75)^2+1.125),a)..(-a,(-2(a-0.75)^2+1.125),0)..(0,(-2(a-0.75)^2+1.125),-a)..cycle;
+    	draw(c1,linewidth(1pt)+deepgray);
+
+        
+    //Revolve arrow
+        
+    	path3 arrow=(0.4,-0.86,0)..(0,-0.86,-0.4)..(-0.4,-0.86,0)..(0,-0.86,0.4)..(0.3,-0.89,0.4);
+		draw(arrow,linewidth(1.5pt),Arrow3(size=13bp));
+
+	//Creates Axis:
+
+    defaultpen(fontsize(18pt));
+    xaxis3(Label("$x$"),-2.5,2.5,linewidth(1pt),above=true,Arrow3);
+    yaxis3(Label("$y$"),-1.15,2,linewidth(1pt),above=true,Arrow3);
+    
+    label("$f(x)$",(1.8,-0.7,0),X+Y);
+    
+    label("$(b,f(b))$",(1.75,0.25,0),fontsize(10pt),X+Y);
+    label("$(a,f(a))$",(0.35,-0.25,0),fontsize(10pt),X+Y);
+
+
+    

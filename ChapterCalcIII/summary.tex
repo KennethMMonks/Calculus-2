@@ -1,0 +1,29 @@
+\section{Chapter Summary}
+
+Here we introduced two new languages for describing curves in the plane, parametric and polar.
+
+\begin{enumerate}
+\item {\bf Parametric:} A {\bf parametric curve} is the set of points $\left(x(t),y(t)\right)$ for some specified domain of $t$ values.
+\begin{enumerate}
+\item {\bf Graphing:} Pick a helpful spread of $t$ values and plot the resulting points $\left(x(t),y(t)\right)$ to get some idea of the shape.  Often {\bf converting to cartesian} by eliminating $t$ and finding a direct relationship between $x$ and $y$ can be helpful.
+\item {\bf Derivatives:} The {\bf slope of the tangent line to a parametric curve} can be found by $\frac{\dif y}{\dif x}=\frac{\dif y/\dif t}{\dif x/\dif t} .$
+\item {\bf Integrals:} The {\bf length of a parametric curve} can be found by integrating the distance formula.  If the parameter domain is the closed interval $D=[a,b]$, then the length is  $$\int_{t=a}^{t=b}\sqrt{\left(\frac{dx}{dt}\right)^2+\left(\frac{dy}{dt}\right)^2} \dif t. $$
+\end{enumerate}
+\item {\bf Polar:} The system of {\bf polar coordinates} describes the plane as $\left(\theta,r\right)$ where $\theta$ is the counterclockwise angle from the positive $x$ axis and $r$ is the signed distance from the origin. 
+\begin{enumerate}
+\item {\bf Graphing:} Given a polar function $r\left(\theta\right)$, pick a helpful spread of $\theta$ values and plot the resulting points $\left(\theta,r\left(\theta\right)\right)$ to get some idea of the shape.  Often {\bf converting to cartesian} can be helpful.  To convert, use the relationships
+\begin{align*}
+x&=r\cos\left(\theta\right)\\
+y&=r\sin\left(\theta\right) \\
+r^2&=x^2+y^2
+\end{align*} or any other helpful relationship that follows from the triangle with angle $\theta$, adjacent side $x$, opposite side $y$, and hypothenuse $r$. 
+\item {\bf Derivatives:} To find the {\bf slope of the tangent line to a polar graph}, convert to parametric by letting $t=\theta$.  Specifically, set \begin{align*}
+x(t)&=r(t)\cos\left(t\right)\\
+y(t)&=r(t)\sin\left(t\right) \\
+\end{align*} and then use the formula for a parametric derivative.
+\item {\bf Integrals:} To find {\bf area under a polar graph}, perform a Riemann sum with sectors of circles (rather than rectangles as we did initially).  The $\pi$ cancels to give us our polar area formula as seen below.   \begin{align*}
+A&=\int_{\theta=\alpha}^{\theta=\beta}  \underset{\text{Area of a circle}}{\underbrace{\pi r^2(\theta)}} \underset{\text{proportion of full circle's radians}}{\underbrace{\frac{\dif \theta}{2\pi}}}\\
+&=\frac{1}{2}\int_{\theta=\alpha}^{\theta=\beta}  r^2(\theta) \dif \theta
+\end{align*}
+\end{enumerate}
+\end{enumerate}

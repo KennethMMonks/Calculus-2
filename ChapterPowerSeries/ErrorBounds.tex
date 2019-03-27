@@ -1,0 +1,137 @@
+\section{\taylorseries{Error Bounds}}
+
+Here we state a theorem (without proof) regarding just how accurate a finite degree polynomial approximation is.  It is commonly named after Brook Taylor, who stated it in the 1700s, however Cauchy was the first to actually prove it, roughly 100 years later!
+
+\begin{theorem}{\errorbounds{Taylor's Error Theorem}}
+Let $f(x)$ be a function, $n$ a natural number, and $P_n(x)$ the degree $n$ \remainder{power series approximation} centered at a real number $a$. Let $M$ be an upper bound for $\left|f^{(n+1)}(z)\right|$ where $z$ is any number between $x$ and $a$.  Then the error (also called the remainder) in the approximation $$f(x)\approx P_n(x) $$ is no worse than the quantity $$\frac{M|x-a|^{n+1}}{(n+1)!} $$
+
+That is, $$\left| f(x)- P_n(x)\right|\leq \frac{M|x-a|^{n+1}}{(n+1)!} $$
+\end{theorem}
+
+Note that in the above theorem, the expression $f^{(n+1)}$ represents $n+1$ derivatives applied to the function $f$.  It is not an exponent.  Notice also that we can be a bit careless when choosing a value of $M$.  If $M$ is exactly the max value of $f^{(n+1)}$ between $x$ and $a$, that will give us the tightest error bound.  Often, for simplicity's sake, we will intentionally choose a $M$ value that is a bit too large.  This still provides a valid error bound, just not one that is as tight as it could have been.  
+
+\begin{example}{\powerseries{Taylor's Error Theorem} Applied to Sine}
+Suppose we wish to compute $\sin(0.1)$ \emph{by hand}!  Here is a feasible approach.
+
+\begin{wrapfigure}{r}{0.4\textwidth}
+    	\centering
+		\includegraphics[height=150px]{ChapterPowerSeries/Figures/ErrorSine}
+\end{wrapfigure}
+
+Consider the third degree polynomial approximation $P_3(x)$ of sine, centered at zero.  We have that for $x$ values near zero, $$\sin(x)\approx x-\frac{1}{6}x^3. $$
+
+Suppose we wish to compute $\sin(0.1)$ \emph{by hand} using this approximation.  We evaluate
+
+\begin{align*}
+\sin(0.1)&\approx 0.1-\frac{1}{6}\cdot (0.1)^3 \\
+&= 0.1-(0.16666\ldots)\cdot(0.001) \\
+&= 0.1-0.00016666\ldots \\
+&= 0.099833333\ldots.
+\end{align*}
+
+Taylor's Error Theorem allows us to analyze how accurate this approximation is.  We list all the components to plug into the error formula below:
+\begin{itemize}
+\item The function $f(x)$ is $\sin(x)$, the function that we took the power series approximation of.
+\item The value of $n$ is 3, the degree of the polynomial approximation.  Notice though here since the degree four coefficient in the power series for sine is zero.  Thus, $P_3(x)=P_4(x)$, so we can get away with using $n=4$ which will give a better error bound. 
+\item The center of the power series, $a$, is zero in this case since we used just powers of $x$, not powers of $x-a$ for some nonzero $a$.
+\item The value of $x$ is $0.1$, since that is the input value to the function.
+\item The upper bound $M=1$ will suffice, since any derivative of a sine or cosine is again a sine or cosine (plus or minus) and thus has outputs of magnitude less than or equal to one.
+\end{itemize}
+
+Plugging all of this information into our error bound, we get that our error is no worse than $$\frac{M|x-a|^{n+1}}{(n+1)!}=\frac{1|0.1-0|^{5}}{(5)!}= (0.000001)\cdot(0.008333\ldots)=0.00000008333\ldots.  $$
+This tells us that our approximation of $\sin(0.1)$ is incredibly accurate!  The difference between the true value of $\sin(0.1)$ and our approximation $P_4(0.1)=0.099833333\ldots$ is less than $0.00000008333\ldots$.  Another way to say this is that if we were writing out the digits of $\sin(0.1)$ as a decimal, our approximation would have the correct first seven digits past the decimal point (up to rounding).   
+\end{example}
+
+\begin{exercise}{Checking Our Work \Coffeecup}
+Compute $\sin(0.1)$ on a calculator or CAS.  Verify that the first seven digits after the decimal are correct, and verify that the difference between the true and approximate values is less than $0.00000008333\ldots$ as claimed. \vspace*{1in}
+\end{exercise}
+
+\section{What the Cosine Button on Your Calculator Does}
+
+It is worth noting that the definitions of common non-polynomial functions (roots, logs, trig functions, etc) are often very useful for intuition, understanding, and proving theoretical results.  However, they are often atrocious for practical computation!  For example, consider (in year 1 BC, 1 year Before Computers) trying to compute the quantity $\sqrt{4.1}$.  What are you going to do, guess and check?  Will you play the high-low game? 
+
+What is needed is a method for expressing less computationally tractable functions as polynomials (which can be evaluated using good old arithmetic).  We describe our method below!
+
+$$ \text{To compute } f(x) \text{ for a non-polynomial function } f:$$
+
+\begin{enumerate}
+
+\item Find a power series expansion for $f$, preferably centered near $x$.
+
+\item Take a finite degree approximation to this power series (or if the full power series is too difficult to obtain, maybe only compute finitely many terms in the first place).
+
+\item Plug the value for $x$ into your finite degree approximation.
+
+\item Use Taylor's Error Theorem to be sure that your approximation is sufficiently accurate for your purposes.
+
+\end{enumerate}
+ 
+This is the idea behind calculators and computer programs that can so efficiently compute so many wacky functions.  Let's try it by hand together a bit to get a feel for the method.
+
+\begin{exercise}{Seeing Taylor's Error Theorem on a Graph \Coffeecup \Coffeecup}
+\begin{itemize}
+\item What is the degree 2 power series for $\cos(x)$ centered at zero?  Write the function and plot the graph of both cosine and this parabolic approximation.
+
+\begin{center}
+\includegraphics[scale=0.5]{quadall}
+\end{center}
+
+\item On your graph, label $y$-coordinates for both functions (cosine and the parabolic approximation) at $x=1$.  What is the gap between the two $y$-coordinates at $x=1$?  That is, how far is the true value of $\cos(1)$ from the estimated value using the degree two polynomial approximation for cosine?  (This gap is what we refer to as the error.)  
+
+\item Apply Taylor's Error Theorem to this situation.  What bound does it give on the error for approximating $\cos(1)$ via the degree two power series centered at zero?  How does this relate to your measurement of the error above?
+
+\vspace*{2in}
+
+\item Suppose we had a calculator that displays ten digits on the screen.  What degree power series \emph{would} you need to guarantee ten digits of accuracy in computing $\cos(1)$?  Show explicitly how you used Taylor's Error Theorem to get your result. ({\bf Hint:} Since any derivative of cosine will just again be plus or minus cosine or sine, you can take $M=1$.)
+
+\vspace*{2in}
+
+\end{itemize}
+\end{exercise}
+
+\begin{exercise}{The Error in a Square Root Calculation \Coffeecup \Coffeecup \Coffeecup}
+Suppose we wish to compute the number $\sqrt{4.1}$. 
+\begin{itemize}
+\item Compute a degree one power series for the function $f(x)=\sqrt{x}$ centered at $x=4$.
+\vspace*{1in}
+\item Plug 4.1 into your degree one power series to get an approximation for $\sqrt{4.1}$. (Note that this is \emph{exactly} what you did in Calc 1 when you looked at tangent lines and linearization as an approximation tool.  The only difference here is we're not stuck at degree 1; we can crank up the degree as much as we like to improve accuracy!)
+\vspace*{1in}
+\item Compute a degree two power series for the function $f(x)=\sqrt{x}$ centered at $x=4$.
+\vspace*{1in}
+\item Plug 4.1 into your degree two power series to get an approximation for $\sqrt{4.1}$. 
+\vspace*{1in}
+\item Compute a degree three power series for the function $f(x)=\sqrt{x}$ centered at $x=4$.
+\vspace*{1in}
+\item Plug 4.1 into your degree three power series to get an approximation for $\sqrt{4.1}$. 
+\vspace*{1in}
+\item Apply Taylor's Error Theorem in all three cases above, the degree one, two, and three cases.  How many digits of accuracy do we get in each case?
+\vspace*{3in}
+\end{itemize}
+\AnswerKeyEntry{If $n=1$, we have the following degree one power series centered at $a=4$: $$f(x)=\sqrt{x}\approx 2+\frac{1}{4}(x-4)$$ Since $n=1$, we need the second derivative.  We compute $\left|f''(x)\right|=\frac{1}{4x^{3/2}}$, which on the interval [4,4.1] has its maximum at $x=4$.  Thus, $M=1/32$, which provides an error bound of $$\frac{\frac{1}{32}\cdot|4-4.1|^2}{2!}=\frac{1}{6400}$$  Thus the error is definitely less than one thousandth, but not necessarily less than one ten thousandth.  So for the approximation $$\sqrt{4.1}\approx 2+\frac{1}{4}(4.1-4)=2.025$$ we can guarantee three digits past the decimal are correct but not necessarily the fourth.  That is, 2.025 is certainly the correct decimal expansion for $\sqrt{4.1}$ rounded to the thousandths place.  However, the digit 0 we implicitly have in the ten-thousandths place may or may not be correct.
+This process can be repeated for the other $n$ values of two and three.}
+\end{exercise}
+
+
+\begin{exercise}{Clear-Cut Logging \Coffeecup \Coffeecup \Coffeecup}
+
+Compute $\ln(0.9)$ \emph{by hand} accurate to three decimal places.  Really.  Just by hand.  Show all work (including all arithmetic!) below.  ({\bf Hint:} Use Taylor's Error Theorem to make sure you aren't working harder than you need and accidentally using too many terms in the power series.)  
+
+\vspace*{4in}
+
+\end{exercise}
+
+It is worth noting that for most of the history of mathematics, logarithms were computed in essentially this manner, by hand, and then stored in massive tables which then people would use to look them up.  A particularly successful 19th Century French mathematician Gaspard de Prony led a group which compiled a table of logarithms of integers between 1 and 200,000 accurate to 19 decimal places!  His name is one of only 72 engraved onto the Eiffel Tower.
+
+\begin{exercise}{You're Still Smarter Than the Machines \Coffeecup \Coffeecup \Coffeecup}
+Complete the following entirely by hand with no calculator use whatsoever! 
+\begin{itemize}
+\item  Compute $ \sqrt[3]{1001}$ by using a degree two power series approximation for the function $f(x)=\sqrt[3]{x}$ centered at $a=1000$.
+
+\vspace*{2in}
+
+\item  How many digits of accuracy does Taylor's Error Theorem guarantee in this case?
+
+\vspace*{2in}
+
+\end{itemize}
+\end{exercise}

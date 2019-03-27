@@ -1,0 +1,26 @@
+\begin{tikzpicture}[
+      >=latex',
+      auto
+    ]
+    
+    \tikzstyle{box} = [rectangle, rounded corners, minimum width=2cm, minimum height=1cm, text centered, text width=2.7cm, draw=black, fill=gray!15, drop shadow]
+    
+    \tikzstyle{arrow} = [thick,>=stealth,arrowhead=5mm,->]
+    
+    \node [box] (xZero) {
+    	Plug in $x=a$
+        };
+     \node [box]  (solve) [node distance=0.7cm and -.5cm,below right=of xZero] {
+     	Solve for next coefficient
+     	};
+	\node [box]  (diff) [node distance=0.7cm and -0.5cm,below left=of xZero] {
+     	Differentiate
+     	};
+    
+    \draw [->, >=open triangle 60, ultra thick,line width= 3pt, shorten >=2pt] (xZero.east) -- ($(xZero.east)+(0.25,0)$) -| (solve.north);
+    \draw [->, >=open triangle 60, ultra thick,line width= 3pt, shorten >=2pt] (solve.west) --  (diff.east);
+    \draw [->, >=open triangle 60, ultra thick,line width= 3pt, shorten >=2pt] (diff.north) -- ($(diff.north)+(0,0.7)$) |- (xZero.west);
+
+
+
+\end{tikzpicture}

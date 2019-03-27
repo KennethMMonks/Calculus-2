@@ -1,0 +1,81 @@
+
+  	settings.render=0;
+	import three;
+    import graph3;
+    currentprojection=orthographic(0,-0.25,1);
+    currentlight=nolight;
+
+	size(300);
+
+  	path3 p1=(1,0,0)..(0,1,0)..(-1,0,0)..(0,-1,0)..cycle; 
+  	real o=0.1;
+  	for(real c=0.15; c<=1; c=c+0.001)
+        {
+        	draw((sqrt(1-c^2),0+c,0)..(0,0+c,sqrt(1-c^2))..(-sqrt(1-c^2),0+c,0)..(0,0+c,-sqrt(1-c^2))..cycle,linewidth(2pt)+gray+opacity(o));
+        	
+        	draw((sqrt(1-c^2),0-c,0)..(0,0-c,sqrt(1-c^2))..(-sqrt(1-c^2),0-c,0)..(0,0-c,-sqrt(1-c^2))..cycle,linewidth(2pt)+gray+opacity(o));
+        }
+        
+		//Pull Out        
+        for(real c=0;c<=1; c=c+0.001)
+   		{
+   			draw((c+0.2,0.15,0)..(0,0.15,-c+0.2)..(-c+0.2,0.15,0)..(0,0.15,c+0.2)..cycle, linewidth(2pt)+gray+opacity(o));
+   			draw((c+0.2,-0.15,0)..(0,-0.15,-c+0.2)..(-c+0.2,-0.15,0)..(0,-0.15,c+0.2)..cycle, linewidth(2pt)+gray+opacity(o));
+   			
+   		}
+        
+       for(real c=0; c<=0.15; c=c+0.001)
+        {
+        	draw((sqrt(1-c^2)+0.2,0+c,0)..(0,0+c,sqrt(1-c^2)+0.2)..(-sqrt(1-c^2)+0.2,0+c,0)..(0,0+c,-sqrt(1-c^2)+0.2)..cycle,linewidth(2pt)+gray+opacity(o));
+        	
+        	draw((sqrt(1-c^2)+0.2,0-c,0)..(0,0-c,sqrt(1-c^2)+0.2)..(-sqrt(1-c^2)+0.2,0-c,0)..(0,0-c,-sqrt(1-c^2)+0.2)..cycle,linewidth(2pt)+gray+opacity(o));
+        }
+        
+        
+	//Circles!
+    
+    	//Top
+		real a=0.15;
+		path3 c1=(-sqrt(1-a^2),a,0)..(0,a,-sqrt(1-a^2))..(sqrt(1-a^2),a,0)..(0,a,sqrt(1-a^2))..cycle;
+    	draw(c1,linewidth(1pt)+heavygray);
+    	
+    //	real a=0.45;
+	//	path3 c1=(-sqrt(1-a^2),a,0)..(0,a,-sqrt(1-a^2))..(sqrt(1-a^2),a,0)..(0,a,sqrt(1-a^2))..cycle;
+    //	draw(c1,linewidth(1pt)+heavygray);
+    	
+    	real a=0.5;
+		path3 c1=(-sqrt(1-a^2),a,0)..(0,a,-sqrt(1-a^2))..(sqrt(1-a^2),a,0)..(0,a,sqrt(1-a^2))..cycle;
+    	draw(c1,linewidth(1pt)+heavygray);
+    	
+    //	real a=0.9;
+	//	path3 c1=(-sqrt(1-a^2),a,0)..(0,a,-sqrt(1-a^2))..(sqrt(1-a^2),a,0)..(0,a,sqrt(1-a^2))..cycle;
+   // 	draw(c1,linewidth(1pt)+heavygray);
+    	
+    	//Bottom
+    	
+    	real a=-0.15;
+		path3 c1=(-sqrt(1-a^2),a,0)..(0,a,-sqrt(1-a^2))..(sqrt(1-a^2),a,0)..(0,a,sqrt(1-a^2))..cycle;
+    	draw(c1,linewidth(1pt)+heavygray);
+    	
+    //	real a=-0.45;
+	//	path3 c1=(-sqrt(1-a^2),a,0)..(0,a,-sqrt(1-a^2))..(sqrt(1-a^2),a,0)..(0,a,sqrt(1-a^2))..cycle;
+    //	draw(c1,linewidth(1pt)+heavygray);
+    	
+    	real a=-0.5;
+		path3 c1=(-sqrt(1-a^2),a,0)..(0,a,-sqrt(1-a^2))..(sqrt(1-a^2),a,0)..(0,a,sqrt(1-a^2))..cycle;
+    	draw(c1,linewidth(1pt)+heavygray);
+    	
+    //	real a=-0.9;
+	//	path3 c1=(-sqrt(1-a^2),a,0)..(0,a,-sqrt(1-a^2))..(sqrt(1-a^2),a,0)..(0,a,sqrt(1-a^2))..cycle;
+    //	draw(c1,linewidth(1pt)+heavygray);
+    	
+    	//Pull Out
+    	
+    	real a=0.15;
+		path3 c1=(-sqrt(1-a^2)+0.2,a,0)..(0,a,-sqrt(1-a^2)+0.2)..(sqrt(1-a^2)+0.2,a,0)..(0,a,sqrt(1-a^2)+0.2)..cycle;
+    	draw(c1,linewidth(1pt));
+    	
+    	real a=-0.15;
+		path3 c1=(-sqrt(1-a^2)+0.2,a,0)..(0,a,-sqrt(1-a^2)+0.2)..(sqrt(1-a^2)+0.2,a,0)..(0,a,sqrt(1-a^2)+0.2)..cycle;
+    	draw(c1,linewidth(1pt));
+        

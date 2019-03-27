@@ -1,0 +1,71 @@
+  	settings.render=0;
+	import three;
+    import graph3;
+    currentprojection=orthographic(1,-2,1);
+    currentlight=nolight;
+
+	size(300);
+    
+    
+    //Cone
+    
+    real o=0.15;
+    
+   	real c=0;
+    for (c; c<1.75; c=c+0.001)
+    {
+        path3 c1=(c,0.5c,0)..(c,0,0.5c)..(c,-0.5c,0)..(c,-0.5c,0)..cycle;
+    	draw(c1,linewidth(1pt)+gray+opacity(o));
+    } 
+    
+    //bottom of cylinder
+    
+	real c=1.75;
+    for (c; c<=1.75; c=c+0.35)
+    {
+        path3 c1=(c,0.5c,0)..(c,0,0.5c)..(c,-0.5c,0)..(c,-0.5c,0)..cycle;
+    	draw(c1,linewidth(0.5pt)+deepgray+opacity(0.85));
+    }
+        
+   	//Defines our function that we revolve
+    
+  //  	real x1(real t) {return t;}
+	//	real y1(real t) {return 0.5*t;}
+	//	real z1(real t) {return 0;}
+  //  	path3 p=graph(x1,y1,z1,0,1.75,operator ..);
+  //      draw(p,linewidth(0.5pt)+deepgray);
+    
+    //Revolves the function
+   //     
+	//	path3 p1=graph(x1,y1,z1,0,1.75,operator ..);
+        
+   //     for(int c=1; c<6; c=c+1)
+   //     {
+   //     	draw(rotate(c*60,(1,0,0))*p1,linewidth(0.5pt)+deepgray);
+   //     }
+        
+    
+    //Dots
+    
+    dot((0,0,0),linewidth(6pt));
+    dot((1.75,0,0),linewidth(6pt));
+    
+    //Radius Line
+    
+    draw((1.75,0,0)--(1.75,0,0.5*1.75),linewidth(1pt)+deepgray+dashed);
+    
+    //''Right'' Line
+    real r=0.1;
+    path3 right=(1.75,0,r)--(1.75-r,0,r)--(1.75-r,0,0);
+    draw(right,linewidth(0.7pt)+deepgray);
+   
+
+	//Creates Axis:
+
+    defaultpen(fontsize(18pt));
+    xaxis3(Label("$x$"),-.25,2.5,linewidth(1pt),above=true,Arrow3);
+    yaxis3(Label("$y$"),-.25,2,linewidth(1pt),above=true,Arrow3);
+    
+    
+    label("$(h,0,0)$",(1.85,0.2,0),fontsize(10pt),X+Y);
+    label("$r$",(1.75,0.2,0.2*1.75),fontsize(10pt),X+Y);

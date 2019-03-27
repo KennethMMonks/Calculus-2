@@ -1,0 +1,179 @@
+\chapter{Introduction to Probability: Integrals and Series in Action}
+
+In \powerseries{probability theory}, it turns out that many fundamental questions cannot be answered without the power series tools we developed here in Calculus 2.  In particular, in the following exercises we will use the geometric series and the square of the geometric series.  
+
+\begin{exercise}{Recalling Some Important Power Series \Coffeecup}
+Write the power series centered at zero for these functions below:
+
+\vspace*{.1in}
+
+$ \frac{1}{1-x}=$
+
+\vspace*{.3in}
+
+$ \frac{1}{(1-x)^2}=$
+
+\vspace*{.3in}
+\end{exercise}
+
+Let's begin with a few definitions.
+
+\begin{definition}{Probability}
+\begin{itemize}
+\item The \emph{probability} of an event $A$ is the likelihood of the event happening, measured as a number between zero and one, where probability zero means $A$ is impossible and probability one means $A$ is guaranteed to happen.  Everything inbetween is scaled proportionally, for example probability three-fourths means that in four trials, we would expect the event $A$ to happen three times and not happen one time.
+\item A \emph{discrete event} is an event where there is a finite or countable number of total possible outcomes for the event.  For example, flipping a coin is a discrete event because there are only two possible outcomes.  However, measuring the temperature at a particular time of day could be considered to not be a \probability{discrete event} since your temperature could be viewed to potentially be any real number between absolute zero and infinity. 
+\end{itemize}
+\end{definition}
+
+One way to compute the probability of a discrete event is to compute the number of ways the event itself can happen and then divide by the total number of possibilities.
+\begin{exercise}{Discrete Event Probabilities \Coffeecup}
+\begin{itemize}
+\item  What is the probability of flipping a tails on one coin toss?  
+
+\vspace*{1in}
+
+\item What is the probability of rolling a number less than five if you roll a standard six sided die?  Clearly indicate what are the number of successes and what is the number of total number of possibilities.
+
+\vspace*{1in}
+
+\item What is the probability of picking a queen if you randomly draw one card out of a standard deck of 52 cards?  Clearly indicate what are the number of successes and what is the number of total number of possibilities.
+
+\vspace*{1in}
+\end{itemize}
+\end{exercise}
+
+One reason for looking at probabilities of events is to answer the following question: ``What is the expected outcome of the event?''  Essentially we want to know what to expect before an event happens.  
+\begin{definition}{\probability{Expected Value}}
+Define the \emph{\moment{expected value}} (also known as the \emph{first moment}) of an event $X$ as follows.  Let $D$ be the set of all possible outcomes of event $X$.  Then the  \emph{expected value of $X$}, written $E(X)$ is 
+
+$$ E(X) = \sum_{x \in D} x \cdot P(X=x) $$
+\end{definition}
+
+That is to say, if we take each outcome times the probability of that outcome and sum them, we get the expected outcome.  It is a weighted average across all outcomes, weighted by how likely each outcome is.
+\begin{example}{Rolling a Die}
+For example, suppose we asked for the expected value of rolling one die.  Each of the numbers has probability one-sixth of coming up.  Thus the expected value of rolling a die is $$\frac{1}{6}\cdot 1 +\frac{1}{6}\cdot 2 + \frac{1}{6}\cdot 3 +\frac{1}{6}\cdot 4 +\frac{1}{6}\cdot 5 +\frac{1}{6}\cdot 6 = 3.5$$
+\end{example}
+
+\begin{exercise}{Rolling Two Die \Coffeecup \Coffeecup}
+ What is the expected value of rolling two die?  ({\bf Hint:} Draw a 6x6 table to enumerate all possibilities where the columns correspond to the first die and the rows correspond to the second die.) 
+
+\vspace*{2in}
+
+\end{exercise}
+
+Most of the time it's harder to compute the number of successful events or the number of total events.  The key trick in computing these is the following: 
+
+\begin{theorem}{Fundamental Principle of Counting}
+The \emph{Fundamental Principle of Counting} says the following: if event $A$ can occur $n$ ways and event $B$ can occur in $m$ ways. then  the number of ways events $A$ and $B$ can occur together is $n\cdot m$.  
+
+\end{theorem}
+
+Note that this only holds if events $A$ and $B$ are \emph{independent}. This means that for any outcome of $A$, any outcome of $B$ can then occur, and vise-versa.  That is, the outcome of event $A$ in no way restricts what is possible for event $B$.
+
+\begin{exercise}{Independent Events \Coffeecup \Coffeecup}
+\begin{itemize}
+\item Let event $A$ be rolling the first of two die.  Let event $B$ be rolling the second of two die.  Explain why events $A$ and $B$ are independent.  In light of this, use the Fundamental Principle of Counting to compute the total number of possible outcomes.
+\vspace*{1in}
+\item You roll two die.  What is the probability the total is either a 7 or 11?  (Note this is the probability you'll win on the first roll of a round of Craps.)
+\vspace*{1in}
+\end{itemize}
+\end{exercise}
+
+With more than two independent events, we can iterate the Fundamental Principle of Counting and simply multiply together the number of possibilities for all events.  
+\begin{example}{Four Coin Tosses}
+Suppose we flip a coin four times.  Each flip has two potential outcomes, so there is a total of $2\cdot 2\cdot 2\cdot 2=16$ total possible outcomes.  We can explicitly list them to see our computation is correct, where T is tails and H is heads, and the string of four characters is the sequence of outcomes of the four flips.
+
+ \begin{align*}
+ 1\hspace{,1in}  &TTTT \\
+ 2\hspace{,1in}  &TTTH \\
+ 3\hspace{,1in}  &TTHT \\
+ 4\hspace{,1in}  &TTHH \\
+ 5\hspace{,1in}  &THTT \\
+ 6\hspace{,1in}  &THTH \\
+ 7\hspace{,1in}  &THHT \\
+ 8\hspace{,1in}  &THHH \\
+ 9\hspace{,1in}  &HTTT \\
+ 10\hspace{,1in} &HTTH \\
+ 11\hspace{,1in} &HTHT \\
+ 12\hspace{,1in} &HTHH \\
+ 13\hspace{,1in} &HHTT \\
+ 14\hspace{,1in} &HHTH \\
+ 15\hspace{,1in} &HHHT \\
+ 16\hspace{,1in} &HHHH
+\end{align*}
+
+\end{example}
+
+Use the above table to answer the following questions.
+
+\begin{exercise}{Probabilities with Coins \Coffeecup \Coffeecup}
+ \begin{itemize}
+ \item You start flipping a coin over and over. What is the probability you get a heads on the very first flip?
+\vspace*{1in}
+\item You start flipping a coin over and over. What is the probability your first heads doesn't appear until the second flip?
+\vspace*{1in}
+\item You start flipping a coin over and over. What is the probability your first heads doesn't appear until the third flip?
+\vspace*{1in}
+\item You start flipping a coin over and over. What is the probability your first heads doesn't appear until the fourth flip?
+\vspace*{1in}
+\end{itemize}
+\end{exercise}
+
+Let's now generalize this.  Let events $A$ and $B$ be independent.  Define a new event $A\cap B$ to mean that $A$ and $B$ both happen. By definition of probability and by the Fundamental Principle of Counting, we have 
+
+\begin{align*}
+\text{Probability of $A \cap B$}=& \frac{\text{number of ways for both events to be successful}}{\text{number of total possible outcomes for the two events}}\\
+=& \frac{\text{number of ways for $A$ to be successful times number of ways for $B$ to successful}}{\text{number of ways for $A$ to happen times number of ways for $B$ to happen}}\\
+=& \frac{\text{number of ways for $A$ to be successful }}{\text{number of ways for $A$ to happen}} \cdot \frac{\text{number of ways for $B$ to be successful }}{\text{number of ways for $B$ to happen}} \\
+=&\text{Probability of $A$} \cdot \text{Probability of $ B$}
+\end{align*}
+
+This provides a more structured view of what was going on in the coin exercises.  For example, in for the probability of our first heads on the fourth flip, we could also have computed our probability as follows: 
+
+\begin{align*}
+\text{Probability} & \text{ of the first heads appearing on the fourth flip} \\ =& \text{Probabilty of NOT getting heads on flip 1} \\ &\text{and NOT getting heads on flip 2} \\ &\text{and NOT getting heads on flip 3} \\ &\text{and getting heads on flip 4}\\
+=& \frac{1}{2}\cdot \frac{1}{2} \cdot \frac{1}{2} \cdot \frac{1}{2}\\
+=& \frac{1}{16}
+\end{align*}
+
+Now let's look at a slightly more complicated situation where the answer can be obtained via the same reasoning.
+
+\begin{exercise}{Expected Number of Days You Can Avoid a Ticket \Coffeecup \Coffeecup \Coffeecup}
+Suppose we are a CU student.  Parking permits are grossly overpriced, so we decide to just risk it and park illegally in our favorite Permits-Only parking spot.  From past experience, we know there is only a $p=15\%$ chance of getting a ticket on any particular day; it's not heavily policed.  Let $X$ the number of days until the first parking ticket occurs. That is, $P(X=n)$ is the probability of us getting away with this for the first $n-1$ days and then getting our first parking ticket on day $n$.  Fill out the following table: 
+
+\begin{center}
+  \begin{tabular}{|| l || c  ||}
+    \hline
+    $n$ & $\hspace{.5in} P(X=n) \hspace{.5in} $   \\ \hline
+    1 &   \\ \hline
+    2 &   \\ \hline
+    3 &   \\ \hline
+    4 &   \\ \hline
+    5 &   \\ \hline
+    6 &   \\ \hline
+    7 &   \\ \hline
+    8 &   \\ \hline
+ \end{tabular}
+\end{center}
+\end{exercise}
+
+Notice that the list of \geometricsequence{probability} values are entries in a geometric sequence!  Thus a random variable such as the one above is called a \emph{geometric random variable} and the corresponding distribution of probabilities is called the \emph{geometric distribution}.
+
+\begin{exercise}{Row $n$ of the Table \Coffeecup \Coffeecup \Coffeecup}
+\begin{itemize}
+\item  What is the general formula for $P(X=n)$ in terms of $n$?
+\vspace*{1in}
+\item If all is fair, we should be able to add up all of the above probabilities and get 1, since 1 is \geometricseries{total probability} of anything at all happening.  Compute $$ \sum_{n=1}^{\infty} P(X=n)$$  Do you get one as the sum? 
+\vspace*{1in}
+\item How many days can we expect to go before we get a ticket?  That is to say, what is the expected value of $X$?  Recall the formula for expected value: $$ E(X)=\sum_{n=1}^{\infty} n\cdot P(X=n)$$
+\vspace*{2in}
+\end{itemize}
+\end{exercise}
+
+Alright so before we call it good... no probability discussion is ever complete without a gambling example! 
+
+\begin{exercise}{Roulette \Coffeecup \Coffeecup}
+ A roulette wheel has 38 spots on it.  Suppose ``28" is our favorite number, so we keep playing it over and over again.  How many spins of the wheel should we expect before it hits our number?
+\vspace*{2in}
+\end{exercise}
+

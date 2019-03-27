@@ -1,0 +1,315 @@
+\section{The Sequence of Partial Sums}
+
+\subsection{Adding Terms in a Sequence: Integration for Sequences}\label{AddingDong}
+Given a sequence $a_n$, we build a new sequence $A_N$ called the \emph{sequence of partial sums} by keeping a running total of all terms in $a_n$ from $0$ to $N$.  We state this definition more formally.
+
+\begin{definition}{Sequence of \series{Partial Sums}}
+Let $a_n$ be a sequence.  Define $A_N$, the \emph{sequence of partial sums} of $a_n$ to be $$A_N=\sum_{n=0}^Na_n=a_0+a_1+a_2+\cdots+a_N. $$
+\end{definition}
+When studying a sequence and its partial sums, it can be helpful to organize your data in a table.
+
+\begin{example}{From a Sequence to  Partial Sums}\label{OddSum}
+
+Consider the sequence of odd natural numbers $a_n=2n+1$.  We compute a few partial sums and see if we can notice a pattern.
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|} \hline
+$n$ & $a_n$ & $A_n$ & Total \\ \hline
+0 & 1 & 1 &1 \\
+1 & 3 & 1+3 &4 \\
+2 & 5 & 1+3+5 &9 \\
+3 & 7 & 1+3+5+7 &16 \\
+4 & 9 & 1+3+5+7+9 &25 \\
+5 & 11 &1+3+5+7+9+11 &36 \\ \hline
+\end{tabular}
+\end{center}
+
+We notice the column of totals contains all perfect squares.  In particular, the number in row $n$ is always exactly $\left(n+1\right)^2$.  Thus, the pattern suggests that
+$$A_N=\sum_{n=0}^N\left(2n+1\right) = \left(N+1\right)^2 $$
+\end{example}
+
+\begin{exercise}{Computing a Partial Sum with the Arithmetic Series Formula \Coffeecup \Coffeecup}
+Notice the sum $A_N$ above is in fact an arithmetic series!  Use the arithmetic series formula to evaluate $$A_N=\sum_{n=0}^N\left(2n+1\right)$$ and confirm it matches our conjectured formula from the table.
+\vspace*{.5in}
+\AnswerKeyEntry{In this series, there are $N+1$ terms, the first of which is 1 and the last of which is $2N+1$.  Plugging this information into the Arithmetic Series Formula will produce the desired result.  }
+\end{exercise}
+Notice in Example \ref{AppleCations}.\ref{Critteria}, $a_n$ represents the number of critters in generation $n$, whereas $A_N$ represents the total number of descendants up to and including generation $N$.  This is a good way to think of the relationship between a sequence $a_n$ and the corresponding partial sums $A_N$; the quantities $A_N$ keep running totals of all $a_n$ we have encountered up to and including index $N$.
+\begin{exercise}{Add-Ups \Coffeecup}
+Suppose you start a push-up routine on day 0, where you do $a_0$ push-ups.  On day 1, you do $a_1$ push-ups. On day 2, you do $a_2$ push-ups, and so on.  In this context, what does the sequence of partial sums $A_N$ represent? \vspace*{.2in} 
+\AnswerKeyEntry{The partial sum $A_N$ represents the total number of push-ups you've done so far in your push-up routine, up to and including day $N$.}
+\end{exercise}
+\subsection{Discrete Derivatives: Derivatives for Sequences}
+
+Given a sequence of partial sums, we can uncover the sequence from which it came.  The difference of two consecutive partial sums will be a single term in the sequence, since \begin{align*}
+A_{N}-A_{N-1}&=\sum_{n=0}^Na_n-\sum_{n=0}^{N-1}a_n\\ &=\left( a_0+a_1+a_2+\cdots+a_N\right)-\left( a_0+a_1+a_2+\cdots+a_{N-1}\right) \\
+&=a_N.
+\end{align*}
+\begin{example}{From Partial Sums to a Sequence} 
+Let's try to undo Example \ref{AddingDong}.\ref{OddSum}.  Suppose we start with $A_N=(N+1)^2$.  We draw a table to see what terms $a_n$ would have been added together to obtain those totals. 
+\begin{center}
+\begin{tabular}{|c|c|c|c|} \hline
+$N$ & $A_N$ & $a_N$ & Difference \\ \hline
+0 & 1 & $1-0$ &1 \\
+1 & 4 & $4-1$ &3 \\
+2 & 9 & $9-4$ &5 \\
+3 & 16 & $16-9$ &7 \\
+4 & 25 & $25-16$ &9 \\
+5 & 36 & $36-25$ &11 \\ \hline
+\end{tabular}
+\end{center}
+
+We see that sure enough, the last column is the sequence of odd numbers and is always one more than twice $N$.  Thus, we have that $a_N=2N+1$. 
+
+\end{example}
+
+\begin{exercise}{Taking a Difference of Partial Sums \Coffeecup}
+Using the formula $A_N=(N+1)^2$, try taking the difference $A_{N}-A_{N-1}$ and verify you get the same $a_N$.  That is, simplify the right-hand side of the following expression: $$ A_{N}-A_{N-1}=(N+1)^2-\left((N-1)+1\right)^2 $$
+\end{exercise}
+
+Note that we have two different indices, as we are taking the convention that $n$ indexes the sequence $a_n$ and $N$ indexes the partial sums $A_N$.  Thus, depending on which we start with, it looks like we have the ``wrong'' index for the other ($A_n$ vs $A_N$ or $a_n$ vs $a_N$).  This is nothing to worry about, as the sequence is really just the mapping from the natural numbers to the reals.  This is similar to how $f(x)=x^2$ and $f(t)=t^2$ are the same function on the reals, but just listed with different independent variables.
+
+\begin{example}{Revisitng Our Critters }
+In Example \ref{AppleCations}.\ref{Critteria}, we had computed the formula for a sequence of partial sums, even though at the time we didn't call it that.  In particular, given the sequence $$a_n=3^n$$
+we found a closed formula for the sequence of partial sums as $$A_N=\sum_{n=0}^Na_n=\frac{1}{2}\left(3^{N+1}-1\right)$$ by using the Geometric Series Formula.  Here we demonstrate that the difference of consecutive partial sums will reproduce the original summand.
+\begin{align*}
+A_N-A_{N-1}&=\frac{1}{2}\left(3^{N+1}-1\right)-\frac{1}{2}\left(3^{\left(N-1\right)+1}-1\right) \\
+&=\frac{1}{2}\left(3^{N+1}-1-3^{N}+1\right) \\
+&=\frac{1}{2}\left(3^{N+1}-3^{N}\right) \\
+&=\frac{3^N}{2}\left(3^{1}-1\right)\\
+&=3^N
+\end{align*}
+Sure enough, $a_n=3^n$ was our original summand!
+\end{example}
+
+\subsection{Taking a Sequence to Partial Sum and Back Again}
+
+Here we summarize a bit of what happened above. 
+\begin{itemize}
+\item Given a sequence $a_n$, we can define an associated sequences of partial sums $A_N=\sum_{n=0}^Na_n$.
+\item If $a_n$ is an arithmetic or geometric sequence, we can find a formula for $A_N$ using the Arithmetic Series Formula or Geometric Series Formula.  If it $a_n$ is not an arithmetic or geometric sequence, then writing out a table of partial sums and looking for a pattern can be a good strategy.
+\item Given $A_N$, we can recover $a_n$ by taking differences of consecutive partial sums $A_{N}-A_{N-1}$.
+\end{itemize}
+
+Notice this is very similar to what happened in Calculus I or even in the first part of this course.  In those sections, you could start with a function $f(x)$ and find its antiderivative $F(x)$.  If you then took the derivative of this $F(x)$, you would end up with the original $f(x)$. 
+
+\begin{exercise}{Converting Back and Forth \Coffeecup \Coffeecup \Coffeecup}
+
+For each of the following sequences $a_n$, compute the corresponding sequence of partial sums $A_N$.  Once you have $A_N$, then compute the difference of consecutive partial sums $A_{N}-A_{N-1}$ and verify that the original sequence comes back!
+
+\begin{itemize}
+\item $a_n=\frac{5}{2^n}$
+\vspace*{1in}
+\item $a_n=\frac{2}{3^{2n+1}}$
+\vspace*{1in}
+\item $a_n=5-n$
+\vspace*{1in}
+\item $a_n=3n^2+3n+1$
+\vspace*{1in}
+\item $a_n=\left(-1\right)^n$
+\vspace*{1in}
+\item $a_n=\begin{cases}
+1, & \text{if $n=0$;} \\
+0, & \text{otherwise.}
+\end{cases}$
+\vspace*{1in}
+\end{itemize}
+\AnswerKeyEntry{The corresponding partial sums are as follows: \textbullet $A_N=10\left(1-1/2^{N+1}\right)$ \textbullet $A_N=3/4\left(1-1/9^{N+1}\right)$ \textbullet $A_N=\left(10-N\right)\left(N+1\right)/2$ \textbullet $A_N=N^3$ \textbullet $A_N=1,0,1,0,1,0,\ldots=\left(1-\left(-1\right)^{N+1}\right)/2$ \textbullet $A_N=1$ }
+\end{exercise}
+
+\begin{comment}
+
+\subsubsection*{Sequence vs Partial Sum Telephone!}
+We have two forms, a sequence and a sequence of partial sums.  We also have a way to go back and forth between the two forms.  This calls for a game of... TELEPHONE!
+
+Break into groups of four and play telephone with one of the following pages.  If you are handed a sequence $a_n$, find the sequence of partial sums $A_N$, fold over the original $a_n$, and pass it along.  If you are handed a sequence of partial sums $A_N$, find the sequence it came from $a_n$, fold over the original $A_N$, and pass it along. 
+
+\newpage
+
+$$A_N=5\cdot\frac{1-\frac{1}{2^{(N+1)}}}{1-\frac{1}{2}} $$
+
+\hrulefill
+
+\vspace{.5in}
+
+\begin{center}
+\fbox{$a_n=$ \hspace{3in}}
+\end{center}
+
+\vspace{.5in}
+
+\hrulefill
+
+\vspace{.5in}
+
+\begin{center}
+\fbox{$A_N=$ \hspace{3in}}
+\end{center}
+
+\vspace{.5in}
+
+\hrulefill
+
+\vspace{.5in}
+
+\begin{center}
+\fbox{$a_n=$ \hspace{3in}}
+\end{center}
+
+\vspace{.5in}
+
+\hrulefill
+
+\vspace{.5in}
+
+\begin{center}
+\fbox{$A_N=$ \hspace{3in}}
+\end{center}
+
+\vspace{.5in}
+
+\newpage
+
+$$a_n=2n+3 $$
+
+\hrulefill
+
+\vspace{.5in}
+
+\begin{center}
+\fbox{$A_N=$ \hspace{3in}}
+\end{center}
+
+\vspace{.5in}
+
+\hrulefill
+
+\vspace{.5in}
+
+\begin{center}
+\fbox{$a_n=$ \hspace{3in}}
+\end{center}
+
+\vspace{.5in}
+
+\hrulefill
+
+\vspace{.5in}
+
+\begin{center}
+\fbox{$A_N=$ \hspace{3in}}
+\end{center}
+
+\vspace{.5in}
+
+\hrulefill
+
+\vspace{.5in}
+
+\begin{center}
+\fbox{$a_n=$ \hspace{3in}}
+\end{center}
+
+\vspace{.5in}
+
+\newpage
+
+$$a_n=2/3^n $$
+
+\hrulefill
+
+\vspace{.5in}
+
+\begin{center}
+\fbox{$A_N=$ \hspace{3in}}
+\end{center}
+
+\vspace{.5in}
+
+\hrulefill
+
+\vspace{.5in}
+
+\begin{center}
+\fbox{$a_n=$ \hspace{3in}}
+\end{center}
+
+\vspace{.5in}
+
+\hrulefill
+
+\vspace{.5in}
+
+\begin{center}
+\fbox{$A_N=$ \hspace{3in}}
+\end{center}
+
+\vspace{.5in}
+
+\hrulefill
+
+\vspace{.5in}
+
+\begin{center}
+\fbox{$a_n=$ \hspace{3in}}
+\end{center}
+
+\vspace{.5in}
+
+\newpage
+$$A_N=1 $$
+
+\hrulefill
+
+\vspace{.5in}
+
+\begin{center}
+\fbox{$a_n=$ \hspace{3in}}
+\end{center}
+
+\vspace{.5in}
+
+\hrulefill
+
+\vspace{.5in}
+
+\begin{center}
+\fbox{$A_N=$ \hspace{3in}}
+\end{center}
+
+\vspace{.5in}
+
+\hrulefill
+
+\vspace{.5in}
+
+\begin{center}
+\fbox{$a_n=$ \hspace{3in}}
+\end{center}
+
+\vspace{.5in}
+
+\hrulefill
+
+\vspace{.5in}
+
+\begin{center}
+\fbox{$A_N=$ \hspace{3in}}
+\end{center}
+
+\vspace{.5in}
+
+\newpage
+
+\end{comment}
+Often the study of the real numbers and related objects is called \emph{continuous} mathematics while the study of the natural numbers and related objects is called \emph{discrete} mathematics.  In this course, we encounter many interesting parallels between the two pursuits!
+
+\begin{exercise}{Discrete/Continuous Analogy \Coffeecup \Coffeecup \Coffeecup \Coffeecup}
+\begin{itemize}
+\item In what ways is taking the partial sums of a sequence similar to taking the integral of a function over the real numbers?  ({\bf Hint:} Plot your sequence and draw rectangles with height $a_n$ and width one.)
+\vspace*{1in}
+\item In what ways is taking the difference of consecutive terms in a sequence ($a_{n}-a_{n-1}$) similar to taking the derivative of a function over the real numbers?  ({\bf Hint: } Plot your sequence and think of how you could obtain $a_{n}-a_{n-1}$ as the slope of a secant line.)
+\vspace*{1in}
+\item Suppose you start with a sequence $a_n$.  You add up terms to create the sequence of partial sums $A_N$.  You then take the difference of consecutive terms in the partial sums and find that $A_{N}-A_{N-1}=a_N$.  What theorem of calculus is this analogous to and why?  
+\vspace*{1in}
+\end{itemize}
+\end{exercise}

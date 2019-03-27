@@ -1,0 +1,82 @@
+
+  	settings.render=0;
+	import three;
+    import graph3;
+    currentprojection=orthographic(0,-0.38,1);
+    currentlight=nolight;
+
+	size(300);
+    
+    
+    //CYLINDER!!!!
+    
+    real o=0.2;
+    
+
+    real c=0.4;
+    for (c; c<1.1;c=c+0.005)
+    {
+        path3 c1=(c,0.88,0)..(0,0.88,c)..(-c,0.88,0)..(0,0.88,-c)..cycle;
+    	draw(c1,linewidth(1pt)+gray+opacity(o));
+    }
+        
+   	real c=0.88;
+    for (c; c>0; c=c-0.005)
+    {
+        path3 c1=(0.4,c,0)..(0,c,0.4)..(-0.4,c,0)..(0,c,-0.4)..cycle;
+    	draw(c1,linewidth(1pt)+gray+opacity(o));
+    }
+    	
+    real c=0.88;
+    for (c; c>0; c=c-0.005)
+    {
+        path3 c1=(1.1,c,0)..(0,c,1.1)..(-1.1,c,0)..(0,c,-1.1)..cycle;
+    	draw(c1,linewidth(1pt)+gray+opacity(o));
+    }
+        
+
+   //Cylinder Bottom
+    
+    real c=0.4;
+    for (c; c<1.1; c=c+0.005)
+    {
+        path3 c1=(c,0,0)..(0,0,c)..(-c,0,0)..(0,0,-c)..cycle;
+    	draw(c1,linewidth(1pt)+gray+opacity(o));
+    }
+    
+	//Redraw Cylinder marking things:
+	
+   	real a=0.4;
+		path3 cyl2=(a,(-2(a-0.75)^2+1.125),0)..(0,(-2(a-0.75)^2+1.125),a)..(-a,(-2(a-0.75)^2+1.125),0)..(0,(-2(a-0.75)^2+1.125),-a)..cycle;
+    	draw(cyl2,linewidth(1pt)+heavygray);
+    	
+    path3 cyl22=(1.1,(-2(a-0.75)^2+1.125),0)..(0,(-2(a-0.75)^2+1.125),1.1)..(-1.1,(-2(a-0.75)^2+1.125),0)..(0,(-2(a-0.75)^2+1.125),-1.1)..cycle;
+    	draw(cyl22,linewidth(1pt)+heavygray);
+
+	//Cylinder Bottoms
+	
+    path3 cylb2=(0.4,0,0)..(0,0,0.4)..(-0.4,0,0)..(0,0,-0.4)..cycle;
+    	draw(cylb2,linewidth(1pt)+heavygray);
+    path3 cylb3=(1.1,0,0)..(0,0,1.1)..(-1.1,0,0)..(0,0,-1.1)..cycle;
+    	draw(cylb3,linewidth(1pt)+heavygray);
+
+   	//Cylinder Wall Lines
+
+   		draw((0.4,0,0)--(0.4,0.88,0),linewidth(0.7pt)+heavygray);
+   		draw((1.1,0,0)--(1.1,0.88,0),linewidth(0.7pt)+heavygray);
+		
+   		draw((-0.4,0,0)--(-0.4,0.88,0),linewidth(0.7pt)+heavygray);
+   		draw((-1.1,0,0)--(-1.1,0.88,0),linewidth(0.7pt)+heavygray);
+
+	//Labels
+		draw((1.2,0,0)--(1.2,0.88,0),linewidth(0.7pt)+dashed);
+		draw((1.2,0,0)--(1.1,0,0));
+		draw((1.2,0.88,0)--(1.1,0.88,0));
+		label("$h$",(1.25,0.44,0),X+Y);
+		
+		dot((0,0.88,0),linewidth(3pt));
+		draw((0,0.88,0)--(0.4,0.88,0),linewidth(0.7pt)+dashed);
+		label("$r_1$",(0.2,0.93,0));
+		
+		draw((0,0.88,0)--(1.1*cos(20),0.88,1.1*sin(-20)),linewidth(0.7pt)+dashed);
+		label("$r_2$",(0.6*cos(20),0.88,0.6*sin(-20)-0.05),X+Y);

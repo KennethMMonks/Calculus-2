@@ -1,0 +1,222 @@
+\section{Mixed Practice}
+
+\subsection{Warm Ups}
+These are good problems for reinforcing the vocabulary and foundational concepts of this chapter.
+
+\begin{exercise}{\Coffeecup }
+
+ Consider the sequence $$a_n=\frac{1}{2n} $$ and the claim that $$\lim_{n\rightarrow\infty}\frac{1}{2n}=L=0. $$
+
+\begin{enumerate}[label=\alph*.)] \item For the limit above, find minimum $N$ values for each of the following $\epsilon$.  That is, for each $\epsilon$, find the \emph{smallest} value of $N$ such that all $\left|a_n-L\right|<\epsilon$ for $n>N$. \begin{itemize}
+\item $\epsilon=0.1$ \vspace{.1in} \item $\epsilon=0.01$ \vspace{.1in}  \item $\epsilon=0.001$
+\end{itemize}
+\solushun{Note: \begin{center}
+\begin{tabular}{c|c}
+$n$ & $a_n$  \\ \hline
+1 & $\frac{1}{2}$  \\
+2 & $\frac{1}{4}$  \\
+3 & $\frac{1}{6}$  \\
+4 & $\frac{1}{8}$   \\
+5 & $\frac{1}{10}$  \\
+$\cdots$ & $\cdots$ \\
+$n$ & $\frac{1}{2n}$ \\
+\end{tabular}
+\end{center}
+The progression shows that when $n=5,~~a_n=0.1$ so we have the smallest value of N to yield and $\epsilon=0.1$ is 5.\\
+Similarly, we have $a_n = \frac{1}{100}$ when $n=50$ and $a_n= \frac{1}{1000}$ when $n=500$.\\ }{0in}
+\item Find a formula for $N$ in terms of $\epsilon$.  Plug in $\epsilon=0.01$ and confirm your answer above.
+\solushun{$\left| \frac{1}{2n} -0 \right| < \epsilon \Longrightarrow \frac{1}{2n} < \epsilon \Longrightarrow \frac{1}{2\epsilon } < n \Longrightarrow \frac{1}{2\epsilon }=N $\\
+Test with $\epsilon = 0.001: N= \frac{1}{2 \cdot 0.001} = \frac{1}{2} \frac{1}{\frac{1}{100}} = \frac{100}{2} = 50$\\ }{0in}
+\item Write an $N-\epsilon$ proof to verify that the above limit is correct.
+\solushun{Let $ \epsilon >0$ also, let $N = \frac{1}{2n}$ and let $n \in \mathbb{N}$  Assume $n>N$ We wish to show that under these circumstances, the distance from $a_n= \frac{1}{2n}$ to $L=0$ will be less than $\epsilon$. \\
+$\left| a_n-L \right| =\left|\frac{1}{2n}-0 \right| = \frac{1}{2n} < \frac{1}{2N}$ since $N<n$ by our assumptions $ \frac{1}{2N }=\frac{1}{2\frac{1}{2 \epsilon}} = \frac{1}{\epsilon} = \epsilon $\\
+Thus the terms will be within $\epsilon$ or 0 past the index $\frac{1}{2 \epsilon}$ , no matter how small $\epsilon$ is chosen.\\
+Therefore, $\lim\limits_{n \to \infty}{\frac{1}{2n}} = 0$\\ }{0in}
+\end{enumerate}
+
+\AnswerKeyEntry{a.~~ For $\epsilon = 0.1, n=5,~~~\epsilon = 0.01, n=05,~~~\epsilon = 0.001, n=500$
+b.~~ $\frac{1}{2\epsilon }=N $ 
+c.~~Let $ \epsilon >0$ also, let $N = \frac{1}{2n}$ and let $n \in \mathbb{N}$  Assume $n>N$ We wish to show that under these circumstances, the distance from $a_n= \frac{1}{2n}$ to $L=0$ will be less than $\epsilon$. 
+$\left| a_n-L \right| =\left|\frac{1}{2n}-0 \right| = \frac{1}{2n} < \frac{1}{2N}$ since $N<n$ by our assumptions $ \frac{1}{2N }=\frac{1}{2\frac{1}{2 \epsilon}} = \frac{1}{\epsilon} = \epsilon $
+Thus the terms will be within $\epsilon$ or 0 past the index $\frac{1}{2 \epsilon}$ , no matter how small $\epsilon$ is chosen.
+Therefore, $\lim\limits_{n \to \infty}{\frac{1}{2n}} = 0$
+}
+\end{exercise}
+
+\begin{exercise}{\Coffeecup }
+In the game \emph{Clash of Clans}, a Barbarian King can be upgraded using Dark Elixir.  Suppose your king is currently at level 10.  To upgrade from level 10 to level 11 requires 40,000 Dark Elixir.  Every upgrade past that requires 5,000 more Dark Elixir than what the previous upgrade cost.  For example, to upgrade from level 11 to level 12 will require 45,000.  To upgrade from level 12 to level 13 requires 50,000, and so on.  What is the total amount of Dark Elixir required to upgrade your level 10 king to level 40?
+
+\AnswerKeyEntry{$3,375,000$}
+\solushun{Total upgrade cost $=40,000+45,000+50,000 + \cdots + (40,000 + 5,000(40-11))= 40000+45000+\cdots + 185000$\\
+This is an arithmetic series which is the number of terms times the average of the first and last terms $=30 \cdot \frac{185000+40000}{2}= 15 \cdot 225000 =3,375,000$ dark elixir.
+\\ }{0in}
+\end{exercise}
+
+\begin{exercise}{\Coffeecup \Coffeecup }
+An Italian math professor confesses he has a pizza-eating problem.  He decides to change his usual policy of ``Each minute, I eat all the pizza I see, until it's all gone'', to his new rule: ``Each minute, I eat 1/4 of all the pizza I see.''  He orders an 8 slice pan of pizza.
+
+\begin{enumerate}[label=\alph*.)]
+\item After one minute, how much pizza is left?
+\solushun{$8-\frac{1}{4} 8 = \frac{3}{4} 8 =6$ slices.
+\\ }{0in}
+\item After two minutes, how much pizza is left?
+\solushun{$\frac{3}{4} \left(\frac{3}{4} 8\right) =4.5$ slices.
+\\ }{0in}
+\item After twenty minutes, how much pizza is left?
+\solushun{ $\left(\frac{3}{4} \right)^{20} 8$ slices.
+\\ }{0in}
+\item No matter how long he spends with the pan, how much of the pan will never be eaten?  Explain.
+\AnswerKeyEntry{a.)~~6 Slices,~b.)~~4.5 Slices,~c.)$\left(\frac{3}{4} \right)^{20} 8$ Slices,~d.)~~None because as time goes to $\infty$ the number of slices left goes to 0, since $ \left(\frac{3}{4} \right)^{n} 8$ represents the number of slices left after n minutes and $\lim\limits_{n \to \infty}{ \left(\frac{3}{4} \right)^{n} 8} = 0$ slices.}
+\solushun{None because as time goes to $\infty$ the number of slices left goes to 0, since $ \left(\frac{3}{4} \right)^{n} 8$ represents the number of slices left after n minutes and $\lim\limits_{n \to \infty}{ \left(\frac{3}{4} \right)^{n} 8} = 0$ slices.
+\\ }{0in}
+\end{enumerate}
+\end{exercise}
+
+
+\begin{exercise}{\Coffeecup \Coffeecup \Coffeecup}
+For each of the following infinite series, determine if it converges absolutely, converges conditionally, or diverges.  Explain clearly what your reasoning is, citing any tests you use.
+\begin{enumerate}[label=\alph*.)]
+\item $ \sum\limits_{n=0}^{\infty} {\frac{(-2)^n+n^2}{n!}} $ 
+\solushun{Apply the ratio test $ \lim\limits_{n \to \infty} \left|{\frac{(-2)^{n+1}n+(n+1)^2}{(n+1)!}}\cdot {\frac{n!}{(-2)^n+n^2}}\right| = \lim\limits_{n \to \infty}\left|\frac{1}{n+1} \frac{(-2)^{n+1}+(n+1)^2}{(-2)^{n}+n^2} \right|=\lim\limits_{n \to \infty}\left|\frac{1}{n+1} \frac{(-2)+\frac{(n+1)^2}{(-2)^{n}}}{1+\frac{n^2}{(-2)^{n}}} \right| =\lim\limits_{n \to \infty} {\frac{2}{n+1}}$ because  $\frac{(n+1)^2}{(-2)^{n}}$ and $\frac{n^2}{(-2)^{n}}$ goes to zero as n goes to $\infty$ but since  $\lim\limits_{n \to \infty} {\frac{2}{n+1}}=0<1$, it converges absolutely. \\ }{0in}
+
+\item $ \sum\limits_{n=0}^{\infty} F_n $ 
+\solushun{Use the No Hope test: $\lim\limits_{n \to \infty}{ \sum\limits_{n=0}^{\infty} F_n}\neq 0$ since $F_n = 0,1,1,2,3,5,8, \cdots \infty$ So $ \sum\limits_{n=0}^{\infty} F_n$ Diverges.  \\ }{0in}
+
+\item $ \sum_{n=0}^{\infty} (-1)^nF_n $ 
+\solushun{ Use the No Hope test: $\lim\limits_{n \to \infty}{ \sum\limits_{n=0}^{\infty} (-1)^n F_n}\neq 0$ since $F_n = 0,-1,1,-2,3,-5,8, \cdots $  does not approach zero. So $ \sum\limits_{n=0}^{\infty} (-1)^n F_n$ Diverges by the No Hope Test \\ }{0in}
+
+\item$ \sum_{n=0}^{\infty} \sqrt{\frac{2}{n^3+n+1}} $ 
+\solushun{We can use the Limit Comparison Test with $\frac{1}{n^{3/2}}$ since $\lim\limits_{n \to \infty}{\frac{\sqrt{\frac{2}{n^3+n+1}}}{\frac{1}{n^{3/2}}}}=\lim\limits_{n \to \infty}{\sqrt{\frac{\frac{2}{n^3+n+1}}{\frac{1}{n^{3/2}}}}} = \lim\limits_{n \to \infty}{\sqrt{\frac{2}{n^3+n+1}{\frac{n^{3}}{1}}}}
+=\lim\limits_{n \to \infty}{\sqrt{\frac{2}{1+\frac{1}{n^2}+\frac{1}{n^3}}}}=\sqrt{2}
+$ So they have the same growth order.  According to the Limit Comparison Test, if two functions have the same growth order, then the sums of them both with either converge or diverge.  So we can use $\sum\limits_0^{\infty} \frac{1}{n^3/2}$ to determine the behavior of $  \sum_{n=0}^{\infty} \sqrt{\frac{2}{n^3+n+1}} $ and since $\sum\limits_0^{\infty} \frac{1}{n^3/2}$ converges by the p-test since $p=\frac{3}{2}>1$ So $ \sum_{n=0}^{\infty} \sqrt{\frac{2}{n^3+n+1}} $  converges absolutely.\\ }{0in}
+\item $ \sum\limits_{n=0}^{\infty} \frac{2^n}{2^n+1}$ 
+\solushun{Apply the No Hope Test$ \lim\limits_{n \to \infty}{\frac{2^n}{2^n+1}}=1 \neq 0 $ So it diverges. \\}{0in}
+
+\item $ \sum\limits_{n=0}^{\infty} \frac{n}{2^n+1}$ 
+\solushun{First note that $\frac{n}{2^n+1}< \frac{n}{2^n}$ so we can apply the Direct Comparison Test using $\frac{n}{2^n}$.  The no Hope test yields no information since $\lim\limits_{n \to \infty}{\frac{n}{2^n}} = 0$.  We can instead apply the Ratio Test and get $\lim\limits_{n \to \infty}{\left| \frac{\frac{n+1}{2^{n+1}}}{\frac{n}{2^n}} \right|}=\lim\limits_{n \to \infty}{\left| \frac{n+1}{2^{n+1}}\cdot\frac{2^n} {n}\right|}=\lim\limits_{n \to \infty}{ \frac{1}{2}}<1 $ So it converges absolutely.\\}{0in}
+\item  $ \sum\limits_{n=0}^{\infty} \frac{e^n}{e^{2n}+1} $
+\solushun{Use the Integral Test: $\int_0^{\infty}{\frac{e^x}{e^{2x}+1} ~dx}$ Let $u=e^x$ then $du = dx$ and we get $\int_{u=1}^{\infty}{\frac{u}{u^2+1} ~du}=\lim\limits_{b \to \infty}{\int_{u=1}^{b}{\frac{u}{u^2+1} ~du}}=\lim\limits_{b \to \infty}{\arctan{u} \Biggr|_1^b}\lim\limits_{b \to \infty}{\arctan{b} -\arctan{1}}=\frac{\pi}{2}-\frac{\pi}{4} = \frac{\pi}{4}$ Since the integral converges the series also converges and converges absolutely.\\
+You could also use the ratio test to get the same result.\\}{0in}
+\AnswerKeyEntry{a.) Converges Absolutely by the Ratio Test.\newline
+b.) Diverges by the No Hope Test.\newline
+c.) Diverges by the No Hope Test.\newline
+d.) Converges by the Limit Comparison Test and the p-test.\newline
+e.) Diverges by the No Hope Test \newline
+f.) Converges Absolutely by the Ratio Test.\newline
+g.)Converges Absolutely by the Integral Test or the Ratio Test.}
+\end{enumerate}
+\end{exercise}
+
+
+\subsection{Sample Test Problems}
+\begin{exercise}{\Coffeecup \Coffeecup \Coffeecup}
+
+ Define the following recursive sequence:  
+
+$$ a_0 =2 $$
+$$ a_{n+1}= a_{n}-\frac{1}{2^{n}} $$
+\begin{enumerate}[label=\alph*.)]
+\item Compute the first few values of the sequence $a_n$.  Fill them in the table below:
+\def\arraystretch{1.5}
+\begin{center}
+\begin{tabular}{|c||c|c|c|c|c|c|} \hline
+$n$ & 0 & 1 & 2 & 3 & 4 & 5 \\ \hline
+$a_n$ & & & & & & \\ \hline
+\end{tabular}
+\end{center}
+\solushun{\def\arraystretch{1.5}
+\begin{center}
+\begin{tabular}{|c||c|c|c|c|c|c|} \hline
+$n$ & 0 & 1 & 2 & 3 & 4 & 5 \\ \hline
+$a_n$& 2 & 1 & $\frac{1}{2}$ & $\frac{1}{4}$ &$\frac{1}{8}$ & $\frac{1}{16}$ \\ \hline
+\end{tabular}
+\end{center}
+ }{0in}
+\item Define $A_N$ to be the sequence of partial sums of $a_n$.  Find the first few values of the sequence $A_N$.  
+\begin{center}
+\begin{tabular}{|c||c|c|c|c|c|c|} \hline
+$N$  & 0 & 1 & 2 & 3 & 4 & 5 \\ \hline
+$A_N$ & & & & & & \\ \hline
+\end{tabular}
+\end{center} 
+
+\solushun{\begin{center}
+\begin{tabular}{|c||c|c|c|c|c|c|} \hline
+$N$ & 0 & 1 & 2 & 3 & 4 & 5 \\ \hline
+$A_N$ &2 & 3 &3.5 & 3.75 & 3.875& 3.9375 \\ \hline
+\end{tabular}
+\end{center}}{0in}
+\item Compute the following infinite sum:
+$$ \sum_{n=1}^\infty a_n $$  How does this quantity relate to your work in part b)?
+ \solushun{ Notice $a_n$ is a geometric sequence with initial term $a_0=2$ and the ratio $r=\frac{1}{2}$. We can then use the infinite geometric series formula $\sum\limits_{n=0}^\infty {a_n}= a \cdot\frac{1}{1-r}$ so we have $\sum\limits_{n=0}^\infty {2\cdot \left(\frac{1}{2}\right)^n} = 2 \cdot \frac{1}{1-\frac{1}{2}} = 2 \frac{1}{\frac{1}{2}} = 2 \cdot 2 = 4$ So the partial sums converge to 4.
+\\ }{0in}
+\end{enumerate}
+\AnswerKeyEntry{Notice $a_n$ is a geometric sequence with initial term $a_0=2$ and the ratio $r=\frac{1}{2}$. We can then use the infinite geometric series formula $\Sigma_{n=0}^\infty {a_n}= \frac{a}{1-r}$ so we have $\Sigma_{n=0}^\infty {2\cdot \left(\frac{1}{2}\right)^n} = 2 \cdot \frac{1}{1-\frac{1}{2}} = 2 \frac{1}{\frac{1}{2}} = 2 \cdot 2 = 4.$ Thus, the sequence of partial sums converges to $4$.}
+\end{exercise}
+
+
+\begin{exercise}{\Coffeecup \Coffeecup \Coffeecup}
+\begin{enumerate}[label=\alph*.)]
+\item Formally define what it means for a sequence $a_n$ to converge to a limit $L$.
+\solushun{ $\lim\limits_{n \to \infty}{a_n} = L \Longleftrightarrow $ For all $\epsilon >0$ there exists N such that for all $n>N, |a_n-L| < \epsilon$ \\ }{0in}
+
+\item Consider the sequence $a_n= \frac{n}{3n+1}$.  What is $\lim\limits_{n \rightarrow \infty} a_n$?
+\solushun{ $\lim\limits_{n \rightarrow \infty} a_n=\lim\limits_{n \rightarrow \infty} \frac{n}{3n+1} =\lim\limits_{n \rightarrow \infty} \frac{1}{3+\frac{1}{n}}=\frac{1}{3}$\\ }{0in}
+\item Write an $N-\epsilon$ proof of your claim in part b.
+\solushun{ First do the side work:\\
+$\left| \frac{n}{3n+1} - \frac{1}{3} \right| =\left| \frac{3n-3n-1}{3(3n+1)} \right| =\left| \frac{-1}{3(3n+1)} \right|<\epsilon \Longleftrightarrow \frac{1}{3\epsilon} < 3n+1 \Longleftrightarrow \frac{1}{3 \epsilon }-1 < 3n \Longleftrightarrow \frac{1}{9 \epsilon}-\frac{1}{3} < n$\\
+Let $\epsilon>0$ then choose $N=\frac{1}{9n}-\frac{1}{3}$ Then choose $n \in \mathbb{N}$ with $n>N$. We now show that any $a_n$ for such n is no more than $\epsilon$ away from $\frac{1}{3}$.\\
+$\left| \frac{n}{3n+1} - \frac{1}{3} \right|=\left| \frac{3n}{3(3n+1)} - \frac{3n+1}{3(3n+1)} \right|=\left| \frac{-1}{3(3n+1)} \right|= \frac{1}{3(3n+1)}<\frac{1}{3(3N+1)}$ \\note here we made the denominator smaller by introducing N for n \\
+$\frac{1}{3(3N+1)}=\frac{1}{3\left(3\left(\frac{1}{9 \epsilon}-\frac{1}{3} \right)+1\right)}=\frac{1}{3\left(\left(\frac{1}{3 \epsilon}-1 \right)+1\right)}=\frac{1}{3\left(\frac{1}{3 \epsilon} \right)}=\frac{1}{\frac{1}{\epsilon}}=\epsilon$
+\\}{0in}
+\end{enumerate}
+\AnswerKeyEntry{a.) $\lim\limits_{n \to \infty}{a_n} = L \Longleftrightarrow $ For all $\epsilon >0$ there exists N such that for all $n>N, |a_n-L| < \epsilon$ \newline
+b.) $\frac{1}{3}$\newline
+c.) Let $\epsilon>0$ then choose $N=\frac{1}{9n}-\frac{1}{3}$ Then choose $n \in \mathbb{N}$ with $n>N$. We now show that any $a_n$ for such n is no more than $\epsilon$ away from $\frac{1}{3}$. \newline
+$\left| \frac{n}{3n+1} - \frac{1}{3} \right|=\left| \frac{3n}{3(3n+1)} - \frac{3n+1}{3(3n+1)} \right|=\left| \frac{-1}{3(3n+1)} \right|= \frac{1}{3(3n+1)}<\frac{1}{3(3N+1)}$ \newline note here we made the denominator smaller by introducing N for n\newline
+$\frac{1}{3(3N+1)}=\frac{1}{3\left(3\left(\frac{1}{9 \epsilon}-\frac{1}{3} \right)+1\right)}=\frac{1}{3\left(\left(\frac{1}{3 \epsilon}-1 \right)+1\right)}=\frac{1}{3\left(\frac{1}{3 \epsilon} \right)}=\frac{1}{\frac{1}{\epsilon}}=\epsilon$
+}
+\end{exercise}
+
+
+\begin{exercise}{\Coffeecup \Coffeecup \Coffeecup}
+ Consider the following infinite series; 
+
+$$1-\frac{1}{1!}+\frac{1}{2!}-\frac{1}{3!}+\frac{1}{4!}-\frac{1}{5!}+\cdots $$
+\begin{enumerate}[label=\alph*.)]
+\item Apply the Divergence Test/No Hope Test to the above series.  What does it tell you about its convergence or divergence?
+\solushun{First rewrite the series as $ \sum\limits_{n=0}^{\infty}{(-1)^n \frac{1}{n!}}$ Now we can apply the No Hope Test $\lim\limits_{n \to \infty}{(-1)^n \frac{1}{n!}} = 0$ So the no hope test gives no information since it requires the limit to be not equal to zero.
+\\ }{0in}
+\item Apply the Alternating Series Test to the above series.  What does it tell you about its convergence or divergence?
+\solushun{According to the Alternating Series test, we just need to determine if $\frac{1}{n!}$ approaches zero and it does so $ \sum\limits_{n=0}^{\infty}{(-1)^n \frac{1}{n!}}$ converges absolutely by the Alternating Series Test.
+\\ }{0in}
+\item Apply the Ratio Test to the above series.  What does it tell you about its convergence or divergence?
+\solushun{$\lim\limits_{n \to \infty}{ \left| \frac{\frac{(-1)^{n+1}}{(n+1)!} }{\frac{(-1)^n}{n!}} \right| } =\lim\limits_{n \to \infty}{\left| \frac{(-1)^{n+1}}{(n+1)!} \cdot {\frac{n!}{(-1)^n}} \right|}=\lim\limits_{n \to \infty}\frac{1}{(n+1)}=0 < 1$ So $ \sum\limits_{n=0}^{\infty}{(-1)^n \frac{1}{n!}}$ converges absolutely by the Ratio Test\\ }{0in}
+\end{enumerate}
+\AnswerKeyEntry{a.)$\lim\limits_{n \to \infty}{(-1)^n \frac{1}{n!}} = 0$ So the no hope test gives no information since it requires the limit to be not equal to zero. \newline
+b.)It converges absolutely by the Alternating Series Test.\newline
+c.)It converges absolutely by the Ratio Test
+}
+\end{exercise}
+
+\begin{exercise}{\Coffeecup \Coffeecup }
+  Consider the sequence given by the following recurrence relation: 
+
+\begin{align*}
+a_0&=0 \\
+a_n&=a_{n-1}+3n^2-3n+1 
+\end{align*}
+
+\begin{enumerate}[label=\alph*.)]
+\item Write out the first five terms of $a_n$.
+\solushun{$a_0 = 0, a_1=1, a_2=1+3\cdot2^2-3\cdot2+1 = 8,  a_3=8+3\cdot3^2-3\cdot3+1 = 27, a_4=1+3\cdot4^2-3\cdot4+1 = 64  $\\ }{0in}
+\item Find an explicit formula for $a_n$.
+\solushun{These are consecutive perfect cubes so $a_n = n^3$\\ }{0in}
+\item Does  $ \sum_{n=0}^\infty a_n $ converge or diverge?  Explain why, clearly indicating any tests you use in the process.
+\solushun{It diverges by the No Hope Test since $\lim\limits_{n \to \infty}{ n^3} \neq 0$ \\ }{0in}
+\end{enumerate}
+\AnswerKeyEntry{a.)$a_0 = 0, a_1=1, a_2=1+3\cdot2^2-3\cdot2+1 = 8,  a_3=8+3\cdot3^2-3\cdot3+1 = 27, a_4=1+3\cdot4^2-3\cdot4+1 = 64  $\newline
+b.)$a_n = n^3$\newline
+c.)It diverges by the No Hope Test
+}
+\end{exercise}

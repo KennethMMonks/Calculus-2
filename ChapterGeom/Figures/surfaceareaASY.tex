@@ -1,0 +1,79 @@
+
+\begin{asy}
+  	settings.render=0;
+	import three;
+    import graph3;
+    currentprojection=orthographic(0,-0.25,1);
+    currentlight=nolight;
+
+	size(300);
+    
+    //Creates Axis:
+    
+    defaultpen(fontsize(18pt));
+    xaxis3(Label("$x$"),-.5,1.5,linewidth(1pt),above=true,Arrow3);
+    yaxis3(Label("$y$"),-.5,2.2,linewidth(1pt),above=true,Arrow3);
+    
+    label("$f(x)$",(1.1,0.9,0),X+Y);
+    
+    label("$(b,f(b))$",(1.35,1.5,0),fontsize(15pt),X+Y);
+    label("$(a,f(a))$",(0.6,-.15,0),fontsize(15pt),X+Y);
+    
+    real b=0.4;
+    for (b; b<0.85; b=b+0.001)
+    {
+        path3 c=(b,(b)^5,0)..(0,b^5,b)..(-b,(b)^5,0)..(0,(b)^5,-b)..cycle;
+    	draw(c,linewidth(1pt)+gray+opacity(0.25));
+    }
+    for (b=0.85; b<1.1; b=b+0.001)
+    {
+        path3 c=(b,(b)^5,0)..(0,b^5,b)..(-b,(b)^5,0)..(0,(b)^5,-b)..cycle;
+    	draw(c,linewidth(1.5pt)+gray+opacity(0.25));
+    }
+    
+    //Defines our function that we revolve
+    
+    	real x1(real t) {return t;}
+		real y1(real t) {return t^5;}
+		real z1(real t) {return 0;}
+    	path3 p=graph(x1,y1,z1,0,1.1487,operator ..);
+        draw(p,linewidth(1pt),Arrow3(size=20bp));
+        draw(graph(x1,y1,z1,0.4,1.1,operator ..),linewidth(2pt));
+        
+        dot((0.4,0.4^5,0),linewidth(7pt));
+        dot((1.1,1.1^5,0),linewidth(7pt));
+        
+    //Revolves the function
+        
+		path3 p1=graph(x1,y1,z1,0,1.1,operator ..);
+        
+        for(int c=1; c<9; c=c+1)
+        {
+        	draw(rotate(c*45,(0,1,0))*p1,linewidth(1pt));
+        }
+    	
+	//Circles!
+    
+		real a=0.4;
+		path3 c1=(a,(a)^5,0)..(0,a^5,a)..(-a,(a)^5,0)..(0,(a)^5,-a)..cycle;
+    	draw(c1,linewidth(1pt));
+        
+        real a=0.85;
+		path3 c2=(a,(a)^5,0)..(0,a^5,a)..(-a,(a)^5,0)..(0,(a)^5,-a)..cycle;
+    	draw(c2,linewidth(1pt));
+        
+        real a=1;
+		path3 c3=(a,(a)^5,0)..(0,a^5,a)..(-a,(a)^5,0)..(0,(a)^5,-a)..cycle;
+    	draw(c3,linewidth(1pt));
+
+        real a=1.1;
+		path3 c4=(a,(a)^5,0)..(0,a^5,a)..(-a,(a)^5,0)..(0,(a)^5,-a)..cycle;
+    	draw(c4,linewidth(1pt));
+        
+    //Revolve arrow
+        
+    	path3 arrow=(0.4,-0.3,0)..(0,-0.3,-0.4)..(-0.4,-0.3,0)..(0,-0.3,0.4)..(0.3,-0.33,0.4);
+		draw(arrow,linewidth(1.5pt),Arrow3(size=20bp));
+
+
+\end{asy}

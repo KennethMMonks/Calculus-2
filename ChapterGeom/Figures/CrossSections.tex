@@ -1,0 +1,66 @@
+  	settings.render=0;
+	import three;
+    import graph3;
+    currentprojection=orthographic(1,-1,1.25);
+    currentlight=nolight;
+
+	size(300);
+    
+    
+    //Squares
+    
+    real o=0.1;
+    
+   	real c=0;
+    for (c; c<1.75; c=c+0.001)
+    {
+        path3 c1=(c,0,0)--(c,sqrt(c),0)--(c,sqrt(c),sqrt(c))--(c,0,sqrt(c))--cycle;
+    	draw(c1,linewidth(1pt)+gray+opacity(o));
+    }
+    
+    //Square Detail
+    	c=1.75;
+    	    path3 c1=(c,0,0)--(c,sqrt(c),0)--(c,sqrt(c),sqrt(c))--(c,0,sqrt(c))--cycle;
+    		draw(c1,linewidth(1pt)+heavygray);
+    	c=1.7;
+    	    path3 c1=(c,0,0)--(c,sqrt(c),0)--(c,sqrt(c),sqrt(c))--(c,0,sqrt(c))--cycle;
+    		draw(c1,linewidth(1pt)+heavygray);
+    //Defines Function:
+        real x1(real t) {return t;}
+		real y1(real t) {return sqrt(t);}
+		real z1(real t) {return 0;}
+    
+    	//Revolves function        
+        
+    	path3 p1=graph(x1,y1,z1,0,1.75,operator ..);
+
+        draw(rotate(90,(1,0,0))*p1,linewidth(0.5pt)+heavygray+dashed);
+        
+            	real x2(real t) {return t;}
+				real y2(real t) {return sqrt(t);}
+				real z2(real t) {return sqrt(t);}
+        draw(graph(x2,y2,z2,0,1.75,operator ..),linewidth(0.5pt)+heavygray+dashed);
+    
+    
+    //Draws function
+    
+    	path3 p=graph(x1,y1,z1,0,2.5,operator ..);
+        draw(p,linewidth(1pt),Arrow3(size=20bp));
+        draw(graph(x1,y1,z1,0,1.75,operator ..),linewidth(2pt));
+        
+        dot((0,0,0),linewidth(7pt));
+        dot((1.75,sqrt(1.75),0),linewidth(7pt));	
+        
+
+	//Creates Axis:
+
+    defaultpen(fontsize(18pt));
+    xaxis3(Label("$x$"),-.5,3,linewidth(1pt),above=true,Arrow3);
+    yaxis3(Label("$y$"),-.5,sqrt(2.5)+0.25,linewidth(1pt),above=true,Arrow3);
+    
+    label("$f(x)$",(1.8,sqrt(2)+0.25,0),X+Y);
+    
+    label("$(b,f(b))$",(2,sqrt(1.75)-0.2,0),fontsize(10pt),X+Y);
+    label("$(a,f(a))$",(0.25,-0.2,0),fontsize(10pt),X+Y);
+    
+    label("$A(x)$",(1.7,0.9,0.8),fontsize(13pt),Y+Z);

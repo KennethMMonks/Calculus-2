@@ -1,0 +1,124 @@
+
+\section{Rational and Irrational Numbers}
+
+One of the oldest questions in mathematics is the following:  
+
+$$ \emph{ \text{ Which real numbers are rational, and which are irrational? } }
+$$
+
+\subsection{Rational Numbers}
+
+Recall that the set of rational numbers is the set of all numbers that can be expressed as the ratio of two integers.  More formally: 
+
+$$ {\mathbb{Q}}= \Bigg \lbrace \frac{a}{b} : a, b \in { \mathbb{Z} }, b \not = 0 \Bigg \rbrace $$
+
+So to show a number is rational is usually not terribly hard... we simply need to find some integers $a$ and $b$ whose ratio is your number.
+\begin{exercise}{Definition of Rational Numbers \Coffeecup}
+Show that the real number 2.1 is rational.  What is your $a$ and what is your $b$?
+\vspace*{1in}
+\end{exercise}
+
+If the decimal expansion is repeating and not terminating, it is slightly more tricky, as we need an infinite geometric series.  
+\begin{exercise}{Repeating Decimals are Rational \Coffeecup \Coffeecup}
+\begin{enumerate}
+\item Use a geometric series to show that .0131313131313... is rational:
+\vspace*{2in}
+\item The infinite geometric series formula in fact proves that every number with a repeating decimal expansion is rational.  Explain why this is the case:
+\vspace*{2in}
+\end{enumerate}
+\end{exercise}
+
+\subsection{Irrational Numbers}
+
+What is \emph{much} harder is to show that a number is irrational.  To accomplish this, we must show that it is not possible to express a number as a ratio of integers for \emph{any} choice of integers.  Since there are infinitely many, we obviously cannot run through all choices of $a$ and $b$ to verify that none of them work.  Rather,  an irrationality argument typically follows a pattern of logic known as ``proof by contradiction'' (\emph{Reductio ad absurdum}).  The basic idea is to assume the opposite of what you are trying to prove and deduce an absurd conclusion, thus implying your working assumption was false.  In this case, 
+to show that a number $r \in \mathbb{R}$ is irrational via proof by contradiction:
+
+\begin{enumerate}
+\item Assume $r$ is rational.
+\item Thus there exist some integers $a$ and $b$ with $r=\frac{a}{b}$.
+\item Use the equation $r=\frac{a}{b}$ and known properties of the number $r$ to deduce a statement we know is false. 
+\item Conclude that our assumption of $r$ being rational must have been false, so $r$ is in fact irrational.
+\end{enumerate}
+
+\subsection{The Square Root of Two}
+Here is the classic proof that the square root of two is irrational.  It relies on the simple fact that a number is even if and only if it can be written as a multiple of two.  
+
+\begin{exercise}{Irrationality of $\sqrt{2}$ \Coffeecup \Coffeecup \Coffeecup}
+Fill in the blanks in the following proof:
+
+\vspace*{.1in}
+
+{\bf Proof: }  Assume that $\sqrt{2}$ is rational.  Then $$\sqrt{2}=\frac{a}{b}$$ for some $a,b \in \mathbb{Z}$.  We may assume that $a$ and $b$ are relatively prime.  That is, if $a$ and $b$ had a common factor greater than one, we could cancel it out of the fraction, so we may as well assume $a$ and $b$ were chosen to have no common factors greater than one.
+
+By squaring both sides and clearing denominators in the above equation, we get $$ \underline{\hspace{2in}}$$
+
+Thus $a^2$ is even, since it is two times an integer.  But since $a^2$ is even, $a$ must be even as well.  Therefore we can write $a=2m$ for some number $m \in \underline{\hspace{.4in}}$.  Plugging this into the above equation produces the following: $$2b^2=(2m)^2 \implies 2b^2 = 4m^2 \implies b^2 = \underline{\hspace{.4in}} $$  Thus $b^2$ is even so $\underline{\hspace{.4in}}$ is also even.
+
+However, $a$ and $b$ were taken to be relatively prime!  If $a$ and $b$ are both even than the initial fraction $\frac{a}{b}$ was not a reduced fraction as assumed since we could cancel a two out of the top and bottom.  Thus we have reached a contradiction, so our initial assumption must have been false.
+
+We conclude the square root of two is irrational!
+{\bf QED}
+\end{exercise}
+
+There is a lot of interesting history behind this result.  The square root of two first came up as a result of the Pythagorean Theorem being used to measure the diagonal of a square.  The exact history of this result is sketchy!  Different authors tell different versions of the story.
+
+\begin{exercise}{A Brief Literature Search \Coffeecup \Coffeecup}
+Regardless of which account is correct, history indicates that the result is at least how old?  Who are two other Greeks who may have discovered the result?
+Cite your sources below.
+\vspace{1in}
+\end{exercise}
+
+\subsection{Euler's Constant $e$}
+
+Significantly harder than proving the irrationality of the square root of two is proving that the number $e$ is irrational.  The reason $e$ is fundamentally harder to deal with is because $e$ turns out to be {\bf transcendental } whereas $\sqrt{2}$ is not.  This means that $\sqrt{2}$ is a root of a polynomial equation with integer coefficients, whereas $e$ is not the root of any such polynomial. 
+
+\begin{exercise}{The Square Root of 2 is not Transcendental  \Coffeecup}
+Justify the above claim by finding a polynomial with integer coefficients that has $\sqrt{2}$ as a root.
+
+\vspace*{1in}
+\end{exercise}
+
+Notice that in our proof of the irrationality of $\sqrt{2}$, our very first step was exactly the condition that the number is a root of a polynomial with integer coefficients.  Since we have no such polynomial for $e$, we must start our proof based on something else.  It turns out this ``something'' is the infinite series expansion for $e!$ $\leftarrow$ {\small{\emph{excitement, not factorial}}}  Let us step through this together.  
+
+\begin{exercise}{Proof That $e$ is Irrational \Coffeecup \Coffeecup \Coffeecup}
+
+Fill in the missing parts of the argument below:
+
+\vspace*{.2in}
+
+{\bf Proof:} First let's write $e$ as an infinite series.  To do this, recall the power series for the exponential function:  $$ e^x = 1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\frac{x^4}{4!}+ \cdots $$ Set $x=1$ to get an infinite series for $e$: $$ e=e^1= \underline{\hspace{3in}}$$
+
+Now we proceed by the classic proof technique: proof by \underline{\hspace{1in}}. Accordingly, we assume $e$ is in fact rational and then show that it leads to an absurd statement.
+
+Thus, assume $e$ is rational.  Then there exist some $a,b \in \mathbb{Z}$ such that
+
+$$ e = \underline{\hspace{1in}} $$
+
+For any $n$ we can multiply both sides of the above equation by $\underline{\hspace{1in}}$ to obtain $$ n!be=n!a  $$  Notice that the right-hand side is an integer because $n!$ and $a$ both are.  Thus the left-hand side must also be an integer.  Notice however, the left-hand-side can be decomposed as follows:
+
+$$ n!be=bn!\left( 1+\frac{1}{1!}+\frac{1}{2!}+\cdots +\frac{1}{n!}\right) + bn!\left(\frac{1}{(n+1)!} +\frac{1}{(n+2)!}+\frac{1}{(n+3)!}+\cdots\right)$$ The term $bn!\left( 1+\frac{1}{1!}+\frac{1}{2!}+\cdots +\frac{1}{n!}\right)$ is an integer because 
+
+\vspace{.1in}
+
+\underline{\hspace{2.5in}}.
+
+\vspace{.1in}
+
+We now proceed to show that the second term is not an integer for sufficiently large $n$.  This will produce a contradiction since the left-hand side was an integer for all $n$.  In particular, we will show that  $bn!\left(\frac{1}{(n+1)!} +\frac{1}{(n+2)!}+\frac{1}{(n+3)!}+\cdots\right)$ $=b\left( \frac{1}{n+1}+ \frac{1}{(n+1)(n+2)}+\frac{1}{(n+1)(n+2)(n+3)}+\cdots\right)$ is between $\frac{b}{n+1}$ and 
+$\frac{b}{n}$, which for $n>b$ will be nonintegral.  Proceeding, we have:
+
+\begin{align}
+\frac{1}{n+1} &< \frac{1}{n+1}+ \frac{1}{(n+1)(n+2)}+\frac{1}{(n+1)(n+2)(n+3)}+\cdots \\
+ &< \frac{1}{n+1}+ \frac{1}{(n+1)(n+1)}+\frac{1}{(n+1)(n+1)(n+1)}+\cdots \\
+ &= \frac{1}{n+1}+ \frac{1}{(n+1)^2}+\frac{1}{(n+1)^3}+\cdots \\
+ &= \frac{\frac{1}{n+1}}{1-\frac{1}{n+1}} \\
+ &= \frac{1}{n}
+\end{align} The above steps are justified as follows.  The inequality on line (1) is true because \underline{\hspace{2in}}.  To get from line (1) to line (2) we notice that \underline{\hspace{3in}}.  To get from line (2) to line (3) is simply algebra.  To get from line (3) to line (4) is an infinite geometric series with common ratio \underline{\hspace{1in}} and initial term \underline{\hspace{1in}}.  To get from line (4) to line (5) is again just algebra (check this step).
+
+Multiplying all sides by $b$, we get $$ \frac{b}{n+1} < b \left( \frac{1}{n+1}+ \frac{1}{(n+1)(n+2)}+\frac{1}{(n+1)(n+2)(n+3)}+\cdots\right) < \frac{b}{n} $$ as desired, which completes the proof. 
+
+\hspace{4in} {\bf QED}
+\end{exercise}
+\vspace{.2in}
+
+This proof is actually not the original proof this fact; Euler first proved it using continued fractions.  The proof above is due to Fourier.  It was again proved in 1873 by Charles Hermite.  It appeared in his landmark paper \emph{ Sur la fonction exponentielle}.  Hermite's method worked not only for $e$ but also lead to the proof that $\pi$ is irrational.  This proof however is quite a bit harder than the proof for $e$, and will be saved for later in your mathematical career, along with the proofs that $\pi$ and $e$ are transcendental!

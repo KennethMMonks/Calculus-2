@@ -1,0 +1,21 @@
+
+\begin{asy}
+	size(100);  
+    import graph;
+    
+    real f(real x)
+    {
+        return 2x+1;
+    }
+           
+    xlimits(0, 2);
+	ylimits(0, 5);
+    draw(graph(f,0,2,n=400), linewidth(.5bp));
+    draw((0,3)--(1,3),dashed);
+    draw((1,0)--(1,3),dashed);
+    
+	yaxis("$u$", -.5, 5);
+	xaxis("$x$", -.5, 2);
+    labelx("$0$",0,1S+1W);
+    
+\end{asy}
