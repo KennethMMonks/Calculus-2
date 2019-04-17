@@ -164,6 +164,16 @@ Thus we determined our choice of $N$, namely $$N= \frac{\ln\left(\frac{1}{\epsil
 
 \begin{exercise}{Justifying Our Work \Coffeecup}
 In words, annotate the above example to indicate why each line follows from the previous.
+\solushun{
+\begin{align*}
+    \left| \frac{1}{2^n}-0 \right|&<\epsilon \tag{This relates $n,\epsilon$ and the limit 0}\\
+    \frac{1}{2^n}&<\epsilon\tag{We just drop the 0, and the sequence is always positive, so we can drop the absolute value signs.} \\
+    \frac{1}{\epsilon}&<2^n \tag{Multiply both sides by $2^n$ and divide both by $\epsilon$.}\\
+    \ln\left(\frac{1}{\epsilon}\right)&<\ln\left(2^n\right) \tag{Take the natural log of both sides to bring down the exponent on the RHT.}\\
+    \ln\left(\frac{1}{\epsilon}\right)&<n\ln\left(2\right) \tag{Exponent rule for logs lets us bring down $n$ on the RHT.}\\
+    \frac{\ln\left(\frac{1}{\epsilon}\right)}{\ln\left(2\right)}&<n \tag{Divide both sides by $\ln(2)$ to isolate $n$.}\\
+\end{align*}
+}{0in}
 \end{exercise}
 
 Now that we found our value for $N$, we are ready to follow the steps described above and construct our proof.
@@ -187,6 +197,19 @@ Thus, for indices $n$ that are larger than our choice of $N$, the corresponding 
 
 \begin{exercise}{Justifying Our Work \Coffeecup}
 Once again in words, annotate the above example to indicate why each line follows from the previous.  Pay particular attention to identify where we used the starting assumption that $n>N$.
+    \solushun{
+        \begin{align*}
+            \left|\frac{1}{2^n}-0\right|&=\frac{1}{2^n}\\\tag{We know that the sequence terms are always positive, so we clear out the absolute value bars.} \\
+            &<\frac{1}{2^N} \tag{This is our starting assumption $n>N$.}\\
+            &\text{(Since $n$ is in the denominator of a fraction, replacing it with a smaller number has the effect of)}\\
+            &\text{(making the fraction bigger.)}\\
+            &=\frac{1}{2^{\left(\frac{\ln\left(\frac{1}{\epsilon}\right)}{\ln\left(2\right)}\right)}} \tag{Substitute in the value we chose for $N$.}\\
+            &=\frac{1}{2^{\left(\log_2\left(\frac{1}{\epsilon}\right)\right)}} \tag{Change of base formula.}\\
+            &=\frac{1}{\frac{1}{\epsilon}} \tag{Since the base of the log is the base of the exponent,}\\
+            &\text{(we can replace the whole expression with the log argument.)}\\
+            &=\epsilon.\tag{Simplify the fraction.}
+        \end{align*}
+    }{0in}
 \end{exercise}
 
 As this course does not go through a general treatment of what constitutes a proof or how to come up with one, the example above could be taken as a template for how an $N-\epsilon$ proof should be written.  In a more in-depth study of analysis, you will encounter more complicated situations where the above template may be too simplistic.  It will be expanded upon when you have the right tools!  For now, follow the above proof template for the following exercises:
