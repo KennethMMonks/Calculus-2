@@ -58,7 +58,7 @@ $$ \cos(x)=\sum_{n=0}^\infty (-1)^{n}\frac{1}{\left(2n\right)!}x^{2n}$$
 Let us apply the Ratio Test to this series.  Our goal is to get the absolute value of the ratios of consecutive terms to be less than 1, in which case we are certain the series converges.
 
 \begin{align*}
-\lim_{n \rightarrow \infty}\left| \frac{a_{n+1}}{a_n} \right| &=\lim_{n \rightarrow \infty} \left|\frac{(-1)^{n+2}\frac{1}{\left(2(n+1)\right)!}x^{2(n+1)}}{(-1)^{n+1}\frac{1}{\left(2n\right)!}x^{2n}} \right| \\
+\lim_{n \rightarrow \infty}\left| \frac{a_{n+1}}{a_n} \right| &=\lim_{n \rightarrow \infty} \left|\frac{(-1)^{n+1}\frac{1}{\left(2(n+1)\right)!}x^{2(n+1)}}{(-1)^{n}\frac{1}{\left(2n\right)!}x^{2n}} \right| \\
  &=\lim_{n \rightarrow \infty} \left|\frac{x^{2n+2}\left(2n\right)!}{\left(2n+2)\right)!x^{2n}} \right| \\
  &=\lim_{n \rightarrow \infty} \left|\frac{x^{2}\left(2n\right)\left(2n-1\right)\cdots 3\cdot 2 \cdot 1}{\left(2n+2\right)\left(2n+1\right)\left(2n\right)\left(2n-1\right)\left(2n-2\right)\cdots 3\cdot 2 \cdot 1} \right| \\
  &=\lim_{n \rightarrow \infty} \left|\frac{x^{2}}{\left(2n+2\right)\left(2n+1\right)} \right| \\
@@ -66,7 +66,7 @@ Let us apply the Ratio Test to this series.  Our goal is to get the absolute val
  &=0\left|x^2 \right| \\
  &=0
 \end{align*}
-The ratio of consecutive terms, being zero, is always strictly less than one no matter what $x$ is.  Since it converges for every $x$ value, the interval of convergence is $(\infty, \infty)$.
+The ratio of consecutive terms, being zero, is always strictly less than one no matter what $x$ is.  Since it converges for every $x$ value, the interval of convergence is $(-\infty, \infty)$.
 \end{example}
 
 \begin{exercise}{Careful with Algebra! \Coffeecup}
