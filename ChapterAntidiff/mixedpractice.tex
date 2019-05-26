@@ -55,16 +55,23 @@ So we have $$\int{\frac{1}{x^4-x^2}dx} = \int{\frac{\frac{1}{2}}{x-1}+\frac{-\fr
  Consider $\int {\cos^{13}{x}\sin^{5}{x} \dif x}$.
 \begin{itemize}
 \item  Can you compute this integral using $u=\cos{x}$?  Explain.
-\solushun{ Yes, use one factor of $\sin{x} $ for the $\dif u$. Specifically, $u=\cos{x}$ implies $ \dif u=-\sin{x} \dif x$ and use  $\sin^2{x}=1-\cos^2{x}$.  We now calculate the integral as 
-$\int {\cos^{13}{x}\sin^{5}{x} dx}=\int {\cos^{13}{x}\sin^{4}{x}\sin{x} \dif x}=
--\int {u^{13}(1-u^2)^2 \dif u}=-\int {u^{13}-2u^{15} + u^{17} \dif u}= -\frac{u^{14}}{14} + \frac{2 u^{16}}{16} + \frac{u^{18}}{18} = -\frac{\cos^{18}{x}}{18}+ \frac{\cos^{16}{x}}{8} - \frac{\cos^{14}{x}}{14} + C.
-$\\ }{0in}
+\solushun{ Yes, use one factor of $\sin{x} $ for the $\dif u$. Specifically, $u=\cos{x}$ implies $ \dif u=-\sin{x} \dif x$ and use  $\sin^2{x}=1-\cos^2{x}$.
+\\ }{0in}
 
 \item  Can you compute this integral using $u=\sin(x)$?  Explain.
-\solushun{ \\ }{0in}
+    \solushun{ Yes, using $\cos(x)$ for the $\dif u$. Specifically, $u=\sin(x)$ implies $\dif u = \cos(x)\dif x$. Then $\int {\cos^{13}{x}\sin^{5}{x} \dif x}=\int \cos^{12}(x)\sin^5(x)\cos(x)\dif x = \int (1-u^2)^6 u^5\dif u$. \\ }{0in}
 
 \item Which of the two above substitutions will be easier to use?  Carry out the integration, using the easier of the two.
-\solushun{ \\ }{0in}
+\solushun{ 
+        The first substitution is easier. Proceeding with $u=\cos(x)$, we get
+        \begin{align*}
+        \int {\cos^{13}{x}\sin^{5}{x} dx} &= \int {\cos^{13}{x}\sin^{4}{x}\sin{x} \dif x}\\
+        &=-\int {u^{13}(1-u^2)^2 \dif u}\\
+        &=-\int {u^{13}-2u^{15} + u^{17} \dif u}\\
+        &= -\frac{u^{14}}{14} + \frac{2 u^{16}}{16} + \frac{u^{18}}{18}\\
+        &= -\frac{\cos^{18}{x}}{18}+ \frac{\cos^{16}{x}}{8} - \frac{\cos^{14}{x}}{14} + C.
+        \end{align*}
+}{0in}
 \end{itemize}
 \AnswerKeyEntry{$-\frac{\cos^{18}{x}}{18}+ \frac{\cos^{16}{x}}{8} - \frac{\cos^{14}{x}}{14} + C$}
 
@@ -128,7 +135,7 @@ We now have $\frac{x^3}{x^3-3x^2+4} = 1 + \frac{ -\frac{1}{9}}{x+1} + \frac{\fra
 \item Use your work from the previous part to evaluate the following antiderivative: $$ \int \frac{x^3}{x^3-3x^2+4} \dif x  $$
 \AnswerKeyEntry{\textbullet $ \frac{x^3}{x^3-3x^2+4} = 1 + \frac{ -\frac{1}{9}}{x+1} + \frac{\frac{28}{9}}{x-2} + \frac{\frac{8}{3}}{(x-2)^2} $ \newline
 \textbullet  $  \intop {1 + \frac{ -\frac{1}{9}}{x+1} + \frac{\frac{28}{9}}{x-2} + \frac{\frac{8}{3}}{(x-2)^2} \dif x} = x -\frac{1}{9} \ln{|x+1|} + \frac{28}{9} \ln{|x-2|} - \frac{8}{3} \frac{1}{(x-2)} + C$ }
-%\solushun{ $$ \int {1 + \frac{ -\frac{1}{9}}{x+1} + \frac{\frac{28}{9}}{x-2} + \frac{\frac{8}{3}}{(x-2)^2} dx} = x -\frac{1}{9} \ln{|x+1|} + \frac{28}{9} \ln{|x-2|} - \frac{8}{3} \frac{1}{(x-2)} + C$$}
+        \solushun{ $$ \int \left( 1 + \frac{ -\frac{1}{9}}{x+1} + \frac{\frac{28}{9}}{x-2} + \frac{\frac{8}{3}}{(x-2)^2}\right) \dif x = x -\frac{1}{9} \ln{|x+1|} + \frac{28}{9} \ln{|x-2|} - \frac{8}{3} \frac{1}{(x-2)} + C$$}{}
 \end{itemize}
 
 \end{exercise}
