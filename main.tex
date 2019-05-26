@@ -2,7 +2,7 @@
 
 \input{Titlepage/Preamble/PackageOfPackages}
 % Set this =0 to hide solutions, =1 to show solutions
-\def\showsolutions{1}
+\def\showsolutions{0}
 \input{Titlepage/Preamble/Environments}
 \input{Titlepage/Preamble/SymbolsAndCounters}
 \input{Titlepage/Preamble/Formatting}
@@ -30,16 +30,18 @@
 
 
 \part{Integration}
-%\include{ChapterAntidiff/usub}
-%\include{ChapterAntidiff/ibp}
-%\include{ChapterAntidiff/sincos}
-%\include{ChapterAntidiff/trigsub}
-%\include{ChapterAntidiff/pfd}
+%\begin{comment}
+\include{ChapterAntidiff/usub}
+\include{ChapterAntidiff/ibp}
+\include{ChapterAntidiff/sincos}
+\include{ChapterAntidiff/trigsub}
+\include{ChapterAntidiff/pfd}
 \include{ChapterAntidiff/summary}
 \include{ChapterAntidiff/mixedpractice}
+%\end{comment}
 
 
-\begin{comment}
+%\begin{comment}
 \include{ChapterGeom/lhr}
 \include{ChapterGeom/improperints}
 \include{ChapterGeom/areabtwcurves}
@@ -48,7 +50,7 @@
 \include{ChapterGeom/centerofmass}
 \include{ChapterGeom/summary}
 \include{ChapterGeom/mixedpractice}
-\end{comment}
+%\end{comment}
 %\include{ChapterGeom/pappus}
 
 \begin{comment}
