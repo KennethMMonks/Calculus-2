@@ -214,8 +214,18 @@ $$\int \tan(x)\sec^2(x) \dif x =\frac{1}{2}\tan^2(x)+C$$
 \begin{exercise}{Alternate Solutions \Coffeecup \Coffeecup }
 Find the antiderivative of $\tan(x)\sec^2(x)$ yet again but by two different methods!  In particular, try...
 \begin{itemize}
-\item ...a $u$-sub with $u=\tan(x)$. \vspace*{1.5in}
-\item ...an IBP with $u=\sec(x)$ and $\dif v = \tan(x)\sec(x) \dif x$. \vspace*{1.5in}
+\item ...a $u$-sub with $u=\tan(x)$. 
+    \solushun{Let $u=\tan(x)$. Then $\dif u = \sec^2(x)$. Then $$\int \tan(x)\sec^2(x)\dif x = \int u\dif u = \frac{1}{2}u^2+C=\frac{1}{2}\tan^2(x).$$}{1.5in}
+\item ...an IBP with $u=\sec(x)$ and $\dif v = \tan(x)\sec(x) \dif x$.
+    \solushun{Let $u=\sec(x) and \dif v = \tan(x)\sec(x)$. Then $\dif u = \sec(x)\tan(x)$ and $v=\sec(x)$. Then the integral is
+        \begin{align*}
+            \int \tan(x)\sec^2(x)\dif x &= \sec^2(x)-\int sec^2(x)\tan(x)\dif x\\
+            I &= \sec^2(x)-I\\
+            I &= \frac{1}{2}\sec^2(x)+C\\
+        \end{align*}
+        At this point, note that the arbitrary constant $C$ allows us to shift the antiderivative by whatever we like. If we shift by $-1$, we get
+        $$ I &= \sec^2(x)-1+C = \frac{1}{2}\tan^2(x)+C.$$
+        }{1.5in}
 \end{itemize}
 Confirm that your answers match the result of Exercise \ref{reappear}.\ref{AnotherReappearing}.
 \end{exercise}

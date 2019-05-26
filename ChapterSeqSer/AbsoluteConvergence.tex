@@ -18,10 +18,10 @@ Let us now correctly analyze the infinite sum $$1-1+1-1+1-1+1-1+1-\cdots $$
 
 \begin{itemize}
 \item Consider the sequence $a_n=(-1)^n$.  Use the Geometric Series Formula to find the corresponding sequence of partial sums $A_N$.
-\vspace*{1in}
+    \solushun{$$\frac{1-(-1)^{N+1}}{2}$$}{1in}
 \item What is the limit of the sequence of partial sums?
-\vspace*{.5in}
-\item Thus, what is the correct value of the infinite series $1-1+1-1+1-1+1-1+1-\cdots$? \vspace*{.5in}
+    \solushun{The limit does not exist, since it alternates between 1 and -1.\\}{.5in}
+\item Thus, what is the correct value of the infinite series $1-1+1-1+1-1+1-1+1-\cdots$? \solushun{The sum is not defined.\\}{.5in}
 \end{itemize}
 \end{exercise}
 
@@ -48,7 +48,15 @@ The \conditional{alternating harmonic series} $$1-\frac{1}{2}+\frac{1}{3}-\frac{
 
 \begin{exercise}{A Maybe Absolutely Convergent Series \Coffeecup \Coffeecup}
 Is the infinite geometric series $$0.1-0.02+0.004-0.0008+0.00016-\cdots $$ absolutely convergent or conditionally convergent?  Explain.
-\vspace*{.5in}
+    \solushun{
+        If we take the absolute value of each of the terms and look consider that series, we get 
+        $$|0.1|+|-0.02|+|0.004|+|-0.0008|+|0.000016|+\cdots$$
+        $$=0.1+0.02+0.004+0.0008+0.000016+\cdots.$$
+        This has common ratio $\frac{2}{10}$ and a starting term of $\frac{1}{10}$, so we can use our Geometric Series formula to get
+        $$\sum_{n=0}^{N}a_n=\frac{1}{10}\cdot\frac{1-\frac{2}{10}^{N+1}}{1-\frac{2}{10}}.$$
+        Taking the limit of this
+        $$\lim_{N\to\infty}\frac{1}{10}\cdot\frac{1-\frac{2}{10}^{N+1}}{\frac{8}{10}}=\frac{1}{10}\cdot\frac{10}{8}=\frac{1}{8}$$.
+    }{.5in}
 \AnswerKeyEntry{It is absolutely convergent, since the series of corresponding positive terms is $0.1+0.02+0.004+0.0008+0.00016+\cdots $ which converges to one-eighth. }
 \end{exercise}
 
