@@ -77,8 +77,8 @@ M_y=\int_{x=-\pi/2}^{x=\pi/2}x\left(\cos(x)-0\right)\dif &= \int_{x=-\pi/2}^{x=\
 \begin{align*}
 M_x=\int_{x=-\pi/2}^{x=\pi/2}\frac{\left(\cos(x)+0\right)}{2}\left(\cos(x)-0\right)\dif x &=\int_{x=-\pi/2}^{x=\pi/2}\frac{1}{2}\cos^2(x)\dif x\\
 &=\int_{x=-\pi/2}^{x=\pi/2}\frac{1}{2}\left(\frac{1}{2}\right)(1+\cos(2x))\dif x\\
-&=\left(\frac{1}{2}\right)\left(\frac{1}{2}\right)\left.(x+\frac{1}{2}\sin(2x))\right]_{x=-\pi/2}^{x=\pi/2} \\
-&=\left.\frac{1}{2}\left(\frac{x}{2}-\frac{1}{4}\sin\left(2x\right)\right)\right]_{x=-\pi/2}^{x=\pi/2}\\
+&=\left(\frac{1}{2}\right)\left(\frac{1}{2}\right)\left.(x+\frac{1}{2}\sin(2x))\right|_{x=-\pi/2}^{x=\pi/2} \\
+&=\left.\frac{1}{2}\left(\frac{x}{2}-\frac{1}{4}\sin\left(2x\right)\right)\right|_{x=-\pi/2}^{x=\pi/2}\\
 &=\frac{\pi}{4}
 \end{align*}
 }{.5in}
@@ -135,7 +135,11 @@ Suppose we have a \centerofmass{rectangle} of width $w$ and height $h$.  If we c
 
 \item Let $f(x)=h$ the constant function whose graph is a horizontal line at height $h$, be the top of the rectangle.  Let $g(x)=0$, the constant function whose graph is a horizontal line at height zero, be the bottom of the rectangle.  Let the lines $x=0$ and $x=w$ be the left and right boundaries of the rectangle.  Sketch this figure below.
 
-\vspace*{2in}
+    \solushun{
+        \begin{center}
+            \includegraphics[width=150pt]{ChapterGeom/Figures/rectangle-soln.eps}
+        \end{center}
+    }{2in}
 
 \item Use our center of mass formulas to compute $(\bar{x},\bar{y})$ and verify that it is in fact $(w/2,h/2)$.
 
@@ -168,7 +172,12 @@ Again by intuition, we would imagine the center of mass of a \centerofmass{paral
 
 \item Coordinatize the parallelogram.  Choosing ``nice'' coordinates for our figure is the first step.  Without loss of generality, we can make one corner of our parallelogram to be the origin and choose one side to lie on the positive $y$-axis, much like the rectangle.  The beauty of this is then the parallelogram is fully determined by only three arbitrary parameters, the horizontal and vertical coordinates of the upper right corner, and the vertical coordinate of the upper left corner.  Call these $a$, $b$, and $c$ respectively.
 
-\vspace*{2in}
+    \solushun{
+        \begin{center}
+            \includegraphics[width=200pt]{ChapterGeom/Figures/parallel-soln.eps}
+        \end{center}
+    
+    }{2in}
  
 \item Compute linear equations for the diagonals in terms of $a,b,$ and $c$.  Solve a simultaneous system of linear equations to find the coordinates of the intersection of these lines.
 
