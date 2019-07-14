@@ -1,70 +1,63 @@
 size(300);
 
-pair a = (0,0);
-pair b = (2,4);
-pair c = (6,1);
+pair A = (0,0);
+pair B = (2,4);
+pair C = (6,1);
 
-draw (a -- b -- c -- cycle);
 
 real dist(pair a, pair b) {
     return sqrt( (a.x - b.x)**2 + (a.y - b.y)**2 );
 }
 
-pair constructAlt( pair angle, pair end1, pair end2) {
-    real m = (end2.y - end1.y) / (end2.x - end1.x);
+real slope(pair a, pair b) {
+    return (b.y - a.y) / (b.x - a.x);
+}
 
-    real altX = (m * end1.x - end1.y + (1/m) * angle.x + angle.y)/(m + (1/m));
-    real altY = (-(1/m) * altX + ((1/m) * angle.x + angle.y));
-    return (altX, altY);
+/********
+ * Returns the pair corresponding to the intersection of the two given lines
+ ****/
+pair findIntercept( real line1Slope, real line2Slope, pair line1Pt, pair line2Pt) {
+    real X = (line1Slope * line1Pt.x - line2Slope * line2Pt.x - line1Pt.y + line2Pt.y) / (line1Slope - line2Slope);
+    real Y = line1Slope * ( X - line1Pt.x ) + line1Pt.y ;
+    return (X, Y);
+}
+
+pair constructAlt( pair angle_point, pair rise_end, pair base_end) {
+    real baseSlope = slope(angle_point, base_end);
+    if (baseSlope != 0) {
+        real altSlope = (-1) / baseSlope;
+        return findIntercept(baseSlope, altSlope, base_end, rise_end);
+    } 
+    else {
+        return (rise_end.x, base_end.y);
+    }
+
+}
+
+real getAngle( pair angle, pair rise, pair base ) {
+    pair altRiseToBase = constructAlt( angle, rise, base);
+    return atan( dist( rise, altRiseToBase) / dist( angle, altRiseToBase));
+}
+
+pair constructBisectorEndpoint( pair anglePt, pair risePt, pair basePt) {
+    real halfAngle = (1/2) * getAngle(anglePt, risePt, basePt);
+    real offset = getAngle(anglePt, basePt, (anglePt.x - 1,anglePt.y));
+    real halfAngleWithOffset;
+    if (halfAngle - offset < 0 && offset < 1) { // the condition for offset < 1 seems weird, but right now that's what works
+        halfAngleWithOffset = -offset + halfAngle;
+    }
+    else {
+        halfAngleWithOffset = offset + halfAngle; 
+    }
+    real halfAngleSlope = tan(halfAngleWithOffset);
+    return findIntercept( halfAngleSlope, slope(basePt, risePt), anglePt, basePt);
 }
 
 
-// use altitude to get one of the angles via the sine function
-// returns the angle measure at point a
-real getAngle( pair a, pair b, pair c ) {
-    pair alt_b_to_ac = constructAlt(b,a,c);
-    return asin(dist(b, alt_b_to_ac)/dist(a,b));
-}
+draw( A -- B -- C -- cycle);
+draw( A -- constructBisectorEndpoint(A, B, C), dashed);
+draw( B -- constructBisectorEndpoint(B, C, A), dashed);
+draw( C -- constructBisectorEndpoint(C, A, B), dashed);
 
-pair bisector(pair a, pair b, pair c) {
-    real half_a = 0.5 * getAngle( a, b, c);
-    real slope_from_a = tan(half_a) + (c.y-a.y)/(c.x-a.x);
 
-    real slope_from_b_to_c = (b.y - c.y)/(b.x-c.x);
 
-    pair intercept_bc = (0, -slope_from_b_to_c * c.x + c.y);
-
-    real intercept_bisector_a = a.y - (slope_from_a * a.x);
-
-    real bisector_x = (intercept_bc.y - intercept_bisector_a) / (slope_from_a - slope_from_b_to_c);
-    real bisector_y = (slope_from_a * bisector_x) + intercept_bisector_a;
-    return (bisector_x, bisector_y);
-}
-
-    pair alt_a_to_bc = constructAlt(a,b,c);
-    draw( a -- alt_a_to_bc);
-    real opp = dist(a,alt_a_to_bc);
-    real hyp = dist(a,b);
-    real angle_b = asin(opp/hyp);
-    real abs_ang_b = atan(slope_from_b_to_c);
-    // ^ this needs to be created
-    real half_b = 0.5 * -angle_b;
-    real slope_from_b = (c.y-b.y)/(c.x-b.x) + tan(half_b);
-
-    real slope_from_c_to_a = (c.y)/(c.x);
-
-    pair intercept_ca = (0, 0);
-
-    real intercept_bisector_b = b.y - (slope_from_b * b.x);
-    dot( (1,1), L=(string) intercept_bisector_b);
-    dot((0,intercept_bisector_b));
-
-    real bisector_x = (intercept_ca.y - intercept_bisector_b) / (slope_from_b - slope_from_c_to_a);
-    real bisector_y = (slope_from_b * bisector_x) + intercept_bisector_b;
-    pair bisector_from_b_int_ca = (bisector_x, bisector_y);
-    dot(bisector_from_b_int_ca);
-
-pair bisector_from_a_int_bc = bisector(a, b, c);
-
-draw(a -- bisector_from_a_int_bc, dotted);
-draw(b -- bisector_from_b_int_ca, dotted);
