@@ -167,7 +167,7 @@ The other region is just a reflection across the $y$-axis and thus must also hav
 \begin{exercise}{Some Subtle Sign Business \Coffeecup}
 In the above computation, why is there a negative sign on the antiderivative, producing $-2\sqrt{|x|}$ instead of just $2\sqrt{|x|}$?  ({\bf Hint:} Graph the function $2\sqrt{|x|}$!)
 \solushun{In order to evaluate the integral of an absolute value function, we treat it as a piecewise function. So:
-$$\int\frac{1}{\sqrt{|x|}}\dif x=\int\frac{1}{\sqrt{-x}}\dif x=\int(-x)^{-\frac{1}{2}}\dif x=-2\sqrt{-x}$$ Since $-x=|x|$ when $x<0$, we can write $-2\sqrt{|x|}$.
+$$\int\frac{1}{\sqrt{|x|}}\dif x=\int\frac{1}{\sqrt{-x}}\dif x=\int(-x)^{-\frac{1}{2}}\dif x=-2\sqrt{-x}$$ Since $-x=|x|$ when $x<0$, we can write $-2\sqrt{|x|}$.\\
 }{1in}
 \end{exercise}
 
@@ -234,7 +234,13 @@ An integral to negative infinity is defined analogously via the corresponding li
 	\begin{center}
         \includegraphics[width=300pt]{ChapterGeom/Figures/unboundhorizont.eps}
 	\end{center}
-Here is a graph that represents the above definition for $a=0$.  Interpret the definition by labeling $c$ on the graph and explaining the role it plays.  \vspace*{1in}
+Here is a graph that represents the above definition for $a=0$.  Interpret the definition by labeling $c$ on the graph and explaining the role it plays.  
+    \solushun{
+        \begin{center}
+            \includegraphics[width=300pt]{ChapterGeom/Figures/unboundedhorizonSoln_cropped-eps-converted-to.pdf}
+        \end{center}
+        Here $c$ is the upper bound of integration, and by taking it in the limit, we are looking at the behavior of the integral as its upper bound increases.\\
+    }{1in}
 \end{exercise}
 
 \begin{example}{Area Under $f(x)=\frac{1}{x^2}$}

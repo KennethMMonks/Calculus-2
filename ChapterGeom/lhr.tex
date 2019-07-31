@@ -32,6 +32,11 @@ Since the ratio of $\sin(\theta)$ to $\theta$ approaches 1 as $\theta$ gets smal
 \begin{center}
 \emph{For small values of $\theta$, \underline{\hspace{1in}}$\approx$\underline{\hspace{1in}}.}
 \end{center}
+    \solushun{
+        \begin{center}
+            \emph{For small values of $\theta$, \underline{$\sin(\theta)$}$\approx$\underline{$\theta$}.}
+        \end{center}
+    }{}
 \end{exercise}
 Note that this property comes up frequently in physics!  For example, when modeling the motion of a mass hanging from a spring, Hooke's Law tells us that force is proportional to displacement.  We use the same model to describe motion of a pendulum, even though in that case force is not technically proportional to displacement, but rather the \emph{sine} of displacement.  Why can we throw away the sine?  It is because for small displacements, the sine of the displacement is roughly equal to the displacement!
 \begin{exercise}{Practice with LHR \Coffeecup \Coffeecup}
@@ -222,7 +227,7 @@ $f(x)/g(x)$ & 7& 3.2105& 3.0201& 3.0020& 3.0002\\
 \end{center}}{0in}
 \begin{itemize}
 \item From the table, does it appear that the ratio $f(x)/g(x)$ is approaching zero, infinity, or a nonzero constant?
-\solushun{It appears that the ratio approaches the constant 3\\}{.3in}
+\solushun{It appears that the ratio approaches the constant 3.\\}{.3in}
 \item Use LHR to compute the limit $$\lim_{x\rightarrow \infty}\frac{f(x)}{g(x)} $$
 How does it relate to the values in the data table? 
 \solushun{\begin{align*}
@@ -246,13 +251,18 @@ This concept comes up frequently in computer science when you try to measure the
 In each of the graphs below, there is a graph of $f(x)$ and a graph of $g(x)$.  Based on the graphs, do you expect that $f$ and $g$ have the same growth order, or is one larger?
 
 \begin{tabular}{l c }
-1. &
-    \raisebox{\dimexpr-\height + 1.5ex\relax}{\includegraphics[width=250pt]{ChapterGeom/Figures/Prob1.eps}} \\
-2. &
-    \raisebox{\dimexpr-\height + 1.5ex\relax}{\includegraphics[width=250pt]{ChapterGeom/Figures/Prob2.eps}} \\
-    3. &
-    \raisebox{\dimexpr-\height + 1.5ex\relax}{\includegraphics[width=250pt]{ChapterGeom/Figures/Prob3.eps}}
+1. & \raisebox{\dimexpr-\height + 1.5ex\relax}{\includegraphics[width=250pt]{ChapterGeom/Figures/Prob1.eps}} \\
+2. & \raisebox{\dimexpr-\height + 1.5ex\relax}{\includegraphics[width=250pt]{ChapterGeom/Figures/Prob2.eps}} \\
+3. & \raisebox{\dimexpr-\height + 1.5ex\relax}{\includegraphics[width=250pt]{ChapterGeom/Figures/Prob3.eps}}
 \end{tabular}
+
+\solushun{
+    \begin{enumerate}
+        \item The ratio between $f$ and $g$ seems to be growing, so $f$ has a larger growth order.
+        \item The ratio between $f$ and $g$ seems to be consistently about 2, so they have the same growth order.
+        \item The ratio between $f$ and $g$ seems to be growing, so $f$ has a larger growth order.
+    \end{enumerate}
+}{}
 
 \AnswerKeyEntry{In the first and third, the ratio between $f$ and $g$ seems to grow without bound, so $f$ has larger growth order.  In the second, the ratio of $f$ to $g$ seems to always be right around 2.  Thus, they have the same growth order.}
 \end{exercise}

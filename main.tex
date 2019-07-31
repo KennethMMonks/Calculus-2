@@ -2,7 +2,7 @@
 
 \input{Titlepage/Preamble/PackageOfPackages}
 % Set this =0 to hide solutions, =1 to show solutions
-\def\showsolutions{0}
+\def\showsolutions{1}
 \input{Titlepage/Preamble/Environments}
 \input{Titlepage/Preamble/SymbolsAndCounters}
 \input{Titlepage/Preamble/Formatting}
@@ -16,20 +16,20 @@
 \Opensolutionfile{AnswerKey}
 \Writetofile{AnswerKey}
  
-\include{Titlepage/titlepage}
+%\include{Titlepage/titlepage}
 
 \pagenumbering{roman}
 
 \pdfbookmark[section]{\contentsname}{toc}
-\tableofcontents
-\include{Acknowledgements}
-\include{ChapterOverview}
+%\tableofcontents
+%\include{Acknowledgements}
+%\include{ChapterOverview}
 
 \pagenumbering{arabic} 
 \setcounter{page}{1}
 
 \part{Integration}
-
+\begin{comment}
 \include{ChapterAntidiff/usub}
 
 \include{ChapterAntidiff/ibp}
@@ -39,22 +39,21 @@
 %\begin{comment}
 \include{ChapterAntidiff/summary}
 \include{ChapterAntidiff/mixedpractice}
-%\end{comment}
+\end{comment}
 
 
 %\begin{comment}
-\include{ChapterGeom/lhr}
-\include{ChapterGeom/improperints}
-\include{ChapterGeom/areabtwcurves}
-%KHALED:^^^^ Need figures for last 2 problems
-\include{ChapterGeom/lengthareavolume}
+%\include{ChapterGeom/lhr}
+%\include{ChapterGeom/improperints}
+%\include{ChapterGeom/areabtwcurves}
+%\include{ChapterGeom/lengthareavolume}
 \include{ChapterGeom/centerofmass}
-\include{ChapterGeom/summary}
-\include{ChapterGeom/mixedpractice}
+%\include{ChapterGeom/summary}
+%\include{ChapterGeom/mixedpractice}
 %\end{comment}
 %\include{ChapterGeom/pappus}
 
-%\begin{comment}
+\begin{comment}
 \part{Sequences and Series}
 \include{ChapterSeqSer/seq}
 \include{ChapterSeqSer/convergence}
@@ -66,9 +65,9 @@
 \include{ChapterSeqSer/convergenceTests}
 \include{ChapterSeqSer/summary}
 \include{ChapterSeqSer/mixedpractice}
-%\end{comment}
+\end{comment}
 
-%\begin{comment}
+\begin{comment}
 \include{ChapterPowerSeries/PowerSeries}
 \include{ChapterPowerSeries/IOC}
 \include{ChapterPowerSeries/MixedIOCPractice}
@@ -83,7 +82,7 @@
 
 \include{ChapterPowerSeries/mixedpractice}
 
-%\end{comment}
+\end{comment}
 
 \begin{comment}
 
@@ -99,7 +98,7 @@
 
 \part{Coming Attractions}
 
-%\begin{comment}
+\begin{comment}
 \include{ChapterCalcIII/parametric}
 
 \include{ChapterCalcIII/polar}
@@ -109,13 +108,13 @@
 \include{ChapterDiffEq/diffeq}
 \include{ChapterDiffEq/summary}
 \include{ChapterDiffEq/mixedpractice}
-%\end{comment}
+\end{comment}
 
-%\begin{comment}
+\begin{comment}
 \include{ChapterComplex/complex}
 \include{ChapterComplex/summary}
 \include{ChapterComplex/mixedpractice}
-%\end{comment}
+\end{comment}
 
 
 \chapter*{Selected Answers and Hints}
