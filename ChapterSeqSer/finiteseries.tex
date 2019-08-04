@@ -57,18 +57,18 @@ Evaluate the following sums:
 \begin{exercise}{Properties of Summations \Coffeecup \Coffeecup \Coffeecup }
 Let $c$ be an arbitrary real number, $j$ and $k$ natural numbers with $j<k$, and $a_n$ and $b_n$ be arbitrary sequences.  For each of the following properties, explain why it is true, or come up with a counterexample that shows it is not.
 \begin{itemize}
-\item $\sum\limits_{n=j}^{k} c\cdot a_n=c\sum\limits_{n=j}^{k} a_n $
-\vspace*{.5in}
-\item $\sum\limits_{n=j}^{k} \left( a_n+b_n\right) =\left(\sum\limits_{n=j}^{k}  a_n\right) +\left( \sum\limits_{n=j}^{k} b_n\right)$
-\vspace*{.4in}
-\item $\sum\limits_{n=j}^{k} \left( a_n\cdot b_n\right) =\left(\sum\limits_{n=j}^{k}  a_n\right) \cdot\left( \sum\limits_{n=j}^{k} b_n\right) $
-\vspace*{.4in}
-\item  $\sum\limits_{n=0}^{k}  a_n =\sum\limits_{n=1}^{k+1}  a_{n-1}$
-\vspace*{.4in}
+    \item $\sum\limits_{n=j}^{k} c\cdot a_n=c\sum\limits_{n=j}^{k} a_n $
+        \solushun{This is true, since the left-hand side can be expanded to $\left(ca_j+ca_{j+1}+\cdots+ca_k\right)$, whereas the right-hand side is $c\left(a_j+a_{j+1}+\cdots+a_k\right)$. These two expressions are equal, because we can factor the $c$ out of the left-hand side to produce the right-hand side.\\}{.5in}
+    \item $\sum\limits_{n=j}^{k} \left( a_n+b_n\right) =\left(\sum\limits_{n=j}^{k}  a_n\right) +\left( \sum\limits_{n=j}^{k} b_n\right)$
+        \solushun{This is true, because the left-hand side can be expanded to $(a_j+b_j)+(a_{j+1}+b_{j+1})+\cdots+(a_k+b_k)$, and if we remove parentheses and simply gather all the $a_n$ terms and all the $b_n$ terms we can get the right-hand side: $(a_j+a_{j+1}+\cdots+a_k)+(b_j+b_{j+1}+\cdots+b_k)$.\\ }{.4in}
+    \item $\sum\limits_{n=j}^{k} \left( a_n\cdot b_n\right) =\left(\sum\limits_{n=j}^{k}  a_n\right) \cdot\left( \sum\limits_{n=j}^{k} b_n\right) $
+        \solushun{This is not true. A simple counterexample is binomial multiplication, which we get by taking a sum with only two terms. In that case, the left-hand side is $a_0\cdot b_0 + a_1\cdot b_1$. The right-hand side would be $(a_0+a_1)(b_0+b_1)=a_0b_0 + a_0b_1 + a_1b_0 + a_1b_1$. The two sides are not equivalent.\\}{4in}
+    \item  $\sum\limits_{n=0}^{k}  a_n =\sum\limits_{n=1}^{k+1}  a_{n-1}$
+        \solushun{This is true. Expanding the left-hand side, we get $a_0+a_1+a_2+\cdots+a_{k-1}+a_k$. On the right-hand side we get $a_{1-1}+a_{2-1}+a_{3-1}+\cdots+a_{k-1}+a_{k+1-1}=a_0+a_1+a_2+\cdots+a_{k-1}+a_k$.\\}{.4in}
 \item  $\sum\limits_{n=0}^{k}  c =ck$
-\vspace*{.4in}
+    \solushun{Considering the discussion of the fencepost problem again, there are $k-0+1=k+1$ terms in this sequence. So, we are adding $c$ $k+1$ times, which would be $c(k+1)$.\\}{.4in}
 \item  $\sum\limits_{n=1}^{k}  c =ck$
-\vspace*{.4in}
+    \solushun{By the same argument as above, there are $k-1+1=k$ terms, and so we add $k$ $c$'s together, to get $ck$.\\}{.4in}
 \end{itemize}
 \AnswerKeyEntry{It is easiest to just expand the sums on both sides and see what the terms look like.  For example, in the first case the left-hand side is $\left(ca_j+ca_{j+1}+\cdots+ca_k\right)$, whereas the right-hand side is $c\left(a_j+a_{j+1}+\cdots+a_k\right)$.  These two expressions are equal, because we can factor the $c$ out of the left-hand side to produce the right-hand side.  For the last two summations, think about our discussion of fencepost problems above!}
 \end{exercise}
