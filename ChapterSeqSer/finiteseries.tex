@@ -33,7 +33,7 @@ Thus our summation is
 
 \begin{exercise}{Not Crashing Into That Extra Fencepost \Coffeecup}
 The summation in the above example has starting index 3 and stopping index 7.  So, does the sum have $7-3=4$ terms, or does it have $7-3+1=5$ terms?
-
+    \solushun{It has 5 terms, to account for the $0$th term.\\}{0in}
 \end{exercise}
 
 
@@ -45,6 +45,13 @@ Evaluate the following sums:
 \item $\sum\limits_{n=0}^{3} 2^n $
 \end{itemize}
 \AnswerKeyEntry{The totals are 12, -6, and 15.}
+    \solushun{
+        \begin{itemize}
+        \item $\sum\limits_{n=0}^{3} 2n = 2\cdot 0 + 2\cdot 1 + 2\cdot 2 + 2\cdot 3 = 12 $
+        \item $\sum\limits_{n=0}^{3} (-1)^nn^2 = (-1)^0\cdot 0^2 + (-1)^1\cdot 1^2 + (-1)^2\cdot 2^2 + (-1)^3\cdot 3^2 = 0 - 1 + 4 - 9 = -6$
+        \item $\sum\limits_{n=0}^{3} 2^n = 2^0 + 2^1 + 2^2 + 2^3 = 1 + 2 + 4 + 8 = 15$
+        \end{itemize}
+    }{}
 \end{exercise}
 
 \begin{exercise}{Properties of Summations \Coffeecup \Coffeecup \Coffeecup }
