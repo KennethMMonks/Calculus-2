@@ -2,7 +2,7 @@
 
 \input{Titlepage/Preamble/PackageOfPackages}
 % Set this =0 to hide solutions, =1 to show solutions
-\def\showsolutions{1}
+\def\showsolutions{0}
 \input{Titlepage/Preamble/Environments}
 \input{Titlepage/Preamble/SymbolsAndCounters}
 \input{Titlepage/Preamble/Formatting}
@@ -16,14 +16,14 @@
 \Opensolutionfile{AnswerKey}
 \Writetofile{AnswerKey}
  
-%\include{Titlepage/titlepage}
+\include{Titlepage/titlepage}
 
 \pagenumbering{roman}
 
 \pdfbookmark[section]{\contentsname}{toc}
-%\tableofcontents
-%\include{Acknowledgements}
-%\include{ChapterOverview}
+\tableofcontents
+\include{Acknowledgements}
+\include{ChapterOverview}
 
 \pagenumbering{arabic} 
 \setcounter{page}{1}
@@ -96,7 +96,7 @@
 
 \part{Coming Attractions}
 
-\begin{comment}
+%\begin{comment}
 \include{ChapterCalcIII/parametric}
 
 \include{ChapterCalcIII/polar}
@@ -106,13 +106,13 @@
 \include{ChapterDiffEq/diffeq}
 \include{ChapterDiffEq/summary}
 \include{ChapterDiffEq/mixedpractice}
-\end{comment}
+%\end{comment}
 
-\begin{comment}
+%\begin{comment}
 \include{ChapterComplex/complex}
 \include{ChapterComplex/summary}
 \include{ChapterComplex/mixedpractice}
-\end{comment}
+%\end{comment}
 
 
 \chapter*{Selected Answers and Hints}
