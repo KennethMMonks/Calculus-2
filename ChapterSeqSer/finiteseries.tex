@@ -33,7 +33,7 @@ Thus our summation is
 
 \begin{exercise}{Not Crashing Into That Extra Fencepost \Coffeecup}
 The summation in the above example has starting index 3 and stopping index 7.  So, does the sum have $7-3=4$ terms, or does it have $7-3+1=5$ terms?
-
+    \solushun{It has 5 terms, to account for the $0$th term.\\}{0in}
 \end{exercise}
 
 
@@ -45,23 +45,30 @@ Evaluate the following sums:
 \item $\sum\limits_{n=0}^{3} 2^n $
 \end{itemize}
 \AnswerKeyEntry{The totals are 12, -6, and 15.}
+    \solushun{
+        \begin{itemize}
+        \item $\sum\limits_{n=0}^{3} 2n = 2\cdot 0 + 2\cdot 1 + 2\cdot 2 + 2\cdot 3 = 12 $
+        \item $\sum\limits_{n=0}^{3} (-1)^nn^2 = (-1)^0\cdot 0^2 + (-1)^1\cdot 1^2 + (-1)^2\cdot 2^2 + (-1)^3\cdot 3^2 = 0 - 1 + 4 - 9 = -6$
+        \item $\sum\limits_{n=0}^{3} 2^n = 2^0 + 2^1 + 2^2 + 2^3 = 1 + 2 + 4 + 8 = 15$
+        \end{itemize}
+    }{}
 \end{exercise}
 
 \begin{exercise}{Properties of Summations \Coffeecup \Coffeecup \Coffeecup }
 Let $c$ be an arbitrary real number, $j$ and $k$ natural numbers with $j<k$, and $a_n$ and $b_n$ be arbitrary sequences.  For each of the following properties, explain why it is true, or come up with a counterexample that shows it is not.
 \begin{itemize}
-\item $\sum\limits_{n=j}^{k} c\cdot a_n=c\sum\limits_{n=j}^{k} a_n $
-\vspace*{.5in}
-\item $\sum\limits_{n=j}^{k} \left( a_n+b_n\right) =\left(\sum\limits_{n=j}^{k}  a_n\right) +\left( \sum\limits_{n=j}^{k} b_n\right)$
-\vspace*{.4in}
-\item $\sum\limits_{n=j}^{k} \left( a_n\cdot b_n\right) =\left(\sum\limits_{n=j}^{k}  a_n\right) \cdot\left( \sum\limits_{n=j}^{k} b_n\right) $
-\vspace*{.4in}
-\item  $\sum\limits_{n=0}^{k}  a_n =\sum\limits_{n=1}^{k+1}  a_{n-1}$
-\vspace*{.4in}
+    \item $\sum\limits_{n=j}^{k} c\cdot a_n=c\sum\limits_{n=j}^{k} a_n $
+        \solushun{This is true, since the left-hand side can be expanded to $\left(ca_j+ca_{j+1}+\cdots+ca_k\right)$, whereas the right-hand side is $c\left(a_j+a_{j+1}+\cdots+a_k\right)$. These two expressions are equal, because we can factor the $c$ out of the left-hand side to produce the right-hand side.\\}{.5in}
+    \item $\sum\limits_{n=j}^{k} \left( a_n+b_n\right) =\left(\sum\limits_{n=j}^{k}  a_n\right) +\left( \sum\limits_{n=j}^{k} b_n\right)$
+        \solushun{This is true, because the left-hand side can be expanded to $(a_j+b_j)+(a_{j+1}+b_{j+1})+\cdots+(a_k+b_k)$, and if we remove parentheses and simply gather all the $a_n$ terms and all the $b_n$ terms we can get the right-hand side: $(a_j+a_{j+1}+\cdots+a_k)+(b_j+b_{j+1}+\cdots+b_k)$.\\ }{.4in}
+    \item $\sum\limits_{n=j}^{k} \left( a_n\cdot b_n\right) =\left(\sum\limits_{n=j}^{k}  a_n\right) \cdot\left( \sum\limits_{n=j}^{k} b_n\right) $
+        \solushun{This is not true. A simple counterexample is binomial multiplication, which we get by taking a sum with only two terms. In that case, the left-hand side is $a_0\cdot b_0 + a_1\cdot b_1$. The right-hand side would be $(a_0+a_1)(b_0+b_1)=a_0b_0 + a_0b_1 + a_1b_0 + a_1b_1$. The two sides are not equivalent.\\}{4in}
+    \item  $\sum\limits_{n=0}^{k}  a_n =\sum\limits_{n=1}^{k+1}  a_{n-1}$
+        \solushun{This is true. Expanding the left-hand side, we get $a_0+a_1+a_2+\cdots+a_{k-1}+a_k$. On the right-hand side we get $a_{1-1}+a_{2-1}+a_{3-1}+\cdots+a_{k-1}+a_{k+1-1}=a_0+a_1+a_2+\cdots+a_{k-1}+a_k$.\\}{.4in}
 \item  $\sum\limits_{n=0}^{k}  c =ck$
-\vspace*{.4in}
+    \solushun{Considering the discussion of the fencepost problem again, there are $k-0+1=k+1$ terms in this sequence. So, we are adding $c$ $k+1$ times, which would be $c(k+1)$.\\}{.4in}
 \item  $\sum\limits_{n=1}^{k}  c =ck$
-\vspace*{.4in}
+    \solushun{By the same argument as above, there are $k-1+1=k$ terms, and so we add $k$ $c$'s together, to get $ck$.\\}{.4in}
 \end{itemize}
 \AnswerKeyEntry{It is easiest to just expand the sums on both sides and see what the terms look like.  For example, in the first case the left-hand side is $\left(ca_j+ca_{j+1}+\cdots+ca_k\right)$, whereas the right-hand side is $c\left(a_j+a_{j+1}+\cdots+a_k\right)$.  These two expressions are equal, because we can factor the $c$ out of the left-hand side to produce the right-hand side.  For the last two summations, think about our discussion of fencepost problems above!}
 \end{exercise}
@@ -79,9 +86,13 @@ A nice short way to state the \area{arithmetic series formula} is as follows:
 In the more formal statement of the arithmetic series formula, what expression represents... 
 \begin{itemize}
 \item ...``number of terms"?
+    \solushun{$N+1$\\}{0in}
 \item ...``first term"?
+    \solushun{$a_0$\\}{0in}
 \item ...``last term"?
+    \solushun{$a_0+Nd$\\}{0in}
 \item ...``average"?
+    \solushun{$\frac{a_0+\left(a_0+Nd\right)}{2}$\\}{0in}
 \end{itemize}
 \end{exercise}
 
@@ -90,24 +101,32 @@ Here we draw a diagram to show why the Arithmetic Series Formula works.
 Consider the arithmetic sum $$\left(a_0\right)+\left(a_0+d\right)+\left(a_0+2d\right)+\cdots+\left(a_0+Nd\right).$$
 \begin{itemize}
 
-\item For each term in the sum, we draw a corresponding rectangle.  Specifically, a one by $a_0$ rectangle represents the first term, a one by $a_0+d$ rectangle represents the second term, and so on.  These rectangles are stacked in order in the first quadrant, next to each other on the $x$-axis, with sides of width one all on the $x$-axis.  Explain why the area of the region is equal to the sum. \vspace*{1in}
+\item For each term in the sum, we draw a corresponding rectangle.  Specifically, a one by $a_0$ rectangle represents the first term, a one by $a_0+d$ rectangle represents the second term, and so on.  These rectangles are stacked in order in the first quadrant, next to each other on the $x$-axis, with sides of width one all on the $x$-axis.  Explain why the area of the region is equal to the sum. \solushun{The area of the first rectangle is the value of $a_0$, and each subsequent rectangle has an additional $d$ of area added on, up to the final term, which has $Nd$ area added on. Then, the total area of the region is equal to the sum.\\}{1in}
 
 	\begin{center}
 		\includegraphics[width=200pt]{ChapterSeqSer/Figures/arithmetic.eps}
 	\end{center}
 
 \item Duplicate the entire region in the opposite order to build one giant rectangle.  Draw a one by $a_0 +Nd$ rectangle on top of the leftmost, then a one by $a_0+(N-1)d$ rectangle on top of the second, and so on until the last rectangle gets topped with a one by $a_0$ rectangle.  In this new giant rectangle that is formed...
+    \solushun{
+	\begin{center}
+		\includegraphics[width=200pt]{ChapterSeqSer/Figures/arithmetic_solushun.eps}
+	\end{center}
+}{0in}
 
 \begin{itemize}
 \item  ...what is the width?
+    \solushun{$(N+1)$, the number of terms, since each rectangle has width 1.\\}{0in}
 \item ...what is the height?
+    \solushun{$a_0+(a_0+Nd)$.\\}{0in}
 \item ...what is the total area?
+    \solushun{$(N+1)\cdot(a_0+(a_0+Nd))$.\\}{0in}
 \end{itemize}
 
 \item Explain why the total area of that rectangle must be exactly double the value of the arithmetic sum.  
-\vspace*{.5in}
+    \solushun{The total area of the rectangle is double the area of the arithmetic sum because it was constructed by duplicating the original set of rectangles, which we had shown to have area equal to the arithmetic sum.\\}{.5in}
 \item Divide the total area by two to arrive at the arithmetic series formula!
-\vspace*{.5in}
+    \solushun{$\frac{(N+1)\cdot(a_0+(a_0+Nd))}{2}=(N+1)\cdot\frac{a_0+(a_0+Nd)}{2}$.\\}{0.5in}
 \end{itemize}
 \end{exercise}
 
