@@ -183,15 +183,31 @@ The very first term, 1, clearly does not fit the pattern given by the rest of th
 \begin{itemize}
 \item  Write out the first few terms of the above series.  That is, expand the sigma notation by plugging in $n=5,6,7,8,\ldots$ and evaluating the summand in each case.
 
-\vspace*{1in}
+    \solushun{
+        \begin{center}
+        \begin{tabular}{|c|c|l|c|} \hline
+            $n$ & $a_n$ & $A_n$ & Total \\ \hline
+            $5$ & $\frac{3^5}{2^{11}}$ & $\frac{3^5}{2^{11}}$ & $\approx 0.1187$ \\
+            $6$ & $\frac{3^6}{2^{13}}$ & $\frac{3^5}{2^{11}}+\frac{3^6}{2^{13}}$ & $\approx 0.2076$ \\
+            $7$ & $\frac{3^7}{2^{15}}$ & $\frac{3^5}{2^{11}}+\frac{3^6}{2^{13}}+\frac{3^7}{2^{15}}$ & $\approx 0.2744$ \\
+            $8$ & $\frac{3^8}{2^{17}}$ & $\frac{3^5}{2^{11}}+\frac{3^6}{2^{13}}+\frac{3^7}{2^{15}}+\frac{3^8}{2^{17}}$ & $\approx 0.3244 $ \\
+        \end{tabular}
+        \end{center}
+    }{1in}
 
 \item  Is the above series geometric?  Explain why or why not.  If so, what is the common ratio $r$?  What is the first term $a$?
 
-\vspace*{1in}
+    \solushun{
+        Yes it is, because each term is a ratio of the last term. The common ratio $r=\frac{3}{4}$ and the first term is $\frac{3^5}{2^{11}}$.\\ 
+    }{1in}
 
 \item  Find the value of the above series.
+    
+    \solushun{
+        Plugging what we have into the infinite geometric series formula, we get
+        $$ \sum_{n=5}^{\infty} \frac{3^n}{2^{2n+1}}=\frac{\frac{3^5}{2^{11}}}{1-\frac{3}{4}}=\frac{\frac{3^5}{2^{11}}}{\frac{1}{4}}=\frac{3^5}{2^{11}}\cdot 4=\frac{3^5}{2^9}\approx 0.4746.$$
 
-\vspace*{1in}
+    }{1in}
 
 \end{itemize}
 \AnswerKeyEntry{Yes, the series is geometric with initial term $\frac{3^5}{2^{11}}$ and common ratio $3/4$.  The infinite series totals to $
