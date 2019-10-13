@@ -51,7 +51,7 @@ Evaluate the following sums:
         \item $\sum\limits_{n=0}^{3} (-1)^nn^2 = (-1)^0\cdot 0^2 + (-1)^1\cdot 1^2 + (-1)^2\cdot 2^2 + (-1)^3\cdot 3^2 = 0 - 1 + 4 - 9 = -6$
         \item $\sum\limits_{n=0}^{3} 2^n = 2^0 + 2^1 + 2^2 + 2^3 = 1 + 2 + 4 + 8 = 15$
         \end{itemize}
-    }{}
+    }{0in}
 \end{exercise}
 
 \begin{exercise}{Properties of Summations \Coffeecup \Coffeecup \Coffeecup }
@@ -135,7 +135,8 @@ Note that you have seen something similar in Calculus I in the context of evalua
 \begin{exercise}{Gauss's Formula as an Arithmetic Series \Coffeecup \Coffeecup}
 
 Pretend for a second (or thirty) that you do not know Gauss's Formula.  Evaluate $\sum_{n=1}^Nn$ using the Arithmetic Series Formula.  Verify this produces the right-hand side of Gauss's Formula.  \AnswerKeyEntry{ In Gauss's formula, the first term $a_0$ and the common difference $d$ are both 1.  The number of terms is $N$.  Plugging these into the Arithmetic Series Formula will produce $N(N+1)/2$.}
-\vspace*{1in}
+\solushun{Gauss's formula sums the series $1+2+3+\ldots+N$, which translates to an arithmetic series of $0+(0+1)+(0+2)+\ldots+(0+N)$. In this case, $a_0=0$ and $d=1$. So the arithmetic sum becomes
+$$\sum_{n=1}^N n=\sum_{n=0}^N n=(N+1)\cdot\frac{a_0+(a_0+Nd)}{2}=\frac{(N+1)(0+0+N(1)}{2}=\frac{(N+1)(N)}{2}.$$ Note that we can equate the first two sums because the zero term at the front of the series doesn't contribute anything to the total.\\}{1in}
 \end{exercise}
 
 \begin{example}{Adding Multiples of Six }
@@ -159,19 +160,41 @@ We now evaluate the summation using the Arithmetic Series Formula as follows: \b
 
 \item  Add up all the whole numbers from 1 to 1000 inclusive.
 
-\vspace*{.6in}
+\solushun{Using Gauss's formula,
+$$\sum_{n=1}^{1000}n=\frac{(1000+1)(1000)}{2}=1001\cdot 500=500500.$$}{.6in}
 
 \item Add up all the whole numbers from 1000 to 2000 inclusive.
 
-\vspace*{.6in}
+\solushun{
+\begin{itemize}
+    \item First term: $1000$
+    \item Last term: $2000$
+    \item Number of terms: $1001$
+\end{itemize}$$
+\sum_{n=0}^{1000} 1000 + n = (1001)\frac{1000+2000}{2}=(2001)(1500)=1501500
+$$}{.6in}
 
 \item What is the sum of all multiples of seven between 1000 and 2000?
 
-\vspace*{.6in}
+\solushun{
+\begin{itemize}
+    \item First term: $7\cdot 143 = 1001$
+    \item Last term: $7\cdot 285 = 1995$
+    \item Number of terms: $285 -143 + 1= 143$
+\end{itemize}$$
+\sum_{n=0}^{142} 1001 + 7n = (143)\frac{1001+1995}{2}=143\cdot 1498 = 214214
+$$}{.6in}
 
 \item Compute the following summation using the Arithmetic Series Formula: $$ \sum_{n=4}^{13} (3n-1).$$
 
-\vspace*{.6in}
+\solushun{
+\begin{itemize}
+    \item First term: $3(4)-1=11$
+    \item Last term: $3(13)-1=38$
+    \item Number of terms: $13-4+1=10$
+\end{itemize}$$
+\sum_{n=4}^{13} 3n-1 = (10)\frac{11+38}{2}=(10)\frac{49}{2}=10\cdot 24.5=245.
+$$}{.6in}
 
 \end{itemize}
 
@@ -196,10 +219,17 @@ Consider the following geometric series and call it $S$ for sum:  $$S=\left(a_0\
 
 $$ rS=\left(a_0r\right)+\left(a_0r^2\right)+\left(a_0r^3\right)+\cdots+\left(a_0r^{N+1}\right)$$
 
+\solushun{We multiple both sides by $r$, distributing it into the right side.\\}{0in}
+
 \item Subtract the two above equations.  Fill in the right hand side below.
 $$S-rS=\hspace{3.5in} $$
+\solushun{\begin{align*}
+    S-rS=\left(a_0\right)&+\left(a_0r\right)+\left(a_0r^2\right)+\cdots+\left(a_0r^N\right)\\
+    &-\left(a_0r\right)-\left(a_0r^2\right)-\left(a_0r^3\right)-\cdots-\left(a_0r^{N+1}\right)]\\
+    =&a_0-a_0r^{N+1}
+\end{align*}}{0in}
 \item Solve for $S$ in the equation above to construct the Geometric Series Formula!
-\vspace*{.5in}
+\solushun{$$S(1-r)=a_0-a_0r^{N+1}\implies S=\frac{a_0-a_0r^{N+1}}{1-r}=a_0\cdot\frac{1-r^{N+1}}{1-r}.$$}{.5in}
 \end{itemize}
 \end{exercise}
 
@@ -208,10 +238,10 @@ Consider the summation $1+10+10^2+10^3+10^4+10^5. $
 \begin{itemize}
 \item Find the total by just doing the arithmetic.  Evaluate the powers of ten and then add them up. 
 
-\vspace*{.5in}
+\solushun{$1+10+10^2+10^3+10^4+10^5=1+10+100+1000+10000+100000=11111.$}{.5in}
 \item Find the total by using the Geometric Series Formula.  Verify that your answers match! 
 
-\vspace*{.5in}
+\solushun{The common ration $r=10$. The first term is $a_0=1$. The number of terms $N+1=6$. This gives the formula $$1\cdot\frac{1-10^6}{1-10}=\frac{-99999}{-9}=11111.$$ This matches our other answer.\\}{.5in}
 
 \end{itemize}
 \AnswerKeyEntry{The common ratio $r=10$.  The first term is 1.  The number of terms is 6.  Putting this all together in the Geometric Series Formula produces $1\cdot\frac{1-10^6}{1-10}=\frac{-99999}{-9}=11111.$}
@@ -222,19 +252,20 @@ Consider the summation $1+2+2^2+2^3+2^4+2^5. $
 \begin{itemize}
 \item Find the total by just doing the arithmetic.  Evaluate the powers of two and then add them up. 
 
-\vspace*{.5in}
+\solushun{$1+2+2^2+2^3+2^4+2^5=1+2+4+8+16+32=63.$\\}{.5in}
 
 \item Find the total by using the Geometric Series Formula.  Verify that your answers match! 
 
-\vspace*{.5in}
+\solushun{The common ratio is $r=2$. The first term is $a_0=1$. The number of terms $N+1=6$. Thus, the geometric series formula gives
+$$1\cdot\frac{1-2^6}{1-2}=\frac{1-64}{-1}=63.$$}{.5in}
 
 \item Use the Geometric Series Formula to evaluate $$1+2+2^2+2^3+\cdots+2^N. $$
 
-\vspace*{.5in}
+\solushun{$$1\cdot \frac{1-2^{N+1}}{-1}=2^{N+1}-1.$$}{.5in}
 
 \item Write in words the answer to the following: ``\emph{A finite sum of consecutive powers of two, starting at one, is equal to... }''
  
-\vspace*{.5in}
+\solushun{A finite sum of consecutive powers of two, starting at one, is equal to one less than the next power of two.\\}{.5in}
 
 \end{itemize}
 \AnswerKeyEntry{A finite sum of consecutive powers of two, starting at one, is equal to one less than the next power of two.}
@@ -254,15 +285,22 @@ Multiplying both sides by $A-B$, we have the difference of two quartics factoriz
 \begin{exercise}{Difference of Two Cubes}
 \begin{itemize}
 \item In the same manner, use the geometric series formula to build the more familiar difference of two cubes formula: $$A^3-B^3=(A-B)\cdot\left(A^2+AB+B^2\right).$$
-\vspace*{1in}
+\solushun{Starting with the summation $A^2+AB+B^2$, we have a common ratio of $\frac{B}{A}$, a first term $a_0=A^2$ and number of terms $N+1=3$. Then, by the geometric series formula
+$$A^2+AB+B^2=A^2\frac{1-\left(\frac{B}{A}\right)^3}{1-\frac{B}{A}}=A^2\frac{A-\frac{B^3}{A^2}}{A-B}=\frac{A^3-B^3}{A-b}.$$ Then, the difference of cubes is $$(A-B)(A^2+AB+B^2)=A^3-B^3.$$}{1in}
 \item Again using the same technique, figure out a formula for factoring $A^n-B^n$ for an arbitrary natural number $n$.
-\vspace*{1in}
+\solushun{In this case, we start out with the series $A^{n-1}+A^{n-2}B+A^{n-3}B^2+\cdots+AB^{n-2}+B^{n-1}$. Then we have common ration $\frac{B}{A}$, first term $A^{n-1}$, and number of terms $N+1=n$. Then the geometric series formula gives
+\begin{align*}
+    A^{n-1}+A^{n-2}B+A^{n-3}B^2+\cdots+AB^{n-2}+B^{n-1}&=A^{n-1}\frac{1-\left(\frac{B}{A}\right)^{n}}{1-\frac{B}{A}}\\
+    &=A^{n-1}\frac{A-\frac{B^{n}}{A^{n-1}}}{A-B}\\
+    &=\frac{A^{n}-B^{n}}{A-B}\\
+    (A-B)(A^{n-1}+A^{n-2}B+A^{n-3}B^2+\cdots+AB^{n-2}+B^{n-1})&=A^{n}-B^{n}.
+\end{align*}}{1in}
 \end{itemize}
 \end{exercise}
 
 \begin{exercise}{Alternate Factorization of a Difference of Quartics \Coffeecup}
-Notice that we could also factor a difference of two quartics by using the difference of two squares formula.  In particular, $$A^4-B^4=\left(A^2\right)^2-\left(B^2\right)^2=\left(A^2-B^2\right)=\left(A^2+B^2\right).$$  Is this factorization compatible with the one we found via the geometric series formula?  Explain.
-\vspace*{.5in}
+Notice that we could also factor a difference of two quartics by using the difference of two squares formula.  In particular, $$A^4-B^4=\left(A^2\right)^2-\left(B^2\right)^2=\left(A^2-B^2\right)\left(A^2+B^2\right).$$  Is this factorization compatible with the one we found via the geometric series formula?  Explain.
+\solushun{It is. If we factor $A^2-B^2$ by difference of squares, we get $A^4-B^4=(A-B)(A+B)(A^2+B^2)$. If we factor $A^3+A^2B+AB^2+B^3$ via grouping, we get $A^4-B^4=(A-B)(A^3+A^2B+AB^2+B^3)=A^2(A+B)+B^2(A+B)=(A^2+B^2)(A+B)(A-B)$, which is equivalent.\\}{.5in}
 \AnswerKeyEntry{Sure!  If you further factor $A^2-B^2$ via difference of two squares and further factor $A^3+A^2B+AB^2+B^3$ via grouping, you will end up with the same factorizations.}
 \end{exercise}
 \subsection{Applications of Geometric Series}\label{AppleCations}
@@ -298,11 +336,18 @@ Thus, the model predicts that after $N$ generations, there are $\frac{1}{2}\left
 \begin{exercise}{Meeting Critter-ia for a Geometric Series \Coffeecup}
 \begin{itemize}
 \item In the above example, why was it valid to use the Geometric Series Formula? 
-\vspace*{.3in}
+\solushun{Since each generation produces 3 times as many offspring as it has members, there is a common ratio of 3 in the series $1+3+3^2+\cdots+3^N$. Thus, we can use the geometric series formula.\\}{.3in}
 \item In the above example, plug in $N=0,1,2$, and 3 into the formula $\frac{1}{2}\left(3^{N+1}-1\right)$ and verify that it produces the correct totals.
-\vspace*{.5in}
+\solushun{
+\begin{align*}
+    N=0 & \frac{1}{2}\left(3^{0+1}-1\right)= \frac{1}{2}3-1)=1\\
+    N=1 & \frac{1}{2}\left(3^{1+1}-1\right)= \frac{1}{2}(9-1)=4\\
+    N=2 & \frac{1}{2}\left(3^{2+1}-1\right)= \frac{1}{2}(27-1)=13\\
+    N=3 & \frac{1}{2}\left(3^{3+1}-1\right)= \frac{1}{2}(81-1)=40.\\
+\end{align*} These value all agree with the table.\\
+}{.5in}
 \item The above example demonstrates that the quantity $3^{N+1}-1$ is always divisible by 2.  Why is this the case?
-\vspace*{.5in}
+\solushun{Every term of the sum except the first is a power of three. So, if we ignore the first term, the sum is always an odd number. When we add back the first term, we get an even number.\\}{.5in}
 \end{itemize}
 \end{exercise}
 
@@ -316,7 +361,10 @@ Suppose also that on average, money changes hands roughly once a month.  That is
 
 The government invests \$5 billion in public infrastructure.  How much total economic activity is actually generated by this investment in one year? Use the Geometric Series Formula to evaluate your answer!
 
-\vspace*{1in}
+\solushun{
+We start by considering what the series sum might look like. If we take each month's expenditure as a term in the series, we get
+$$5\text{ billion} + 0.8\cdot 5\text{ billion} + 0.8^2\cdot 5\text{ billion} +\cdots + 0.8^12\cdot 5\text{ billion}.$$ So the first term in the series is $5\text{ billion}$, the common ration is $0.8$, and the number of terms is $13$. Plugging this into the GSF we get$$\$5 \text{ billion }\cdot\frac{1-0.8^{13}}{1-0.8}\approx \$23.6 \text{ billion}.$$
+}{1in}
 \AnswerKeyEntry{$\$5 \text{ billion }\cdot\frac{1-0.8^{13}}{1-0.8}\approx \$23.6 \text{ billion}$}
 \end{exercise}
 
@@ -335,14 +383,25 @@ F_0+F_1+F_2+F_3+F_4&=\\
 F_0+F_1+F_2+F_3+F_4+F_5&=\\
 F_0+F_1+F_2+F_3+F_4+F_5+F_6&=
 \end{align*}
+\solushun{
+\begin{align*}
+F_0&=0\\
+F_0+F_1&=0+1=1\\
+F_0+F_1+F_2&=0+1+1=2\\
+F_0+F_1+F_2+F_3&=0+1+1+2=4\\
+F_0+F_1+F_2+F_3+F_4&=0+1+1+2+3=7\\
+F_0+F_1+F_2+F_3+F_4+F_5&=0+1+1+2+3+5=12\\
+F_0+F_1+F_2+F_3+F_4+F_5+F_6&=0+1+1+2+3+5+8=20
+\end{align*}
+}{0in}
 
 \item Explain why $F_0+F_1+\cdots+F_N$ cannot be evaluated by directly applying the Arithmetic or Geometric Series Formula.
 
-\vspace*{.5in}
+\solushun{The series is neither arithmetic, as it has no common difference, nor geometric, as it has no common ratio.\\}{.5in}
 
-\item Do you notice any patterns in the sums above?  In particular, see if you can express the sum of Fibonacci numbers $ \sum_{i=0}^n F_i$ in terms of just a single Fibonacci number.
+\item Do you notice any patterns in the sums above?  In particular, see if you can express the sum of Fibonacci numbers $\sum_{i=0}^n F_i$ in terms of just a single Fibonacci number.
 
-\vspace*{1in}
+\solushun{Each sum is one less than the value of the next Fibonacci number. For example, $F_0=0=F_1-1$, and $F_0+F_1+F_2+F_3=4=F_4-1$. So, $$\sum_{i=0}^n F_i=F_{n+1}-1.$$\\}{1in}
 \end{itemize}
 \AnswerKeyEntry{Try to notice how the summations relate to the very next Fibonacci number, the first one not being summed.}
 \end{exercise}
