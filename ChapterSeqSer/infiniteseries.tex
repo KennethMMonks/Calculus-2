@@ -218,6 +218,7 @@ Explain why the following calculation is not valid according to our definition o
 \begin{align*}
 1+2+2^2+2^3+2^4+\cdots &=\frac{1}{1-2} \\
 &=-1
+    \solushun{The common ratio $r=2$, and so $|r| > 1$. Thus, we cannot use our definition above, which only applies to $|r|<1$.\\}{0in}
 \end{align*}
 \AnswerKeyEntry{Think about what the value of $r$ would be for that series.  What restrictions did we have on $r$ in the statement of the infinite geometric series formula?}
 \end{exercise}
@@ -226,7 +227,10 @@ Explain why the following calculation is not valid according to our definition o
 		\includegraphics[width=300pt]{ChapterSeqSer/Figures/ball.eps}        
 	\end{center}
     A magical bouncy ball is bounced from a height of 1 meter.  On each bounce, it always rebounds to exactly five-eighths of the height it fell from.  What is the ball's total vertical distance traveled from now until the end of time?
-    \vspace*{1in}
+    \solushun{
+        In this case, we are dealind with a geometric series with first term $1$ and common ratio $\frac{5}{8}$. Applying our infinite series formula, we get
+        $$\frac{1}{1-\frac{5}{8}}=\frac{8}{3} = 2.7\overline{3}.$$
+    }{1in}
     \AnswerKeyEntry{$1+2\frac{5}{8}+2\left(\frac{5}{8}\right)^2+2\left(\frac{5}{8}\right)^3+\cdots=1+2\frac{5/8}{1-5/8}=1+2\frac{5/8}{3/8}=13/3=4.\overline{3}$ meters.}
 \end{exercise}
 
