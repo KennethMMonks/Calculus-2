@@ -31,7 +31,9 @@ We have defined three very important interconnected structures:
 \item An infinite series $\sum_{n=0}^\infty a_n$.
 \end{itemize}
 Describe in words how the three structures are related and are built from one another.
-\vspace*{1in}
+    \solushun{
+        Taking the sum of some consecutve elements of the sequence $a_n$ produces the partial sums $A_N$. If we take an infinite number of the elements of $a_n$ and sum them, we generate the infite series $\sum_{n=1}^\infty$, which is equivalent to taking the limit $\lim_{N\to\infy}A_N$.\\
+    }{1in}
  \end{exercise}
  
  \subsection{Zeno's \Zeno{Paradox}, Resolution, and Consequences}\label{infser} 
@@ -55,13 +57,21 @@ Consider the sequence $\frac{1}{2},\frac{1}{4},\frac{1}{8},\frac{1}{16},\ldots$.
 
 \begin{itemize}
 \item Find an explicit formula $a_n$ that describes the sequence above.
-\vspace*{.5in}
+    \solushun{
+        $a_n=\frac{1}{2^{n+1}}$.\\ 
+    }{.5in}
 \item Compute the corresponding sequence of partial sums $A_N$. 
-\vspace*{.5in}
+    \solushun{
+        Taking the Geometric Series Formula, with first term $\frac{1}{2}$ and common ration $\frac{1}{2}$, we get
+        $$A_N=\frac{1}{2}\cdot \frac{1-\left(\frac{1}{2}\right)^{n+1}}{1-\frac{1}{2}}=\frac{1}{2}\cdot \frac{1-\frac{1}{2^{n+1}}}{\frac{1}{2}}=1-\frac{1}{2^{n+1}}.$$
+    }{.5in}
 \item Evaluate the infinite sum $$\frac{1}{2}+\frac{1}{4}+\frac{1}{8}+\frac{1}{16}+\cdots $$
 by taking the limit of the sequence of partial sums.  Verify the total is in fact one.
-\vspace*{1in}
+        \solushun{
+            $$\lim_{N\to\infty}1-\frac{1}{2^{N+1}}=1-\lim_{N\to\infty}\frac{1}{2^{N+1}}=1-0=1.$$
+        }{1in}
 \end{itemize}
+
 \AnswerKeyEntry{The sequence is $a_n=\frac{1}{2^{n+1}}$.  Since this is a geometric sequence, the finite geometric series formula can be applied to then find the sequence of partial sums $A_N$.}
 \end{exercise}
 
@@ -74,17 +84,27 @@ To solve this problem, we notice that it is equivalent to adding up all terms in
 this sequence can be expressed as a geometric sequence with initial term $a_0=\frac{1}{2}$ and common ratio $r=-\frac{1}{2}$ as follows: $$ a_n=\frac{1}{2}\left( -\frac{1}{2} \right) ^n.$$
 \begin{itemize}
 \item Let $A_N=\sum_{n=0}^N a_n$ be the sequence of partial sums.  Find a formula for $A_N$. 
-\vspace*{1in}
+    \solushun{
+        Since this is a geometric series, we again use the Geometric Series Formula:
+        $$A_N=\frac{1}{2}\cdot\frac{1-\left(-\frac{1}{2}\right)^{N+1}}{1-\left(-\frac{1}{2}\right)}=\frac{1}{2}\cdot\frac{1-\left(-\frac{1}{2}\right)^{N+1}}{\frac{3}{2}}=\frac{1-\left(-\frac{1}{2}\right)^{N+1}}{3}.$$
+    }{1in}
 \item  Compute $ \sum_{n=0}^{5} a_n.$
-\vspace*{1in}
+    \solushun{
+        $$A_5=\frac{1-\left(-\frac{1}{2}\right)^{5+1}}{3}=\frac{1-\left(-\frac{1}{2}\right)^{6}}{3}=\frac{1-\frac{1}{64}}{3}\approx 0.4219.$$
+    }{1in}
 \item  Compute $ \sum_{n=0}^{10} a_n.$
-\vspace*{1in}
+    $$A_{10}=\frac{1-\left(-\frac{1}{2}\right)^{10+1}}{3}=\frac{1-\left(-\frac{1}{2}\right)^{11}}{3}=\frac{1+\frac{1}{2^{11}}}{3}\approx 0.3335.$$
 \item Compute $ \sum_{n=0}^{\infty} a_n$ from the definition of an infinite series.
-\vspace*{1in}
+    \solushun{
+        Take the limit of $A_N$ as $N$ approaches infinity.
+        $$\lim_{N\to\infty} A_N=\lim_{N\to\infty} \frac{1-\left(-\frac{1}{2}\right)^{N+1}}{3}=\frac{1-\left(\lim_{N\to\infty}\left(-\frac{1}{2}\right)^{N+1}\right)}{3}=\frac{1}{3}.$$
+    }{1in}
 \end{itemize}
 
 So, where does the bug end up?
-\vspace*{.5in}
+    \solushun{
+        It ends up one-third of a meter forward from where it started.\\
+    }{.5in}
 \AnswerKeyEntry{It ends up one-third of a meter forward from where it started.}
 \end{exercise}
 \subsection{Infinite Geometric Series}\label{Geometrickery}
