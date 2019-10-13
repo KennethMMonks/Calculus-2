@@ -17,7 +17,9 @@ If the limit exists, we say the \conv{infinite series} \emph{converges} to the v
 The idea is simple; if you want to add up infinitely many numbers, a good place to start is by just adding up finitely many of them.  However, if you only add up finitely many, your answer has some error to it.  If you want that error to go down, add up more and more of them!  The limit of the values of these partial sums will be the exact answer.
 
 \begin{exercise}{The Return of the Discrete/Continuous Analogy \Coffeecup \Coffeecup \Coffeecup} In what way is the definition of an infinite series analagous to the definition of a horizontally unbounded improper integral?
-\vspace*{.5in}
+    \solushun{
+        In the same way that the definition of the infinite series involves taking the limit as the last term approaches infinity, the definition for a horizontally unbounded improper integral also involves taking the limit of the upper bound of integration: $ \int_{a}^\infty f(x)\dif x = \lim_{c \rightarrow \infty} \int_{a}^c f(x)\dif x. $ \\
+    }{.5in}
 \AnswerKeyEntry{Think about an integral of the form $\intop_{x=0}^{x=\infty}f(x)\dif x $.  How does one handle that infinity in the bounds?}
 \end{exercise}
 
