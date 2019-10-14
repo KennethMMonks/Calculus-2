@@ -230,6 +230,7 @@ Explain why the following calculation is not valid according to our definition o
     \solushun{
         In this case, we are dealind with a geometric series with first term $1$ and common ratio $\frac{5}{8}$. Applying our infinite series formula, we get
         $$\frac{1}{1-\frac{5}{8}}=\frac{8}{3} = 2.7\overline{3}.$$
+        So the ball travels $2.7\overline{3}$ meters until the end of time.\\
     }{1in}
     \AnswerKeyEntry{$1+2\frac{5}{8}+2\left(\frac{5}{8}\right)^2+2\left(\frac{5}{8}\right)^3+\cdots=1+2\frac{5/8}{1-5/8}=1+2\frac{5/8}{3/8}=13/3=4.\overline{3}$ meters.}
 \end{exercise}
@@ -241,15 +242,21 @@ Consider the constant sequence $ a_n=2$.  Now consider the corresponding infinit
 
 \item Write out the first five terms of the sequence $a_n$.  Also write out the first five terms of the corresponding sequence of partial sums.
 
-\vspace*{.5in}
+    \solushun{
+        The first five terms of $a_n$ are $2,4,8,16,32.$ The first five terms of the corresponding partial sums are $2, 6, 14, 30, 62.$\\
+    }{.5in}
 
 \item  Find an explicit formula for the sequence of partial sums.
 
-\vspace*{.5in}
+    \solushun{
+        $A_N=2(N+1)$.\\
+    }{.5in}
 
 \item Does the infinite series converge?  If so, what value does it converge to?
 
-\vspace*{.5in}
+    \solushun{
+        Taking the limit, we can clearly see that the infinite series $\lim_{N\to\infty A_N}=\lim_{N\to\infty}2(N+1)=\infty$ does not converge.
+    }{.5in}
 \end{itemize}
 \AnswerKeyEntry{The partial sums are $A_N=2(N+1)$.  The infinite series is the limit of $A_N$ as $N$ goes to infinity, which here is clearly again infinity.  Thus, the infinite series diverges.}
 \end{exercise}
@@ -260,22 +267,96 @@ Consider the following sequence: $$ a_n= \frac{2}{n^2+5n+6}$$
 \begin{itemize}
 \item Compute the first five terms of the sequence.  
 
-\vspace*{1in}
+    \solushun{
+        \begin{center}
+        \begin{tabular}{|c|c|} \hline
+            $n$ & $a_n$ \\ \hline
+            $0$ & $\frac{2}{6}=\frac{1}{3}$ \\ \hline
+            $1$ & $\frac{2}{1+5+6}=\frac{1}{6}$ \\ \hline
+            $2$ & $\frac{2}{4+10+6}=\frac{1}{10}$ \\ \hline
+            $3$ & $\frac{2}{9+15+16}=\frac{1}{15}$ \\ \hline
+            $4$ & $\frac{2}{16+20+6}=\frac{1}{21}$ \\ \hline
+        \end{tabular}
+        \end{center}
+    }{1in}
 
 \item Compute the first five partial sums of the sequence.
 
-\vspace*{1in}
+    \solushun{
+        We can make the process a little faster by transferring the solution from one line down to the next, and then just adding on the new term from $a_N$ by referring to the table above.
+        \begin{center}
+        \begin{tabular}{|c|c|} \hline
+            $N$ & $A_N$ \\ \hline
+            $0$ & $\frac{1}{3}$ \\ \hline
+            $1$ & $\frac{1}{3}+\frac{1}{6}=\frac{3}{6}=\frac{1}{2}$ \\ \hline
+            $2$ & $\frac{1}{2}+\frac{1}{10}=\frac{3}{5}$ \\ \hline
+            $3$ & $\frac{3}{5}+\frac{1}{15}=\frac{2}{6}$ \\ \hline
+            $4$ & $\frac{2}{6}+\frac{1}{21}=\frac{5}{7}$ \\ \hline
+        \end{tabular}
+        \end{center}
+    }{1in}
 
 \item Based on your data, conjecture a formula for $$ A_N=\sum_{n=0}^{N}  \frac{2}{n^2+5n+6}$$
 
-\vspace*{1in}
+    \solushun{
+        We need to play around with the terms of $A_N$ a bit to get what we want. Since we want something that follows some pattern as $N$ increases, we can try to convert the fractions so that the numerator and the denominator both increase as $N$ gets larger. This requires some experimentation to figure out what denominator to choose, but playing around eventually gives us $A_N=\frac{1}{3}, \frac{2}{4},\frac{3}{5},\frac{4}{6},\frac{5}{7},\ldots$.
+
+        Then we can conjecture that the pattern is $A_N=\frac{N+1}{N+3}$.\\
+    }{1in}
 
 \item Prove your answer is correct via a partial fraction decomposition.  Specifically, perform a PFD on $a_n= \frac{2}{n^2+5n+6}$ and then notice that when you add the terms in a partial sum, all but two terms cancel!  (This lucky happening is what is referred to as a series \emph{telescoping}, as it is collapsing in on itself much like a retractable telescope would.)
 
-\vspace*{3in}
+    \solushun{
+        To do a PFD on $a_n=\frac{2}{n^2+5n+6}$, first factor the denominator to get $n^2+5n+6=(n+2)(n+3)$.
+        This gives us the decomposition $$\frac{A}{n+2}+\frac{B}{n+3}=\frac{A(n+3)+B(n+2)}{(n+2)(n+3)}.$$
+        This yields the system of equations:
+
+        $$An+Bn=(A+B)n=0, \hspace{0.25in} 3A+2B=2$$
+        so that, 
+        $$A=-B \hspace{0.125in} \implies \hspace{0.125in} -3B+2B=-B=2,$$
+        $$A=2, B=-2.$$
+        So this means we can rewrite $a_n$ as
+        $$a_n=\frac{2}{n+2}-\frac{2}{n+3}.$$
+
+        Now, if we examine the partial sums using this expansion, we will see the telescoping:
+        \begin{align*}
+            A_N&=\left(\frac{2}{2}-\frac{2}{3}\right)+
+                  \left(\frac{2}{3}-\frac{2}{4}\right)+
+                  \left(\frac{2}{4}-\frac{2}{5}\right)+\cdots+
+                  \left(\frac{2}{(N+2-1)}-\frac{2}{(N+3-1)}\right)+
+                  \left(\frac{2}{(N+2)}-\frac{2}{(N+3)}\right)\\
+                &=\frac{2}{2}-\frac{2}{3}+
+                  \frac{2}{3}-\frac{2}{4}+
+                  \frac{2}{4}-\frac{2}{5}+\cdots+
+                  \frac{2}{(N+1)}-\frac{2}{(N+2)}+
+                  \frac{2}{(N+2)}-\frac{2}{(N+3)}\\
+                  &=1-\frac{2}{(N+3)}\\
+                  &=\frac{N+3-2}{N+3}\\
+                  &=\frac{N+1}{N+3}.
+        \end{align*}
+        This agrees with our conjecture.\\
+    }{3in}
 
 \item Use your formula for the partial sums and the definition of an infinite series to write an $N-\epsilon$ proof for the value of $$ \sum_{n=0}^{\infty}  \frac{2}{n^2+5n+6}.$$
-\vspace*{3in}
+    \solushun{
+        Let $A_N=\frac{2}{n^2+5n+6}$. Then the limit $\lim_{N\to\infty}A_N=\sum_{n=0}^\infty\frac{2}{n^2+5n+6}$. We wish to show that the limit is $1$. So, we need to show that, for all $\epsilon>0$, there exists some $N'>0$ such that for all $N>N'$, we have $|A_N-1|<\epsilon$.
+        Note, we are just using L'hopital's rule to get 1 as our limit candidate.
+
+        Let $N'=\frac{-2}{\epsilon}-3$.
+        Then we have 
+        \begin{align*}
+            \left|A_N-1\right|&=\left|\sum_{n=0}^N\frac{2}{n^2+5n+6}-1\right|\\
+                              &=\left|\frac{N+1}{N+3}-1\right|\\
+                              &=\left|\frac{N+1}{N+3}-1\right|\\
+                              &=\left|\frac{N+1-N-3}{N+3}\right|\\
+                              &=\left|\frac{-2}{N+3}\right|\\
+                              &<\left|\frac{-2}{N'+3}\right|\\
+                              &=\left|\frac{-2}{\frac{-2}{\epsilon}-3+3}\right|\\
+                              &=\left|\frac{-2}{\frac{-2}{\epsilon}}\right|\\
+                              &=\epsilon.\\
+        \end{align*}
+        Thus, for all $\epsilon > 0$, we can find some $N' > 0$, so that for any $N>N'$ $|A_N-1|<\epsilon$ and thus, $\lim_{N\to\infty} A_N=1$\\.
+    }{3in}
 
 \end{itemize}
 \AnswerKeyEntry{The partial sums are $$A_N=\frac{N+1}{N+3}$$ for an infinite sum of 1.}
