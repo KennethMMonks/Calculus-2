@@ -228,7 +228,7 @@ Explain why the following calculation is not valid according to our definition o
 	\end{center}
     A magical bouncy ball is bounced from a height of 1 meter.  On each bounce, it always rebounds to exactly five-eighths of the height it fell from.  What is the ball's total vertical distance traveled from now until the end of time?
     \solushun{
-        In this case, we are dealind with a geometric series with first term $1$ and common ratio $\frac{5}{8}$. Applying our infinite series formula, we get
+        In this case, we are dealing with a geometric series with first term $1$ and common ratio $\frac{5}{8}$. Applying our infinite series formula, we get
         $$\frac{1}{1-\frac{5}{8}}=\frac{8}{3} = 2.7\overline{3}.$$
         So the ball travels $2.7\overline{3}$ meters until the end of time.\\
     }{1in}
@@ -381,13 +381,110 @@ And now, the sequences:
 \begin{itemize}
 
 \item The sequence defined by $$a_n=2n$$
-\vspace*{1.5in}
+    \solushun{
+        \begin{itemize}
+
+        \item Make a table to show the first five terms:
+        \begin{center}
+        \begin{tabular}{|c|c|c|} \hline
+            $n$ & $a_n$ & $A_n$ \\
+            \hline
+            0 & 0 & 0 \\
+            1 & 2 & 2 \\
+            2 & 4 & 6 \\
+            3 & 6 & 12 \\
+            4 & 8 & 20 \\
+            \hline
+        \end{tabular}
+        \end{center}
+
+        \item This looks like an exponential function, and indeed $A_N=N^2+N$ works.
+
+        \item It does not appear to converge. Since $a_n$ is growing, we can be confident that $A_N$ does not converge.
+
+        \end{itemize}
+    }{1.5in}
 \item The sequence defined by $$a_n=2^n$$
-\vspace*{1.5in}
+    \solushun{
+        \begin{itemize}
+
+        \item Make a table to show the first five terms:
+        \begin{center}
+        \begin{tabular}{|c|c|c|} \hline
+            $n$ & $a_n$ & $A_n$ \\
+            \hline
+            0 & 1 & 1 \\
+            1 & 2 & 3 \\
+            2 & 4 & 7 \\
+            3 & 8 & 15 \\
+            4 & 16 & 31 \\
+            \hline
+        \end{tabular}
+        \end{center}
+
+    \item Notice that every term is one less than a power of 2. In fact, $A_N=2^{N+1}-1$.
+
+        \item It does not appear to converge. Since $a_n$ is growing, we can be confident that $A_N$ does not converge.
+
+        \end{itemize}
+    }{1.5in}
 \item The sequence defined by $$ a_n=\left(\frac{2}{3}\right)^n$$
-\vspace*{1.5in}
+    \solushun{
+        \begin{itemize}
+
+        \item Make a table to show the first five terms:
+        \begin{center}
+        \begin{tabular}{|c|c|c|} \hline
+            $n$ & $a_n$ & $A_n$ \\
+            \hline
+            0 & 1 & 1 \\
+            1 & $\frac{2}{3}$ & $\frac{5}{3}$ \\
+             & & \\
+            2 & $\frac{4}{9}$ & $\frac{19}{9}$ \\
+             & & \\
+            3 & $\frac{8}{27}$ & $\frac{65}{27}$ \\
+             & & \\
+            4 & $\frac{16}{81}$ & $\frac{211}{81}$ \\
+            \hline
+        \end{tabular}
+        \end{center}
+
+    \item Using the geometric series formula, we get $$A_N=\frac{1-\frac{2}{3}^{N+1}}{1-\frac{2}{3}}=\frac{1-\frac{2}{3}^{N+1}}{\frac{1}{3}}=3-\frac{2^{N+1}}{3^{N}}.$$
+
+    \item It does appear to converge, and we can just use the Geometric Series Formula for infinite series: $$\lim_{N\to\infty}A_N=\frac{1}{1-\frac{2}{3}}=\frac{1}{\frac{1}{3}}=3.$$
+
+        \end{itemize}
+    }{1.5in}
 \item The sequence defined by $$ a_n=\left(\frac{-1}{2}\right)^n$$
-\vspace*{1.5in}
+    \solushun{
+        \begin{itemize}
+
+        \item Make a table to show the first five terms:
+        \begin{center}
+        \begin{tabular}{|c|c|c|} \hline
+            $n$ & $a_n$ & $A_n$ \\
+            \hline
+            0 & 1 & 1 \\
+            1 & $\frac{-1}{2}$ & $\frac{1}{2}$ \\
+             & & \\
+            2 & $\frac{1}{4}$ & $\frac{3}{4}$ \\
+             & & \\
+            3 & $\frac{-1}{8}$ & $\frac{5}{8}$ \\
+             & & \\
+            4 & $\frac{1}{16}$ & $\frac{11}{16}$ \\
+            \hline
+        \end{tabular}
+        \end{center}
+
+    \item Using the geometric series formula, we get 
+        $$A_N=\frac{1-\frac{-1}{2}^{N+1}}{1-\frac{-1}{2}}$$
+        $$A_N=\frac{1-\frac{-1}{2}^{N+1}}{\frac{3}{2}}$$
+        $$A_N=\frac{2}{3}\left(1-\frac{-1}{2}^{N+1}\right)$$
+        $$A_N=\left(\frac{2}{3}-\frac{2}{3}\frac{-1}{2}^{N+1}\right)$$
+
+    \item Does converge....
+        \end{itemize}
+    }{1.5in}
 \item The sequence defined by $$ a_n=\left(-1\right)^n$$
 \vspace*{1.5in}
 \item The sequence defined by \begin{align*}
