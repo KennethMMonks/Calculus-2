@@ -477,33 +477,128 @@ And now, the sequences:
         \end{center}
 
     \item Using the geometric series formula, we get 
-        $$A_N=\frac{1-\frac{-1}{2}^{N+1}}{1-\frac{-1}{2}}$$
-        $$A_N=\frac{1-\frac{-1}{2}^{N+1}}{\frac{3}{2}}$$
-        $$A_N=\frac{2}{3}\left(1-\frac{-1}{2}^{N+1}\right)$$
-        $$A_N=\left(\frac{2}{3}-\frac{2}{3}\frac{-1}{2}^{N+1}\right)$$
+        \begin{align*}
+            A_N&=\frac{1-\frac{-1}{2}^{N+1}}{1-\frac{-1}{2}}\\
+               &=\frac{1-\frac{-1}{2}^{N+1}}{\frac{3}{2}}\\
+               &=\frac{2}{3}\left(1-\frac{-1}{2}^{N+1}\right)\\
+               &=\left(\frac{2}{3}-\frac{2}{3}\frac{-1}{2}^{N+1}\right)\\
+               &=\left(\frac{2}{3}-\frac{2}{3}\frac{-1}{2}^{N+1}\right)\\
+               &=\left(\frac{2}{3}-\frac{-1^{N+1}}{3\cdot2^{N}}\right)\\
+        \end{align*}
 
-    \item Does converge....
-        \end{itemize}
+    \item The sequence of partial sums does converge, again, because we have a geometric series with $|r|<1$. The limit is $\lim_{N\to\infty}A_N=\frac{2}{3}$.
+    \end{itemize}
     }{1.5in}
 \item The sequence defined by $$ a_n=\left(-1\right)^n$$
-\vspace*{1.5in}
+    \solushun{
+        \begin{itemize}
+
+        \item Make a table to show the first five terms:
+        \begin{center}
+        \begin{tabular}{|c|c|c|} \hline
+            $n$ & $a_n$ & $A_n$ \\
+            \hline
+            0 & 1 & 1 \\
+            1 & -1 & $0$ \\
+            2 & $1$ & $1$ \\
+            3 & $-1$ & $0$ \\
+            4 & $1$ & $1$ \\
+            \hline
+        \end{tabular}
+        \end{center}
+
+    \item $A_N=\frac{1}{2}+\frac{(-1)^N}{2}$.
+
+    \item The sequence of partial sums does not converge.
+    \end{itemize}
+    }{1.5in}
 \item The sequence defined by \begin{align*}
  a_0&=3 \\ 
  a_n&=\frac{-1}{3}a_{n-1} \\
 \end{align*}
-\vspace*{1.5in}
+\solushun{
+        \begin{itemize}
+
+        \item Make a table to show the first five terms:
+        \begin{center}
+        \begin{tabular}{|c|c|c|} \hline
+            $n$ & $a_n$ & $A_n$ \\
+            \hline
+            0 & 3 & 3 \\
+            1 & -1 & $2$ \\
+            2 & $\frac{1}{3}$ & $\frac{7}{3}$ \\
+            3 & $\frac{-1}{9}$ & $\frac{20}{9}$ \\
+            4 & $\frac{1}{27}$ & $\frac{61}{27}$ \\
+            \hline
+        \end{tabular}
+        \end{center}
+
+    \item This is a geometric series with common ratio $r=\frac{-1}{3}$. Thus, we can appeal to the Geometric Series Formula:
+        \begin{align*}
+            A_N&=\frac{3-\frac{-1}{3}^{N+1}}{1-\frac{-1}{3}}\\
+                &=\frac{3-\frac{-1}{3}^{N+1}}{\frac{4}{3}}\\
+                &=\frac{3}{4}\cdot\left(3-\frac{-1}{3}^{N+1}\right)\\
+                &=\frac{9}{4}-\frac{-1^{N+1}}{4\cdot3^N}
+        \end{align*}
+
+    \item Since $|r|<1$, the sequence converges, and we can just take $\lim_{N\to\infty}A_N=\frac{9}{4}$.
+    \end{itemize}
+}{1.5in}
 \item The sequence defined by \begin{align*}
  a_0&=5 \\ 
  a_n&=a_{n-1}+1 \\
 \end{align*}
-\vspace*{1.5in}
+\solushun{
+        \begin{itemize}
+
+        \item Make a table to show the first five terms:
+        \begin{center}
+        \begin{tabular}{|c|c|c|} \hline
+            $n$ & $a_n$ & $A_n$ \\
+            \hline
+            0 & 5 & 5 \\
+            1 & 6 & $11$ \\
+            2 & $7$ & $18$ \\
+            3 & $8$ & $26$ \\
+            4 & $9$ & $35$ \\
+            \hline
+        \end{tabular}
+        \end{center}
+
+    \item This is an Arithmetic Series with $a_0=5, d=1$, and $N+1$ number of terms. Thus, by our Arithmetic Series Formula
+            $$A_N=(N+1)\frac{5+5+N}{2}=\frac{(N+1)(10+N)}{2}.$$
+
+    \item The series does not converge.
+    \end{itemize}
+}{1.5in}
 \item The sequence defined by \begin{center}
 $a_n=\begin{cases}
 1, & \text{if $n=0$;} \\
 0, & \text{otherwise}
 \end{cases}$
 \end{center}
-\vspace*{1.5in}
+\solushun{
+        \begin{itemize}
+
+        \item Make a table to show the first five terms:
+        \begin{center}
+        \begin{tabular}{|c|c|c|} \hline
+            $n$ & $a_n$ & $A_n$ \\
+            \hline
+            0 & $1$ & $1$ \\
+            1 & $0$ & $1$ \\
+            2 & $0$ & $1$ \\
+            3 & $0$ & $1$ \\
+            4 & $0$ & $1$ \\
+            \hline
+        \end{tabular}
+        \end{center}
+
+    \item $A_N=1$.
+
+    \item The series converges to $1$.
+    \end{itemize}
+}{1.5in}
 \end{itemize}
 \AnswerKeyEntry{The infinite series $\Sigma_{n=0}^{\infty}a_n$ are  \textbullet Divergent \textbullet Divergent \textbullet 3 \textbullet$\frac{2}{3}$ \textbullet Divergent \textbullet $\frac{9}{4}$ \textbullet Divergent \textbullet 1}
 \end{exercise}
