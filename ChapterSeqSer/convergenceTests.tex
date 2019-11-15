@@ -132,18 +132,26 @@ A geometric series converges if $|r|<1$ (and in fact converges to the value $a/(
 \begin{exercise}{Practice with the Geometric Series \Coffeecup \Coffeecup \Coffeecup}
 \begin{itemize}
 \item Explain why $\sum_{n=1}^\infty \frac{1}{n^2}$ is not a geometric series (and thus this test would be inapplicable).
-\vspace*{.5in}
+    \solushun{
+        The summation $\sum_{n=1}^\infty \frac{1}{n^2}$ has no common ratio $r$. The first three terms are $1, \frac{1}{4}, \frac{1}{9}$, which have no ratio in commin.\\
+    }{.5in}
 \item Explain why the series $18-6+2-\frac{2}{3}+\frac{2}{9}-\cdots$ converges absolutely.
-\vspace*{.5in}
+    \solushun{
+        The common ratio is $r=-\frac{1}{3}$. Since $|r|<1$, this series converges by the Geometric Series Test. If we take the absolute value of each term in the series, we get $18+6+2+\frac{2}{3}+\frac{2}{9}+\cdots$, which has the same common ratio and thus also converges. Thus, the series converges absolutely.\\
+    }{.5in}
 \item Give an example of a geometric series that converges conditionally, or explain why it is not possible to construct such a series.
-\vspace*{.5in}
+    \solushun{
+        It is not possible to build a conditionally convergent geometric series, because the determining factor in whether a geometric series converges or not is whether $|r| >1$. So, taking the absolute value of each term in the series might flip the sign of the ratio, but it would not change the magnitude. So, any convergent geometric series must converge absolutely.\\
+    }{.5in}
 \end{itemize}
 \AnswerKeyEntry{\textbullet The summation $\Sigma_{n=1}^\infty \frac{1}{n^2}$ has no common ratio $r$ and thus is not a geometric series. For example, the first three terms are $1,1/4,$ and $1/9$.  Thus, the first two ratios between consecutive terms are $1/4$ and $4/9$, which are not equal.  \textbullet The given geometric series has common ratio $r=-1/3$.  After taking the absolute value of each term, it becomes the series $18+6+2+\frac{2}{3}+\frac{2}{9}+\cdots$ which still converges as it now has common ratio $r=1/3$.  \textbullet It is not possible to build a conditionally convergent geometric series.  If we are given a convergent geometric series, then the common ratio $r$ satisfies $|r|<1$.  Taking the absolute value of each term in the series might flip the sign on $r$, but it will not change the magnitude.  Thus, any convergent geometric series must converge absolutely.}
 \end{exercise}
 
 \begin{exercise}{Why Not Arithmetic? \Coffeecup \Coffeecup \Coffeecup}
 Why is there \emph{not} another result in this section called the ``\arithmeticseries{Arithmetic Series Test}''?  Why is only the geometric series getting to have all the fun?
-\vspace*{.5in}
+    \solushun{
+        Since an arithmetic series has a common difference, the sum will always be growing, either towards infinity or negative infinity. This is because we will always be adding progressively larger terms to the sum, or progressively more negative terms. But we will never add terms that get smaller and smaller in magnitude. Thus, in an arithmetic series, the sum will never converge.\\
+    }{.5in}
 \end{exercise}
 
 \subsection{Integral Test}\label{IntTest}
