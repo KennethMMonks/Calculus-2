@@ -49,6 +49,26 @@ So we have $$\int{\frac{1}{x^4-x^2}dx} = \int{\frac{\frac{1}{2}}{x-1}+\frac{-\fr
 \end{exercise}
 
 
+\begin{exercise}{Mixed bag of $u$-subs \Coffeecup \Coffeecup }
+
+Find the following antiderivatives.  
+
+\begin{itemize}
+    \item $ \int 2x+1 \dif x$
+    \item $\int \frac{1}{2x+1}\dif x$
+    \item $\int e^x \sec\left(e^x\right)\tan\left(e^x\right) \dif x$
+    \item $\int\frac{1}{e^x} \dif x$
+    \item $\int \frac{\cos\left(\ln(2x)\right)}{x} \dif x$
+    \item $\int \left(2^x\right)^2 \dif x$
+    \item $\int \frac{1}{2+2x+x^2}\dif x$
+     \item $\int \frac{1}{1+2x+x^2}\dif x$
+\end{itemize}
+\AnswerKeyEntry{\textbullet $ \protect \int 2x+1 \dif x = x^2+x+C$  Here no $u$-sub is required. \textbullet We apply the substitution $u=2x+1$, which implies $\dif u/\dif x=2$ and $\dif x=\dif u/2.$  Thus, $\protect \int \frac{1}{2x+1}\dif x=\protect \int \frac{1}{u} \frac{\dif u}{2}  =\frac{1}{2}\protect \int \frac{1}{u} \dif u  =\frac{1}{2}\ln(u)+C =\frac{1}{2}\ln(2x+1)+C .$ \textbullet  The occurrences of $e^x$ inside parentheses motivate the choice $u=e^x.$  Thus, $\dif u/\dif x=e^x$ as well and $\dif x=\dif u/e^x.$  The integral becomes $\protect \int e^x \sec\left(e^x\right)\tan\left(e^x\right) \dif x =\protect  \int e^x \sec(u)\tan(u)\frac{\dif u}{e^x} = \protect \int \sec(u)\tan(u) \dif u = \sec(u)+C = \sec\left(e^x\right)+C. $ \textbullet Though the initial form might motivate the choice of $u=e^x$, upon trying this one finds the integral becomes worse rather than better.  Instead, rewrite as a negative exponent and use $u=-x$ so $\dif x=-\dif u$.  Thus, $
+\protect \int \frac{1}{e^x}\dif x = \protect \int e^{-x} \dif x = \protect \int e^u (-1)\dif u =-\protect \int e^u \dif u =-e^u +C =-e^{-x}+C.$ \textbullet One can try the inner function $u=2x$, but that ends up not cleaning things up enough.  A more productive choice is $u=\ln(2x)$.  That choice produces $\frac{\dif u}{\dif x}=\frac{1}{2x}\cdot 2 = \frac{1}{x}.$  Solving for $\dif x$ produces $\dif x=x\cdot \dif u.$  We now substitute into the integral, creating $    \protect \int \frac{\cos\left(\ln(2x)\right)}{x}\dif x = \protect \int \frac{\cos\left(u\right)}{x}x\cdot \dif u =\protect \int \cos\left(u\right)\cdot \dif u=\sin(u)+C=\sin\left(\ln(2x)\right)+C.$ \textbullet One can try $u=2^x$, but it gets tangled up.  Instead, try simplifying the integrand using properties of exponents to become $2^{2x}$, at which point $u=2x$ becomes a natural substitution.  Taking the derivative produces $\dif u/\dif x=2$ so $\dif x=\dif u/2.$  Thus, $\protect \int \left(2^x\right)^2 \dif x = \protect \int 2^{2x} \dif x = \protect \int 2^u \dif u/2 = \frac{1}{2}\protect \int 2^u \dif u = \frac{1}{2}\frac{1}{\ln(2)}2^u+C =\frac{1}{2\cdot \ln(2)}2^{2x}+C.$ \textbullet This seems close enough to arctangent if you just glance at it!  Let's complete the square on the denominator to get it there.  In particular, $2+2x+x^2=1+1+2x+x^2=1+\left(1+x\right)^2,$ which motivates the $u$-sub $u=1+x$ with change of differential $\dif u/\dif x=1$ which implies $\dif u=\dif x$.  Therefore, $\protect \int \frac{1}{2+2x+x^2}\dif x= \protect \int \frac{1}{1+(1+x)^2}\dif x = \protect \int \frac{1}{1+u^2}\dif u =\arctan(u)+C =\arctan(1+x)+C.$ \textbullet This appears so similar to the previous, yet it works out quite differently!  The denominator is a perfect square: $(1+x)^2$.  Thus, we simply apply $u$-sub with $u=1+x$, which has the squeaky clean consequence that $\dif u/\dif x=1$ so $\dif u=\dif x$.  This produces the integral $\protect \int \frac{1}{1+2x+x^2}\dif x =\protect \int \frac{1}{(1+x)^2}\dif x = \protect \int \frac{1}{u^2}\dif u=\protect \int u^{-2}\dif u=u^{-1}/(-1)+C=-\frac{1}{1+x}+C.$
+}
+
+\end{exercise}
+
 \subsection{Sample Test Problems}
 
 \begin{exercise}{\Coffeecup \Coffeecup }
